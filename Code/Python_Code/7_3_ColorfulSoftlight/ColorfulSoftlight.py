@@ -9,9 +9,9 @@ import RPi.GPIO as GPIO
 import time
 from ADCDevice import *
 
-ledRedPin = 33      # define 3 pins for RGBLED
+ledRedPin = 29      # define 3 pins for RGBLED
 ledGreenPin = 31
-ledBluePin = 29
+ledBluePin = 33
 adc = ADCDevice(0x48) # Define an ADCDevice class object
 
 def setup():
