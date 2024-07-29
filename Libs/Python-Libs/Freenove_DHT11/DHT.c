@@ -16,7 +16,8 @@ static double humidity=0,temperature=0;
 void setDHT11Pin(int pin)
 {
 	dhtPin = pin;
-	wiringPiSetup();
+	//wiringPiSetup();
+	wiringPiSetupGpio();
 }
 
 int readSensor(int pin, int wakeupDelay){
