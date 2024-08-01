@@ -2,19 +2,19 @@
 * Filename    : ButtonLED.c
 * Description : Control led by button.
 * Author      : www.freenove.com
-* modification: 2021/1/1
+* modification: 2024/07/29
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
 
-#define ledPin    0  	//define the ledPin
-#define buttonPin 25		//define the buttonPin
+#define ledPin    17  	//define the ledPin
+#define buttonPin 26    //define the buttonPin
 
 void  main(void)
 {
 	printf("Program is starting ... \n");
-	
-	wiringPiSetup();	//Initialize wiringPi.	
+
+	wiringPiSetupGpio();//Initialize wiringPi. Use BCM Number.
 	
 	pinMode(ledPin, OUTPUT); //Set ledPin to output
 	pinMode(buttonPin, INPUT);//Set buttonPin to input

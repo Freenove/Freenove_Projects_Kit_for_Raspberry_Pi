@@ -2,7 +2,7 @@
 * Filename    : Sweep.c
 * Description : Servo sweep
 * Author      : www.freenove.com
-* modification: 2021/1/1
+* modification: 2024/07/29
 **********************************************************************/
 #include <wiringPi.h>
 #include <softPwm.h>
@@ -11,7 +11,7 @@
 #define SERVO_MIN_MS 5+OFFSET_MS        //define the pulse duration for minimum angle of servo
 #define SERVO_MAX_MS 25+OFFSET_MS       //define the pulse duration for maximum angle of servo
 
-#define servoPin    1       //define the GPIO number connected to servo
+#define servoPin    18       //define the GPIO number connected to servo
 long map(long value,long fromLow,long fromHigh,long toLow,long toHigh){
     return (toHigh-toLow)*(value-fromLow) / (fromHigh-fromLow) + toLow;
 }
@@ -39,8 +39,8 @@ int main(void)
     
     printf("Program is starting ...\n");
     
-    wiringPiSetup();    
-    servoInit(servoPin);        //initialize PMW pin of servo
+    wiringPiSetupGpio();  //Initialize wiringPi. Use BCM Number. 
+    servoInit(servoPin);  //initialize PMW pin of servo
     while(1){
         for(i=SERVO_MIN_MS;i<SERVO_MAX_MS;i++){  //make servo rotate from minimum angle to maximum angle
             servoWriteMS(servoPin,i);

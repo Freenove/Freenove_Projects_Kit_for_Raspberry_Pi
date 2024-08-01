@@ -2,13 +2,13 @@
 * Filename    : BreathingLED.c
 * Description : Make breathing LED with PWM
 * Author      : www.freenove.com
-* modification: 2021/1/1
+* modification: 2024/07/29
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
 #include <softPwm.h>
 
-#define ledPin    0 
+#define ledPin    17 
 
 void main(void)
 {
@@ -16,7 +16,7 @@ void main(void)
 	
 	printf("Program is starting ... \n");
 	
-	wiringPiSetup();	//Initialize wiringPi.
+	wiringPiSetupGpio();//Initialize wiringPi. Use BCM Number.
 	
 	softPwmCreate(ledPin,  0, 100);//Creat SoftPWM pin
 	

@@ -2,16 +2,16 @@
 * Filename    : StopWatch.c
 * Description : Control 4_Digit_7_Segment_Display by 74HC595
 * Author      : www.freenove.com
-* modification: 2021/1/1
+* modification: 2024/07/29
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
 #include <wiringShift.h>
 #include <signal.h>
 #include <unistd.h>
-#define     dataPin     3   //DS Pin of 74HC595(Pin14)
-#define     latchPin    2   //ST_CP Pin of 74HC595(Pin12)
-#define     clockPin    0    //CH_CP Pin of 74HC595(Pin11)
+#define     dataPin     22   //DS Pin of 74HC595(Pin14)
+#define     latchPin    27   //ST_CP Pin of 74HC595(Pin12)
+#define     clockPin    17   //CH_CP Pin of 74HC595(Pin11)
 // character 0-9 code of common anode 7-segment display 
 unsigned char num[]={0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xf8,0x80,0x90};
 int counter = 0;    //variable counter,the number will be displayed by 7-segment display
@@ -91,7 +91,7 @@ int main(void)
     
     printf("Program is starting ...\n");
     
-    wiringPiSetup();
+    wiringPiSetupGpio();//Initialize wiringPi. Use BCM Number.
     
     pinMode(dataPin,OUTPUT);        //set the pin connected to74HC595 for output mode
     pinMode(latchPin,OUTPUT);

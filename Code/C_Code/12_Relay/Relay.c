@@ -2,13 +2,13 @@
 * Filename    : Relay.c
 * Description : Control Motor with Button and Relay 
 * Author      : www.freenove.com
-* modification: 2021/1/1
+* modification: 2024/07/29
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
 
-#define relayPin    26  	//define the relayPin
-#define buttonPin 	27		//define the buttonPin
+#define relayPin    12  	//define the relayPin
+#define buttonPin 	16		//define the buttonPin
 int relayState=LOW;			//store the State of relay
 int buttonState=HIGH;		//store the State of button
 int lastbuttonState=HIGH;	//store the lastState of button
@@ -19,7 +19,7 @@ int main(void)
 {
 	printf("Program is starting...\n");
 	
-	wiringPiSetup();	
+	wiringPiSetupGpio();//Initialize wiringPi. Use BCM Number.	
 	
 	pinMode(relayPin, OUTPUT); 
 	pinMode(buttonPin, INPUT);

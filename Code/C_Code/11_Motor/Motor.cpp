@@ -2,7 +2,7 @@
 * Filename    : Motor.cpp
 * Description : Control Motor by L293D
 * Author      : www.freenove.com
-* modification: 2021/1/1
+* modification: 2024/07/29
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
@@ -12,8 +12,7 @@
 #include <ADCDevice.hpp>
 
 #define motorPin1    15        //define the pin connected to L293D
-#define motorPin2    16
-#define enablePin    3
+#define motorPin2    14
 
 ADCDevice *adc;  // Define an ADC Device class object
 
@@ -56,7 +55,7 @@ int main(void){
         "Program Exit. \n");
         return -1;
     }
-    wiringPiSetup();
+    wiringPiSetupGpio();//Initialize wiringPi. Use BCM Number.
     pinMode(motorPin1,OUTPUT);
     pinMode(motorPin2,OUTPUT);
     

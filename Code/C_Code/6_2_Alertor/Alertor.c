@@ -2,15 +2,15 @@
 * Filename    : Alertor.c
 * Description : Make Alertor with buzzer and button.
 * Author      : www.freenove.com
-* modification: 2021/1/1
+* modification: 2024/07/29
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
 #include <softTone.h>
 #include <math.h>
 
-#define buzzerPin    7  	//define the buzzerPin
-#define buttonPin 	 28		//define the buttonPin
+#define buzzerPin    4  	//define the buzzerPin
+#define buttonPin 	 20		//define the buttonPin
 
 void alertor(int pin){
 	int x;
@@ -29,7 +29,7 @@ int main(void)
 {
 	printf("Program is starting ... \n");
 	
-	wiringPiSetup();
+	wiringPiSetupGpio();//Initialize wiringPi. Use BCM Number.
 	
 	pinMode(buzzerPin, OUTPUT); 
 	pinMode(buttonPin, INPUT);

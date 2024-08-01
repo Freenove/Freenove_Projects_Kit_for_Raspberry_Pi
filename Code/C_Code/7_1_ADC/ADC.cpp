@@ -2,7 +2,7 @@
 * Filename    : ADC.cpp
 * Description : Use ADC module to read the voltage value of potentiometer.
 * Author      : www.freenove.com
-* modification: 2021/1/1
+* modification: 2024/07/29
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
@@ -13,9 +13,9 @@ ADCDevice *adc;  // Define an ADC Device class object
 int main(void){
     adc = new ADCDevice();
     printf("Program is starting ... \n");
-    if(adc->detectI2C(0x48)){   // Detect the ads7830
+    if(adc->detectI2C(0x48)){     // Detect the ads7830
         delete adc;               // Free previously pointed memory
-        adc = new ADS7830(0x48);      // If detected, create an instance of ADS7830.
+        adc = new ADS7830(0x48);  // If detected, create an instance of ADS7830.
     }
     else{
         printf("No correct I2C address found, \n"

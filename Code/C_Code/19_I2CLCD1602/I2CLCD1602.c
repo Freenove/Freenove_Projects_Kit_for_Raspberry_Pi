@@ -2,7 +2,7 @@
 * Filename    : I2CLCD1602.c
 * Description : Use the LCD display data
 * Author      : www.freenove.com
-* modification: 2021/1/1
+* modification: 2024/07/29
 **********************************************************************/
 #include <stdlib.h>
 #include <stdio.h>

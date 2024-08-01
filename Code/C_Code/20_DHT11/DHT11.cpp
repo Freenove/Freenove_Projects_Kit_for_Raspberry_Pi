@@ -2,14 +2,14 @@
 * Filename    : DHT11.cpp
 * Description : Read the temperature and humidity data of DHT11
 * Author      : www.freenove.com
-* modification: 2021/1/1
+* modification: 2024/07/29
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
 #include <stdint.h>
 #include "DHT.hpp"
 
-#define DHT11_Pin  4    //define the pin of sensor 
+#define DHT11_Pin  23    //define the pin of sensor 
 
 int main(){
     DHT dht;        //create a DHT class object
@@ -17,7 +17,7 @@ int main(){
     
     printf("Program is starting ...\n");
     
-    wiringPiSetup();
+    wiringPiSetupGpio();//Initialize wiringPi. Use BCM Number.
     
     while(1){
         chk = dht.readDHT11(DHT11_Pin); //read DHT11 and get a return value. Then determine whether data read is normal according to the return value.

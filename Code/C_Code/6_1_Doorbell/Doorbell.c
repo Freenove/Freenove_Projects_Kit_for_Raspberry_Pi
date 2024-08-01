@@ -2,19 +2,19 @@
 * Filename    : Doorbell.c
 * Description : Make doorbell with buzzer and button.
 * Author      : www.freenove.com
-* modification: 2021/1/1
+* modification: 2024/07/29
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
 
-#define buzzerPin 26  	//define the buzzerPin
-#define buttonPin 29		//define the buttonPin
+#define buzzerPin 12  	//define the buzzerPin
+#define buttonPin 21		//define the buttonPin
 
 void main(void)
 {
 	printf("Program is starting ... \n");
 	
-	wiringPiSetup();
+	wiringPiSetupGpio();//Initialize wiringPi. Use BCM Number.
 	
 	pinMode(buzzerPin, OUTPUT); 
 	pinMode(buttonPin, INPUT);

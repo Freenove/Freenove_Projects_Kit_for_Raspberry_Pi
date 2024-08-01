@@ -2,14 +2,14 @@
 * Filename    : UltrasonicRanging.c
 * Description : Get distance via UltrasonicRanging sensor
 * Author      : www.freenove.com
-* modification: 2021/1/1
+* modification: 2024/07/29
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
 #include <sys/time.h>
 
-#define trigPin 15       
-#define echoPin 16
+#define trigPin 14       
+#define echoPin 15
 #define MAX_DISTANCE 220        // define the maximum measured distance
 #define timeOut MAX_DISTANCE*60 // calculate timeout according to the maximum measured distance
 //function pulseIn: obtain pulse time of a pin
@@ -28,7 +28,7 @@ float getSonar(){   //get the measurement result of ultrasonic module with unit:
 int main(){
     printf("Program is starting ... \n");
     
-    wiringPiSetup();
+    wiringPiSetupGpio();//Initialize wiringPi. Use BCM Number.
     
     float distance = 0;
     pinMode(trigPin,OUTPUT);

@@ -2,15 +2,15 @@
 * Filename    : LEDMatrix.c
 * Description : Control LEDMatrix by 74HC595
 * Author      : www.freenove.com
-* modification: 2021/1/1
+* modification: 2024/07/29
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
 #include <wiringShift.h>
 
-#define   dataPin   3   //DS Pin of 74HC595(Pin14)
-#define   latchPin  2   //ST_CP Pin of 74HC595(Pin12)
-#define   clockPin  0   //SH_CP Pin of 74HC595(Pin11)
+#define   dataPin   22   //DS Pin of 74HC595(Pin14)
+#define   latchPin  27   //ST_CP Pin of 74HC595(Pin12)
+#define   clockPin  17  //SH_CP Pin of 74HC595(Pin11)
 // data of smile face
 unsigned char pic[]={0x1c,0x22,0x51,0x45,0x45,0x51,0x22,0x1c};
 unsigned char data[]={  // data of "0-F"
@@ -56,7 +56,7 @@ int main(void)
     
     printf("Program is starting ...\n");
     
-    wiringPiSetup();
+    wiringPiSetupGpio();//Initialize wiringPi. Use BCM Number.
     
     pinMode(dataPin,OUTPUT);
     pinMode(latchPin,OUTPUT);

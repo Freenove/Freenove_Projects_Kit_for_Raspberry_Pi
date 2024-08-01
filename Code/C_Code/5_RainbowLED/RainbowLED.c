@@ -2,16 +2,16 @@
 * Filename    : ColorfulLED.c
 * Description : Random color change ColorfulLED
 * Author      : www.freenove.com
-* modification: 2021/1/1
+* modification: 2024/07/29
 **********************************************************************/
 #include <wiringPi.h>
 #include <softPwm.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ledPinRed    21
-#define ledPinGreen  22
-#define ledPinBlue   23
+#define ledPinRed    5
+#define ledPinGreen  6
+#define ledPinBlue   13
 
 void setupLedPin(void)
 {
@@ -33,7 +33,7 @@ int main(void)
 	
 	printf("Program is starting ...\n");
 	
-	wiringPiSetup();	//Initialize wiringPi.
+	wiringPiSetupGpio();//Initialize wiringPi. Use BCM Number.
 	
 	setupLedPin();
 	while(1){

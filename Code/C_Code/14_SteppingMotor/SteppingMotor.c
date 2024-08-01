@@ -2,12 +2,12 @@
 * Filename    : SteppingMotor.c
 * Description : Drive stepping Motor
 * Author      : www.freenove.com
-* modification: 2021/1/1
+* modification: 2024/07/29
 **********************************************************************/
 #include <stdio.h>
 #include <wiringPi.h>
 
-const int motorPins[]={21,22,23,24};    //define pins connected to four phase ABCD of stepper motor 
+const int motorPins[]={19, 13, 6, 5};       //define pins connected to four phase ABCD of stepper motor 
 const int CCWStep[]={0x01,0x02,0x04,0x08};  //define power supply order for coil for rotating anticlockwise 
 const int CWStep[]={0x08,0x04,0x02,0x01};   //define power supply order for coil for rotating clockwise
 //as for four phase stepping motor, four steps is a cycle. the function is used to drive the stepping motor clockwise or anticlockwise to take four steps
@@ -45,7 +45,7 @@ int main(void){
 
     printf("Program is starting ...\n");
 
-    wiringPiSetup();
+    wiringPiSetupGpio();//Initialize wiringPi. Use BCM Number.
     
     for(i=0;i<4;i++){
         pinMode(motorPins[i],OUTPUT);

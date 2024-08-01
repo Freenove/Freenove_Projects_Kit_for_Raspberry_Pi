@@ -2,19 +2,19 @@
 * Filename    : SenseLED.c
 * Description : Control led with infrared Motion sensor
 * Author      : www.freenove.com
-* modification: 2021/1/1
+* modification: 2024/07/29
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
 
-#define ledPin    0  	//define the ledPin
-#define sensorPin 5		//define the sensorPin
+#define ledPin    17  	//define the ledPin
+#define sensorPin 24		//define the sensorPin
 
 int main(void)
 {	
 	printf("Program is starting ... \n");
 	
-	wiringPiSetup();
+	wiringPiSetupGpio();//Initialize wiringPi. Use BCM Number.
 	
 	pinMode(ledPin, OUTPUT); 
 	pinMode(sensorPin, INPUT);

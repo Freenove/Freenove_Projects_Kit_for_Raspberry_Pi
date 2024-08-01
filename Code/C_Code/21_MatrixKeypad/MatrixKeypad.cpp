@@ -2,7 +2,7 @@
 * Filename    : MatrixKeypad.cpp
 * Description : Obtain the key code of 4x4 Matrix Keypad
 * Author      : www.freenove.com
-* modification: 2021/1/1
+* modification: 2024/07/29
 **********************************************************************/
 #include "Keypad.hpp"
 #include <stdio.h>
@@ -14,15 +14,15 @@ char keys[ROWS][COLS] = {  //key code
   {'7','8','9','C'},
   {'*','0','#','D'}
 };
-byte rowPins[ROWS] = {27,28,29,25 }; //define the row pins for the keypad
-byte colPins[COLS] = {24,23,22,21}; //define the column pins for the keypad
+byte rowPins[ROWS] = {16, 20, 21, 26}; //define the row pins for the keypad
+byte colPins[COLS] = {19, 13, 6, 5};   //define the column pins for the keypad
 //create Keypad object
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
 
 int main(){
     printf("Program is starting ... \n");
     
-    wiringPiSetup();
+    wiringPiSetupGpio();//Initialize wiringPi. Use BCM Number.
     
 	char key = 0;
 	keypad.setDebounceTime(50);
