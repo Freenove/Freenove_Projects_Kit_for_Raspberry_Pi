@@ -2,9 +2,9 @@
  * Filename    : Sketch_04_1_1_ColorfulLED
  * Description : Using slider controlRGBLED
  * auther      : www.freenove.com
- * modification: 2016/08/20
+ * modification: 2024/09/03
  *****************************************************/
-import processing.io.*;
+import freenove.processing.io.*;
 
 int bluePin = 13;    //blue Pin
 int greenPin = 6;  //green Pin

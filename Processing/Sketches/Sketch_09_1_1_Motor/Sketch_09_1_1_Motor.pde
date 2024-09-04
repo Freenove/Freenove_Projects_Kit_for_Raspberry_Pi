@@ -2,9 +2,9 @@
  * Filename    : Sketch_09_1_1_Motor
  * Description : Control speed and direction of the motor
  * auther      : www.freenove.com
- * modification: 2016/08/22
+ * modification: 2024/09/03
  *****************************************************/
-import processing.io.*;
+import freenove.processing.io.*;
 
 int motorPin1 = 14;    //connect to the L293D
 int motorPin2 = 15;

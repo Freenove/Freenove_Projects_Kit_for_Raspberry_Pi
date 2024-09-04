@@ -2,9 +2,9 @@
  * Filename    : Sketch_01_1_1_Blink
  * Description : Make an led blinking.
  * auther      : www.freenove.com
- * modification: 2020/12/07
+ * modification: 2024/09/03
  *****************************************************/
-import processing.io.*;
+import freenove.processing.io.*;
 
 int ledPin = 17;    //define ledPin
 boolean ledState = false;    //define ledState

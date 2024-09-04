@@ -2,7 +2,7 @@
  * Filename    : ADCDevice
  * Description : class ADCDevice
  * auther      : www.freenove.com
- * modification: 2020/03/09
+ * modification: 2024/09/03
  *****************************************************/
 
 class ADCDevice {
