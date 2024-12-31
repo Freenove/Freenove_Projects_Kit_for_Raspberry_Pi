@@ -2,9 +2,15 @@
 Freenove Projects Kit for Raspberry Pi
 ######################################################
 
-.. toctree::
-   :maxdepth: 2
-   :caption: FNK0054
-   :glob:
+FNK0054
+******************************************************
 
-   fnk0054/fnk0054.rst
+Select the language you want to use.
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+    
+   fnk0054/c&py.rst
+   fnk0054/Pi4j.rst
+   fnk0054/Processing.rst
