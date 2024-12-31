@@ -9,7 +9,7 @@ Select the language you want to use.
 
 .. toctree::
    :maxdepth: 1
-   :titlesonly:
+   :caption: language
     
    fnk0054/c&py.rst
    fnk0054/Pi4j.rst
