@@ -31,6 +31,12 @@ Processing language
    codes/Processing/16_Stepper_Motor
    codes/Processing/17_Matrix_Keypad
    codes/Processing/18_Infrared_Motion_Sensor
+
+.. toctree::
+   :numbered:
+   :titlesonly:
+   :caption: App
+
    codes/Processing/App_1_Oscilloscope
    codes/Processing/App_2_Control_Graphics
    codes/Processing/App_3_Pong_Game

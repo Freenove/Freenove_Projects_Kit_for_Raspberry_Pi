@@ -77,8 +77,11 @@ Sketch
 ================================================================
 
 Sketch 9.1.1 Motor
+----------------------------------------------------------------
 
-If you have any concerns, please send an email to: support@freenove.com
+.. note::
+    
+    :red:`If you have any concerns, please send an email to:` support@freenove.com
 
 First, enter where the project is located:
 
@@ -162,4 +165,44 @@ Subfunction drawFan(float angle) is used to draw a three-blade fan, based on an 
 Reference
 ----------------------------------------------------------------
 
-class MOTOR
+.. c:function:: class MOTOR
+
+    This is a custom class that is used to operate the motor controlled by L293D.
+    
+    public **MOTOR** (int pin1, int pin2, int enablePin)
+    
+    Constructor, the first two parameters are GPIO pins connected to the L293D pin, and the enablePin is used to create a PWM pin within the range of 0-100 and with frequency of 100Hz.
+    
+    public void **start** (int dir, int speed)
+    
+    Used to drive motor. Parameter dir represents the rotation direction, whose value is CW, CCW, STOP. Parameter speed is used to decide the duty cycle of PWM. Its value is within the range of 0-100.
+
+About class BUTTON:
+
+.. c:function:: About class BUTTON:
+
+    This is a custom class that is used to create a Button.
+    
+    public **BUTTON** (int ix, int iy, int iw, int ih)
+    
+    Constructor, used to create a BUTTON class object. The parameters are for the location and size of the button to be created.
+    
+    public void **create** ()
+    
+    Used to draw Button.
+    
+    public void **setBgColor** (int ir, int ig, int ib)
+    
+    Used to set Button color.
+    
+    public void **setText** (String str)
+    
+    Used to set Button text.
+    
+    public void **setTextColor** (int ir, int ig, int ib)
+    
+    Used to set text color.
+
+.. note::
+    
+    :red:`If you have any concerns, please send an email to:` support@freenove.com

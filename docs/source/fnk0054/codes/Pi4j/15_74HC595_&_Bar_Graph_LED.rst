@@ -108,7 +108,7 @@ Component List
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
 .. |Chapter01_06| image:: ../_static/imgs/1_LED/Chapter01_06.png
-.. |Chapter14_04| image:: ../_static/imgs/16_74HC595_&_Bar_Graph_LED/Chapter16_02.png
+.. |Chapter16_02| image:: ../_static/imgs/16_74HC595_&_Bar_Graph_LED/Chapter16_02.png
 
 Circuit
 ================================================================
