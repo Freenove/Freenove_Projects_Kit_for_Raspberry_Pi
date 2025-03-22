@@ -32,6 +32,7 @@ This product provides the following online documents.
 .. toctree::
    :maxdepth: 1
    :glob:
+   :caption: FNk0054
     
    fnk0054/c&py.rst
    fnk0054/Pi4j.rst
