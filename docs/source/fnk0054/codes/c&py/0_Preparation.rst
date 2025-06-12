@@ -65,6 +65,7 @@ There are many commands, which will come later.
 
 Shortcut Key
 ================================================================
+
 Now, we will introduce several commonly used shortcuts that are very useful in Terminal.
 
 1. **Up and Down Arrow Keys:** Pressing “↑” (the Up key) will go backwards through the command history and pressing “↓” (the Down Key) will go forwards through the command history.
@@ -79,10 +80,12 @@ As shown below, under the '~' directory, you enter the Documents directory with 
 
 Install WiringPi
 ****************************************************************
+
 WiringPi is a GPIO access library written in C language for the used in the Raspberry Pi. 
 
 WiringPi Installation Steps
 ================================================================
+
 To install the WiringPi library, please open the Terminal and then follow the steps and commands below.  
 
 Note: For a command containing many lines, execute them one line at a time.

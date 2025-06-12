@@ -52,7 +52,7 @@ https://www.youtube.com/watch?v=4Zv0GZUQjZc
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/4Zv0GZUQjZc" frameborder="0" allowfullscreen></iframe>
+   <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/4Zv0GZUQjZc" frameborder="0" allowfullscreen></iframe>
 
 FNK0050 - :blue:`Freenove Robot Dog Kit for Raspberry Pi`
 
@@ -63,7 +63,7 @@ https://www.youtube.com/watch?v=7BmIZ8_R9d4&t=35s
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/7BmIZ8_R9d4" frameborder="0" allowfullscreen></iframe>
+   <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/7BmIZ8_R9d4" frameborder="0" allowfullscreen></iframe>
 
 About Freenove
 ***************************************************************

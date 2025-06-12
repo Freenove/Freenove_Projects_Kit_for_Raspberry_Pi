@@ -150,10 +150,17 @@ Required Accessories for Remote Desktop
 Raspberry Pi OS
 ****************************************************************
 
-.. note:: 
-    | **Without Screen - Use Raspberry Pi - under Windows PC:** https://youtu.be/YND0RUuP-to
-    | **With Screen - Use Raspberry Pi - under Windows PC:** https://youtu.be/HEywFsFrj3I
+**Without Screen - Use Raspberry Pi - under Windows PC:** https://youtu.be/7vA5utwzY0E
 
+.. raw:: html
+
+   <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/7vA5utwzY0E" frameborder="0" allowfullscreen></iframe>
+
+**With Screen - Use Raspberry Pi - under Windows PC:** https://youtu.be/HEywFsFrj3I
+
+.. raw:: html
+
+   <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/HEywFsFrj3I" frameborder="0" allowfullscreen></iframe>
 Automatically Method
 ================================================================
 
