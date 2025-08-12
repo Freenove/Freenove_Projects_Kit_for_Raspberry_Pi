@@ -1,50 +1,39 @@
 ##############################################################################
-Chapter Motor & Driver
+Chapter 9 Motor & Driver
 ##############################################################################
 
-In this chapter, we will learn about DC Motors and DC Motor Drivers and how to control the speed and direction of a DC Motor.
+In this chapter, we will learn how to use a DC motor, including how to control the speed and direction of the motor.
 
 Project 9.1 Motor
 ****************************************************************
 
 In this project, we use L293D to drive the DC motor. We can click on the button in the Processing Display Window to control motor direction, and drag the progress bar to control the motor speed.
 
-Component knowledge
-================================================================
-
-DC Motor
-----------------------------------------------------------------
-
-DC Motor is a device that converts electrical energy into mechanical energy. DC Motors consist of two major parts, a Stator and the Rotor. The stationary part of a DC Motor is the Stator and the part that Rotates is the Rotor. The Stator is usually part of the outer case of motor (if it is simply a pair of permanent magnets), and it has terminals to connect to the power if it is made up of electromagnet coils. Most Hobby DC Motors only use Permanent Magnets for the Stator Field. The Rotor is usually the shaft of motor with 3 or more electromagnets connected to a commutator where the brushes (via the terminals 1 & 2 below) supply electrical power, which can drive other mechanical devices. The diagram below shows a small DC Motor with two terminal pins.
-
-.. image:: ../_static/imgs/11_Motor_&_Driver/Chapter11_00.png
-    :align: center
-
-When a DC Motor is connected to a power supply, it will rotate in one direction. If you reverse the polarity of the power supply, the DC Motor will rotate in opposite direction. This is important to note.
-
-.. image:: ../_static/imgs/11_Motor_&_Driver/Chapter11_01.png
-    :align: center
-
 Component List
 ================================================================
 
-+---------------------------------------------+
-| Freenove Projects Board for Raspberry Pi    |
-|                                             |
-|  |Chapter01_04|                             |
-+---------------------+-----------------------+
-| Raspberry Pi        | GPIO Ribbon Cable     |
-|                     |                       |
-|  |Chapter01_05|     |  |Chapter01_06|       |
-+---------------------+-----------------------+
-| Jumper Wire         | Motor                 |
-|                     |                       |
-|  |Chapter05_02|     |  |Chapter11_02|       |
-+---------------------+-----------------------+
-| 9V Battery (you provide) & 9V Battery Cable |
-|                                             |
-|  |Chapter11_03|                             |
-+---------------------------------------------+
+.. table:: 
+    :align: center
+    :class: table-line
+    :width: 80%
+    
+    +---------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi    |
+    |                                             |
+    |  |Chapter01_04|                             |
+    +---------------------+-----------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable     |
+    |                     |                       |
+    |  |Chapter01_05|     |  |Chapter01_06|       |
+    +---------------------+-----------------------+
+    | Jumper Wire         | Motor                 |
+    |                     |                       |
+    |  |Chapter05_02|     |  |Chapter11_02|       |
+    +---------------------+-----------------------+
+    | 9V Battery (you provide) & 9V Battery Cable |
+    |                                             |
+    |  |Chapter11_03|                             |
+    +---------------------------------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -57,21 +46,21 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter11_04|
-    *   -   Hardware connection:
-    *   -   |Chapter11_05|
+    * - Schematic diagram
+    * - |Chapter11_04|
+    * - Hardware connection:
+    * - |Chapter11_05|
 
 .. |Chapter11_04| image:: ../_static/imgs/11_Motor_&_Driver/Chapter11_04.png
 .. |Chapter11_05| image:: ../_static/imgs/11_Motor_&_Driver/Chapter11_05.png
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -81,7 +70,7 @@ Sketch 9.1.1 Motor
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 First, enter where the project is located:
 
@@ -102,17 +91,17 @@ Or you can enter a command in the terminal to open the file Sketch_09_1_1_Motor.
 
 Open Processing and click Run
 
-.. image:: ../_static/imgs/11_Motor_&_Driver/Chapter11_14.png
+.. image:: ../_static/imgs/11_Motor_&_Driver/Chapter11_16.png
     :align: center
 
 The result is as shown below. The duty cycle can be changed by dragging the slider. Cicking the button will change the rotating direction.
 
-.. image:: ../_static/imgs/11_Motor_&_Driver/Chapter11_15.png
+.. image:: ../_static/imgs/11_Motor_&_Driver/Chapter11_17.png
     :align: center
 
 This project contains a lot of code files, and the core code is contained in the file Sketch_09_1_1_Motor. The other files only contain some custom classes.
 
-.. image:: ../_static/imgs/11_Motor_&_Driver/Chapter11_16.png
+.. image:: ../_static/imgs/11_Motor_&_Driver/Chapter11_18.png
     :align: center
 
 The following is program code:
@@ -165,7 +154,7 @@ Subfunction drawFan(float angle) is used to draw a three-blade fan, based on an 
 Reference
 ----------------------------------------------------------------
 
-.. c:function:: class MOTOR
+.. py:function:: class MOTOR
 
     This is a custom class that is used to operate the motor controlled by L293D.
     
@@ -179,7 +168,7 @@ Reference
 
 About class BUTTON:
 
-.. c:function:: About class BUTTON:
+.. py:function:: About class BUTTON:
 
     This is a custom class that is used to create a Button.
     
@@ -205,4 +194,4 @@ About class BUTTON:
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com

@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter Buzzer
+Chapter 6 Buzzer
 ##############################################################################
 
 In this chapter, we will learn about buzzers and the sounds they make. And in our next project, we will use an active buzzer to make a doorbell and a passive buzzer to make an alarm.
@@ -22,7 +22,7 @@ A buzzer is an audio component. They are widely used in electronic devices such 
 
 Active buzzers are easier to use. Generally, they only make a specific sound frequency. Passive buzzers require an external circuit to make sounds, but passive buzzers can be controlled to make sounds of various frequencies. The resonant frequency of the passive buzzer in this Kit is 2kHz, which means the passive buzzer is the loudest when its resonant frequency is 2kHz.
 
-:red:`How to identify active and passive buzzer?`
+:combo:`red font-bolder:How to identify active and passive buzzer?`
 
 1.	As a rule, there is a label on an active buzzer covering the hole where sound is emitted, but there are exceptions to this rule.
 
@@ -32,6 +32,7 @@ Active buzzers are easier to use. Generally, they only make a specific sound fre
     :align: center
 
 Transistors
+----------------------------------------------------------------
 
 A transistor is required in this project due to the buzzer's current being so great that GPIO of RPi's output capability cannot meet the power requirement necessary for operation. A NPN transistor is needed here to amplify the current. 
 
@@ -40,7 +41,7 @@ Transistors, full name: semiconductor transistor, is a semiconductor device that
 .. image:: ../_static/imgs/6_Buzzer/Chapter06_02.png
     :align: center
 
-:red:`In our kit, the PNP transistor is marked with 8550, and the NPN transistor is marked with 8050.`
+:combo:`red font-bolder:In our kit, the PNP transistor is marked with 8550, and the NPN transistor is marked with 8050.`
 
 Thanks to the transistor's characteristics, they are often used as switches in digital circuits. As micro-controllers output current capacity is very weak, we will use a transistor to amplify its current in order to drive components requiring higher current.
 
@@ -49,9 +50,9 @@ When we use a NPN transistor to drive a buzzer, we often use the following metho
 When we use a PNP transistor to drive a buzzer, we often use the following method. If GPIO outputs low level, current will flow through R1. The transistor conducts current and the buzzer will make sounds. If GPIO outputs high level, no current flows through R1, the transistor will not conduct current and buzzer will remain silent (no sounds). Below are the circuit schematics for both a NPN and PNP transistor to power a buzzer.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   NPN transistor to drive buzzer
         -   PNP transistor to drive buzzer
@@ -64,15 +65,20 @@ When we use a PNP transistor to drive a buzzer, we often use the following metho
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
+.. table::
+    :class: table-line
+    :align: center
+    :width: 80%
+
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -82,9 +88,9 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter06_05|
@@ -96,7 +102,7 @@ Circuit
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Code
 ================================================================
@@ -110,7 +116,7 @@ First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 6_1_Doorbell directory of C code.
 
@@ -145,7 +151,7 @@ First, observe the project result, then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 6_1_Doorbell directory of Python code.
 
@@ -175,27 +181,28 @@ Next, we will use a passive buzzer to make an alarm.
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
+.. table::
+    :class: table-line
+    :align: center
+    :width: 80%
 
-.. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
-.. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
-.. |Chapter01_06| image:: ../_static/imgs/1_LED/Chapter01_06.png
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
 
 Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter06_07|
@@ -207,7 +214,7 @@ Circuit
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Code
 ================================================================
@@ -225,7 +232,7 @@ First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 6_2_Alertor directory of C code.
 
@@ -256,6 +263,7 @@ The following is the program code:
 The code is the same to the active buzzer but the method is different. A passive buzzer requires PWM of a certain frequency, so you need to create a software PWM pin though softToneCreate (buzzeRPin). Here softTone is designed to generate square waves with variable frequency and a duty cycle fixed to 50%, which is a better choice for controlling the buzzer.
 
 .. code-block:: c
+    :linenos:
 
     softToneCreate(buzzeRPin);
 
@@ -265,6 +273,7 @@ In the while loop of the main function, when the push button switch is pressed t
     :linenos: 
     :language: c
     :lines: 15-24
+    :dedent:
 
 If you want to stop the buzzer, just set PWM frequency of the buzzer pin to 0.
 
@@ -272,14 +281,15 @@ If you want to stop the buzzer, just set PWM frequency of the buzzer pin to 0.
     :linenos: 
     :language: c
     :lines: 25-27
+    :dedent:
 
 The related functions of softTone are described as follows: 
 
-.. c:function:: int softToneCreate (int pin) ;	
+.. c:function:: int softToneCreate (int pin);	
 
     This creates a software controlled tone pin.
 
-.. c:function:: void softToneWrite (int pin, int freq) ;	
+.. c:function:: void softToneWrite (int pin, int freq);	
 
     This updates the tone frequency value on the given pin.
 
@@ -292,7 +302,7 @@ First observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 6_2_Alertor directory of Python code.
 
@@ -317,6 +327,7 @@ The following is the program code:
 The code is the same as the active buzzer, but the method is different. Passive buzzers require PWM of a certain frequency, so you need to create a buzzer object through TonalBuzzer.
 
 .. code-block:: python
+    :linenos:
 
     buzzer = TonalBuzzer(4)
     button = Button(20) # define Button pin according to BCM Numbering
@@ -324,6 +335,7 @@ The code is the same as the active buzzer, but the method is different. Passive 
 In the while loop of the main function, when the button switch is pressed, the child function alertor() will be called and the alarm will sound a warning. The buzzer will sound at 220Hz.
 	
 .. code-block:: python
+    :linenos:
 
     def alertor():
         buzzer.play(Tone(220.0)) 
@@ -332,6 +344,7 @@ In the while loop of the main function, when the button switch is pressed, the c
 When the push button switch is released, the buzzer (in this case our Alarm) will stop.
 	
 .. code-block:: python
+    :linenos:
 
     def stopAlertor():
         buzzer.stop()

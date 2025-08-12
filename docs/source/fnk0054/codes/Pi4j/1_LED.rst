@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter LED
+Chapter 1 LED
 ##############################################################################
 
 This chapter is the Start Point in the journey to build and explore RPi electronic projects. We will start with simple “Blink” project.
@@ -28,45 +28,23 @@ Each pin's functional assignment is defined in the image below:
 
 For more details about pin definition of GPIO, please refer to http://pinout.xyz/
 
-PHYSICAL Numbering
-----------------------------------------------------------------
-
-Another way to refer to the pins is by simply counting across and down from pin 1 at the top left (nearest to the SD card). This is 'Physical Numbering', as shown below:
-
-.. image:: ../_static/imgs/1_LED/Chapter01_01.png
-    :align: center
-
-WiringPi GPIO Numbering
-----------------------------------------------------------------
-
-Different from the previous two types of GPIO serial numbers, RPi GPIO serial number of the WiringPi are numbered according to the BCM chip used in RPi.
-
-.. image:: ../_static/imgs/1_LED/Chapter01_02.png
-    :align: center
-
-You can also use the following command to view their correlation.
-
-.. code-block:: console
-    
-    $ gpio readall
-
-.. image:: ../_static/imgs/1_LED/Chapter01_03.png
-    :align: center
-
-For more details about wiringPi, please refer to https://github.com/WiringPi/WiringPi .
-
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -76,9 +54,9 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter01_07|
@@ -94,7 +72,7 @@ Circuit
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Component knowledge
 ================================================================
@@ -208,6 +186,7 @@ At the beginning of the code, we use shebang command to inform Raspberry Pi that
     :linenos: 
     :language: java
     :lines: 1-1
+    :dedent:
 
 Likewise, we specify the dependencies required for the script to run. This includes the different components of the SLF4J logging library and the Pi4J library and their version numbers.
 
@@ -215,6 +194,7 @@ Likewise, we specify the dependencies required for the script to run. This inclu
     :linenos: 
     :language: java
     :lines: 3-7
+    :dedent:
 
 Import Pi4J library and the Console class to facilitate creating and managing contexts and printing messages on the console.
 
@@ -222,6 +202,7 @@ Import Pi4J library and the Console class to facilitate creating and managing co
     :linenos: 
     :language: java
     :lines: 9-10
+    :dedent:
 
 Assign the GPIO pin to the LED, and configure it as output mode.
 
@@ -229,10 +210,12 @@ Assign the GPIO pin to the LED, and configure it as output mode.
     :linenos: 
     :language: java
     :lines: 13-18
+    :dedent:
 
 Use the try…finally structure to ensure the smooth running of the code.
 
 .. code-block:: java
+    :linenos:
     
     try{
                 
@@ -247,4 +230,5 @@ Make the LED turn on and off once every 1 second, repeat this process, and print
     :linenos: 
     :language: java
     :lines: 21-28
+    :dedent:
 

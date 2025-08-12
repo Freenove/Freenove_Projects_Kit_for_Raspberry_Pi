@@ -1,5 +1,5 @@
 ##############################################################################
-0. Chapter Processing
+Chapter 0 Processing
 ##############################################################################
 
 Processing is a software used to write programs that can run on computers. Processing software is free and open source running on the Mac, Windows, and GNU/Linux platforms, which is the same as Arduino software. In fact, the development of Arduino software is based on Processing software, and they still have similar interface.
@@ -22,7 +22,7 @@ Run the command to rename the folder.
 
 .. code-block:: console
     
-    $ mv Freenove_Projects_Kit_for_Raspberry_Pi/ Freenove_Kit/
+    $ mv Freenove_Projects_Kit_for_Raspberry_Pi/Freenove_Kit/
 
 Installing Processing Software
 ****************************************************************
@@ -194,7 +194,8 @@ Re-open Processing, clickt Sketch> Import Library, and you can see that the Free
 .. image:: ../_static/imgs/0_Preparation/Chapter00_38.png
     :align: center
 
-Set Commands to run on the Terminal 
+Set Commands to run on the Terminal
+****************************************************************
 
 Check the current Processing startup command. Find the Processing execution file on the desktop, right-click and select Properties. Or open the software Processing Properties option in the system's start menu, as shown in the figure below: 
 
@@ -231,7 +232,7 @@ The specific steps are as follows:
 .. image:: ../_static/imgs/0_Preparation/Chapter00_41.png
     :align: center
 
-:red:`Press "CTRL"+"O" and then "Enter" to save the modified content. Then press "CTRL"+"X" to exit editing.`
+:combo:`red font-bolder:Press "CTRL"+"O" and then "Enter" to save the modified content. Then press "CTRL"+"X" to exit editing.`
 
 Close all current terminal pages, open a new terminal page again, enter the following command, open the command list of defined alias to check whether the addition is successful:
 

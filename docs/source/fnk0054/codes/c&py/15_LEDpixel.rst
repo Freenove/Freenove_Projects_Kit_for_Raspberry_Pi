@@ -1,16 +1,16 @@
 ##############################################################################
-Chapter LEDpixel
+Chapter 15 LEDpixel
 ##############################################################################
 
 In this chapter, we will learn Freenove 8 RGB LED Module.
 
 .. note::
     
-    if your Raspberry Pi is Raspberry Pi5, skip 15.1 and 15.2 and look at 15.3 instead. Because 15.1 and 15.2 use the rpi_ws2812 library, they are not compatible with Raspberry Pi5.
+    **If your Raspberry Pi is** :combo:`red font-bolder:Raspberry Pi5` **, skip 15.1 and 15.2 and look at 15.3 instead. Because 15.1 and 15.2 use the rpi_ws2812 library, they are not compatible with Raspberry Pi5.**
 
-Since rpi libraries do not work on bookworm systems, skip 15.1 and 15.2 if you are using that system. 15.3 Use spi to drive the color lights.
+**Since rpi libraries do not work on bookworm systems, skip 15.1 and 15.2 if you are using that system. 15.3 Use spi to drive the color lights.**
 
-Project 15.1 LEDpixel
+Project LEDpixel
 ****************************************************************
 
 This project will achieve an RGB triple colored flowing water. 
@@ -33,34 +33,43 @@ And you can also control many modules at the same time. Just connect OUT pin of 
 
 Pin description:
 
-+---------------------------------------+---------------------------------------+
-|                 (IN)                  |                    (OUT)              |
-+--------+------------------------------+--------+------------------------------+
-| symbol | Function                     | symbol | Function                     |
-+--------+------------------------------+--------+------------------------------+
-| S      | Input control signal         | S      | Output control signal        |
-+--------+------------------------------+--------+------------------------------+
-| V      | Power supply pin, +3.5V~5.5V | V      | Power supply pin, +3.5V~5.5V |
-+--------+------------------------------+--------+------------------------------+
-| G      | GND                          | G      | GND                          |
-+--------+------------------------------+--------+------------------------------+
+.. table::
+    :align: center
+    :class: zebra text-center
+    
+    +---------------------------------------+---------------------------------------+
+    |                 (IN)                  |                    (OUT)              |
+    +--------+------------------------------+--------+------------------------------+
+    | symbol | Function                     | symbol | Function                     |
+    +--------+------------------------------+--------+------------------------------+
+    | S      | Input control signal         | S      | Output control signal        |
+    +--------+------------------------------+--------+------------------------------+
+    | V      | Power supply pin, +3.5V~5.5V | V      | Power supply pin, +3.5V~5.5V |
+    +--------+------------------------------+--------+------------------------------+
+    | G      | GND                          | G      | GND                          |
+    +--------+------------------------------+--------+------------------------------+
 
 Component List
 ================================================================
 
-+------------------------------------------------+
-| Freenove Projects Board for Raspberry Pi       |
-|                                                |
-|  |Chapter01_04|                                |
-+---------------------+--------------------------+
-| Raspberry Pi        | GPIO Ribbon Cable        |
-|                     |                          |
-|  |Chapter01_05|     |  |Chapter01_06|          |
-+---------------------+--------------------------+
-| Jumper Wire         | Freenove 8 RGB LED Module|
-|                     |                          |
-|  |Chapter05_02|     |  |Chapter15_02|          |
-+---------------------+--------------------------+
+.. table::
+    :class: table-line
+    :align: center
+    :width: 80%
+
+    +------------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi       |
+    |                                                |
+    |  |Chapter01_04|                                |
+    +---------------------+--------------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable        |
+    |                     |                          |
+    |  |Chapter01_05|     |  |Chapter01_06|          |
+    +---------------------+--------------------------+
+    | Jumper Wire         | Freenove 8 RGB LED Module|
+    |                     |                          |
+    |  |Chapter05_02|     |  |Chapter15_02|          |
+    +---------------------+--------------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -72,26 +81,26 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter15_03|
     *   -   Hardware connection:
-    *   -   |Chapter14_06|
+    *   -   |Chapter15_04|
 
 .. |Chapter15_03| image:: ../_static/imgs/15_LEDpixel/Chapter15_03.png
 .. |Chapter15_04| image:: ../_static/imgs/15_LEDpixel/Chapter15_04.png
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Code
 ================================================================
 
-C Code 15.1 Ledpixel
+C Code Ledpixel
 ----------------------------------------------------------------
 
 Before running C code, please install WS281X library.
@@ -117,21 +126,21 @@ First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
-1.	Use cd command to enter 15_1_Ledpixel directory of C code.
+3.	Use cd command to enter 15_1_Ledpixel directory of C code.
 
 .. code-block:: console
 
     $ cd ~/Freenove_Kit/Code/C_Code/15_1_Ledpixel
 
-2.	Use following command to compile " Ledpixel.cpp" and generate executable file "Ledpixel". 
+4.	Use following command to compile " Ledpixel.cpp" and generate executable file "Ledpixel". 
 
 .. code-block:: console
 
     $ sudo g++ Ledpixel.cpp -o Ledpixel -lwiringPi -lWS281X
 
-3.	Run the generated file " Ledpixel".
+5.	Run the generated file " Ledpixel".
 
 .. code-block:: console
 
@@ -148,6 +157,7 @@ The following is the program code:
 Include "Freenove_WS2812_Lib_for_Raspberry_Pi.hpp"
 
 .. code-block:: c
+    :linenos:
 
     #include "Freenove_WS2812_Lib_for_Raspberry_Pi.hpp"
 
@@ -157,8 +167,9 @@ Create the object of the class and set the brightness to 50%. The eight LEDs wil
     :linenos: 
     :language: c
     :lines: 21-46
+    :dedent:
 
-Python Code 15.1 Ledpixel
+Python Code Ledpixel
 ----------------------------------------------------------------
 
 Before running python code, please install WS281X library first.
@@ -178,7 +189,7 @@ First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 15_1_Ledpixel directory of Python code.
 
@@ -199,6 +210,8 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/15_1_Ledpixel/Led.py
     :linenos: 
     :language: python
+    :lines: 1-47
+    :dedent:
 
 Import rpi_ws281x modile. Set the number, pins and brightness of the LED.
 
@@ -206,6 +219,7 @@ Import rpi_ws281x modile. Set the number, pins and brightness of the LED.
     :linenos: 
     :language: python
     :lines: 10-18
+    :dedent:
 
 Define LED class.
 
@@ -213,6 +227,7 @@ Define LED class.
     :linenos: 
     :language: python
     :lines: 20-29
+    :dedent:
 
 Light up the eight LEDs in red, green and blue in turn.
 
@@ -220,8 +235,9 @@ Light up the eight LEDs in red, green and blue in turn.
     :linenos: 
     :language: python
     :lines: 36-47
+    :dedent:
 
-Project 15.2 Rainbow Light
+Project Rainbow Light
 ****************************************************************
 
 In this project, we will learn to control the LED module with a potentiometer.
@@ -229,27 +245,32 @@ In this project, we will learn to control the LED module with a potentiometer.
 Component List
 ================================================================
 
-+------------------------------------------------+
-| Freenove Projects Board for Raspberry Pi       |
-|                                                |
-|  |Chapter01_04|                                |
-+---------------------+--------------------------+
-| Raspberry Pi        | GPIO Ribbon Cable        |
-|                     |                          |
-|  |Chapter01_05|     |  |Chapter01_06|          |
-+---------------------+--------------------------+
-| Jumper Wire         | Freenove 8 RGB LED Module|
-|                     |                          |
-|  |Chapter05_02|     |  |Chapter15_02|          |
-+---------------------+--------------------------+
+.. table::
+    :class: table-line
+    :align: center
+    :width: 80%
+
+    +------------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi       |
+    |                                                |
+    |  |Chapter01_04|                                |
+    +---------------------+--------------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable        |
+    |                     |                          |
+    |  |Chapter01_05|     |  |Chapter01_06|          |
+    +---------------------+--------------------------+
+    | Jumper Wire         | Freenove 8 RGB LED Module|
+    |                     |                          |
+    |  |Chapter05_02|     |  |Chapter15_02|          |
+    +---------------------+--------------------------+
 
 Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter15_07|
@@ -261,19 +282,19 @@ Circuit
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Code
 ================================================================
 
-C Code 15.2 Rainbow Light
+C Code Rainbow Light
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 15_2_RainbowLight directory of C code.
 
@@ -307,6 +328,7 @@ This function converts HSL colors to RGB colors.
     :linenos: 
     :language: c
     :lines: 16-35
+    :dedent:
 
 Read the ADC value of channel 2 in an infinite loop. Let the color of the eight LEDs change according to the value of the ADC.
 
@@ -314,15 +336,24 @@ Read the ADC value of channel 2 in an infinite loop. Let the color of the eight 
     :linenos: 
     :language: c
     :lines: 56-67
+    :dedent:
 
-Python Code 15.2 Rainbow Light
+Finally, in the "while" loop of main function, we need to use two separate cycles to make servo rotate from 0 degrees to 180 degrees and then from 180 degrees to 0 degrees. 
+
+.. literalinclude:: ../../../freenove_Kit/Code/C_Code/15_2_RainbowLight/RainbowLight.cpp
+    :linenos: 
+    :language: c
+    :lines: 56-67
+    :dedent:
+
+Python Code Rainbow Light
 ----------------------------------------------------------------
 
 First observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 15.2 Rainbow Light directory of Python code.
 
@@ -343,6 +374,8 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/15_2_RainbowLight/Led.py
     :linenos: 
     :language: python
+    :lines: 1-75
+    :dedent:
 
 This function converts HSL colors to RGB colors.
 
@@ -350,6 +383,7 @@ This function converts HSL colors to RGB colors.
     :linenos: 
     :language: python
     :lines: 40-56
+    :dedent:
 
 Read the ADC value of channel 2 in an infinite loop. Let the color of the eight LEDs change according to the value of the ADC.
 
@@ -357,23 +391,25 @@ Read the ADC value of channel 2 in an infinite loop. Let the color of the eight 
     :linenos: 
     :language: python
     :lines: 62-70
+    :dedent:
 
-Project 15.3 SpiLEDpixel
+Project 25.2 SpiLEDpixel
 ****************************************************************
 
-+---------------------+--------------------------+
-| Raspberry Pi        | Jumper Wire              |
-|                     |                          |
-|  |Chapter01_05|     |  |Chapter05_02|          |
-+---------------------+--------------------------+
-| Freenove 8 RGB LED Module                      |
-|                                                |
-|  |Chapter15_02|                                |
-+------------------------------------------------+
+.. table::
+    :class: table-line
+    :align: center
+    :width: 80%
 
-.. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
-.. |Chapter05_02| image:: ../_static/imgs/5_RGB_LED/Chapter05_02.png
-.. |Chapter15_02| image:: ../_static/imgs/15_LEDpixel/Chapter15_02.png
+    +---------------------+--------------------------+
+    | Raspberry Pi        | Jumper Wire              |
+    |                     |                          |
+    |  |Chapter01_05|     |  |Chapter05_02|          |
+    +---------------------+--------------------------+
+    | Freenove 8 RGB LED Module                      |
+    |                                                |
+    |  |Chapter15_02|                                |
+    +------------------------------------------------+
 
 Component knowledge
 ================================================================
@@ -393,25 +429,29 @@ And you can also control many modules at the same time. Just connect OUT pin of 
 
 Pin description:
 
-+---------------------------------------+---------------------------------------+
-|                 (IN)                  |                    (OUT)              |
-+--------+------------------------------+--------+------------------------------+
-| symbol | Function                     | symbol | Function                     |
-+--------+------------------------------+--------+------------------------------+
-| S      | Input control signal         | S      | Output control signal        |
-+--------+------------------------------+--------+------------------------------+
-| V      | Power supply pin, +3.5V~5.5V | V      | Power supply pin, +3.5V~5.5V |
-+--------+------------------------------+--------+------------------------------+
-| G      | GND                          | G      | GND                          |
-+--------+------------------------------+--------+------------------------------+
+.. table::
+    :align: center
+    :class: zebra text-center
+    
+    +---------------------------------------+---------------------------------------+
+    |                 (IN)                  |                    (OUT)              |
+    +========+==============================+========+==============================+
+    | symbol | Function                     | symbol | Function                     |
+    +--------+------------------------------+--------+------------------------------+
+    | S      | Input control signal         | S      | Output control signal        |
+    +--------+------------------------------+--------+------------------------------+
+    | V      | Power supply pin, +3.5V~5.5V | V      | Power supply pin, +3.5V~5.5V |
+    +--------+------------------------------+--------+------------------------------+
+    | G      | GND                          | G      | GND                          |
+    +--------+------------------------------+--------+------------------------------+
 
 Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter15_09|
@@ -423,7 +463,7 @@ Circuit
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Before you run your python code, check that the spidev library exists.
 
@@ -438,7 +478,7 @@ The spidev is installed on Raspberry PI by default. As shown in the figure below
 .. image:: ../_static/imgs/15_LEDpixel/Chapter15_11.png
     :align: center
 
-If your Raspberry PI system does not have this library, you can find spidev-3.6.tar.gz in Freenove_Kit/Libs/Python-Libs. 
+If your Raspberry PI system does not have this library, you can find **spidev-3.6.tar.gz** in **Freenove_Kit/Libs/Python-Libs**. 
 
 Enter the following instructions to install spidev.
 
@@ -456,9 +496,10 @@ The installation is complete as shown in the following figure.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
-Additional supplement 
+Additional supplement
+================================================================
 
 Note that the frequency of the SPI changes as the CPU frequency self-regulates, so we need to fix the cpu frequency before we start using the code. Please refer to the following operations.
 
@@ -488,7 +529,7 @@ If your Raspberry PI is Raspberry PI 3, add it at the bottom:
 
     $ sudo raspi-config
 
-5. Select Interface Options, then SPI, and turn it on.
+5. **Select Interface Options, then SPI, and turn it on.**
 
 .. image:: ../_static/imgs/15_LEDpixel/Chapter15_13.png
     :align: center
@@ -507,7 +548,7 @@ If your Raspberry PI is Raspberry PI 3, add it at the bottom:
 Code
 ================================================================
 
-C Code 15.3 SpiLedpixel
+C Code SpiLedpixel
 ----------------------------------------------------------------
 
 Use cd command to enter 15_3_SpiLedpixel directory of C code.
@@ -520,9 +561,9 @@ Use following command to compile " Ledpixel.cpp" and generate executable file "L
 
 .. code-block:: console
 
-    $ g++ SpiLedpixel.cpp Freenove_WS2812_SPI.cpp –o main
+    $ g++ SpiLedpixel.cpp Freenove_WS2812_SPI.cpp -o main
 
-Run the generated file "main". Please use one of the following commands to control the ledpixel.
+Run the generated file "main". **Please use one of the following commands to control the ledpixel.**
 
 .. code-block:: console
 
@@ -551,12 +592,14 @@ The following is the program code:
 Include "Freenove_WS2812_SPI.h".
 
 .. code-block:: c
+    :linenos:
 
     #include "Freenove_WS2812_SPI.h"
 
 To create Ledpixel objects, you can use the default parameters or you can use custom parameters.
 
 .. code-block:: c
+    :linenos:
 
     //Freenove_WS2812_SPI strip = Freenove_WS2812_SPI(8, TYPE_GRB);//led_count, led_type
     Freenove_WS2812_SPI strip = Freenove_WS2812_SPI();//led_count=8, led_type=TYPE_GRB
@@ -567,6 +610,7 @@ Create an interrupt event if the user presses Ctrl+C to turn off the lights befo
     :linenos: 
     :language: c
     :lines: 6-10, 14-15
+    :dedent:
 
 Initialize ledpixel, set the brightness value of the color light to 20, set the type of the color light to GRB type.
 
@@ -574,6 +618,7 @@ Initialize ledpixel, set the brightness value of the color light to 20, set the 
     :linenos: 
     :language: c
     :lines: 17-20
+    :dedent:
 
 Determine the number of parameters when the executable file is invoked. If no parameters are specified, a message is displayed.
 
@@ -581,6 +626,7 @@ Determine the number of parameters when the executable file is invoked. If no pa
     :linenos: 
     :language: c
     :lines: 25-32
+    :dedent:
 
 If the parameter is RGB, let the ledpixel display color one by one, and then switch to another color in turn, and continue to repeat the process.
 
@@ -588,6 +634,7 @@ If the parameter is RGB, let the ledpixel display color one by one, and then swi
     :linenos: 
     :language: c
     :lines: 33-47
+    :dedent:
 
 If the parameter is Rainbow, let the ledpixel display a rainbow of colors and turn slowly.
 
@@ -595,6 +642,7 @@ If the parameter is Rainbow, let the ledpixel display a rainbow of colors and tu
     :linenos: 
     :language: c
     :lines: 48-57
+    :dedent:
 
 If the parameter is Breathing, let the ledpixel gradually turn on one color, slowly turn off, then switch to another color, and repeat the process.
 
@@ -602,8 +650,9 @@ If the parameter is Breathing, let the ledpixel gradually turn on one color, slo
     :linenos: 
     :language: c
     :lines: 58-78
+    :dedent:
 
-Python Code 15.3 SpiLedpixel
+Python Code SpiLedpixel
 ----------------------------------------------------------------
 
 Use cd command to enter 15_3_Ledpixel directory of Python code.
@@ -632,6 +681,7 @@ Call the light library and the time library.
     :linenos: 
     :language: python
     :lines: 8-9
+    :dedent:
 
 Apply for a light object, set the number of lights to 8, brightness to 255, light type to "GRB", use the mosi pin of spi0 to control the lights.
 
@@ -639,16 +689,19 @@ Apply for a light object, set the number of lights to 8, brightness to 255, ligh
     :linenos: 
     :language: python
     :lines: 13-14
+    :dedent:
 
 Check whether the SPI is configured successfully.
 
 .. code-block:: python
+    :linenos:
 
     if led.check_spi_state() != 0:
 
 Reconfigure the number and brightness of ledpixel.
 
 .. code-block:: python
+    :linenos:
 
     led.set_led_count(8)                     # Set the number of lights.
     led.set_led_brightness(20)                # Set the brightness of lights.
@@ -656,6 +709,7 @@ Reconfigure the number and brightness of ledpixel.
 Let ledpixel display red, green and blue one by one, then turn off.
 
 .. code-block:: python
+    :linenos:
 
     color = [[255,0,0],[0,255,0],[0,0,255],[0,0,0]]  # Set the color of the lights
     for j in range(4):
@@ -669,6 +723,7 @@ Let ledpixel display red, green and blue one by one, then turn off.
 Let ledpixel cycle rainbow colors.
 
 .. code-block:: python
+    :linenos:
 
     while True:
         for j in range(255):

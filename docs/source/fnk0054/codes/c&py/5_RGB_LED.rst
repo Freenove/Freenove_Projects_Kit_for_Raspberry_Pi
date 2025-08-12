@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter RGB LED
+Chapter 5 RGB LED
 ##############################################################################
 
 In this chapter, we will learn how to control an RGB LED.
@@ -26,19 +26,24 @@ In this project, we will make a multicolored LED, which we can program the RGB L
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
-| Jumper Wire         | RGBLED Module      |
-|                     |                    |
-|  |Chapter05_02|     |  |Chapter05_03|    |
-+---------------------+--------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
+    | Jumper Wire         | RGBLED Module      |
+    |                     |                    |
+    |  |Chapter05_02|     |  |Chapter05_03|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -50,9 +55,9 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter05_04|
@@ -64,7 +69,7 @@ Circuit
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Code
 ================================================================
@@ -76,9 +81,9 @@ C Code 5.1 RainbowLED
 
 First, observe the project result, and then learn about the code in detail.
 
-If you have any concerns, please send an email to: support@freenove.com
+:combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
-1.	Use cd command to enter 5_ RainbowLED directory of C code.
+1.	Use cd command to enter 5_RainbowLED directory of C code.
 
 .. code-block:: console
 
@@ -114,6 +119,7 @@ First, in subfunction of ledInit(), create the software PWM control pins used to
     :linenos: 
     :language: c
     :lines: 16-21
+    :dedent:
 
 Then create subfunction, and set the PWM of three pins.
 
@@ -121,6 +127,7 @@ Then create subfunction, and set the PWM of three pins.
     :linenos: 
     :language: c
     :lines: 23-28
+    :dedent:
 
 Finally, in the “while” loop of main function, get three random numbers and specify them as the PWM duty cycle, which will be assigned to the corresponding pins. So RGB LED can switch the color randomly all the time.
 
@@ -128,6 +135,7 @@ Finally, in the “while” loop of main function, get three random numbers and 
     :linenos: 
     :language: c
     :lines: 39-46
+    :dedent:
 
 The related function of PWM Software can be described as follows:
 
@@ -144,7 +152,7 @@ First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 5_RainbowLED directory of Python code.
 
@@ -172,3 +180,10 @@ In last chapter, we learned how to use Python language to make a pin output PWM.
     :linenos: 
     :language: py
     :lines: 19-26
+    :dedent:
+
+About the randint() function :
+
+.. py:function:: random.randint(a, b)
+
+    This function can return a random integer (a whole number value) within the specified range (a, b).

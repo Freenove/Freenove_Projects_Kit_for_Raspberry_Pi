@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter Joystick
+Chapter 10 Joystick
 ##############################################################################
 
 In an earlier chapter, we learned how to use Rotary Potentiometer. We will now learn about joysticks, which are electronic modules that work on the same principle as the Rotary Potentiometer.
@@ -30,15 +30,20 @@ When the Joystick data is read, there are some differences between the axes: dat
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
+.. table::
+    :class: table-line
+    :align: center
+    :width: 80%
+
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -48,21 +53,21 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter10_00|
-    *   -   Hardware connection:
-    *   -   |Chapter10_01|
+    * - Schematic diagram
+    * - |Chapter10_02|
+    * - Hardware connection:
+    * - |Chapter10_03|
 
-.. |Chapter10_00| image:: ../_static/imgs/9_Thermistor/Chapter10_00.png
-.. |Chapter10_01| image:: ../_static/imgs/9_Thermistor/Chapter10_01.png
+.. |Chapter10_02| image:: ../_static/imgs/10_Joystick/Chapter10_02.png
+.. |Chapter10_03| image:: ../_static/imgs/10_Joystick/Chapter10_03.png
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Code
 ================================================================
@@ -113,6 +118,7 @@ In the code, configure Z_Pin to pull-up input mode. In the while loop of the mai
     :linenos: 
     :language: c
     :lines: 33-39
+    :dedent:
 
 Python Code 10.1 Joystick
 ----------------------------------------------------------------
@@ -123,7 +129,7 @@ First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 10_Joystick directory of Python code.
 
@@ -139,7 +145,7 @@ First, observe the project result, and then learn about the code in detail.
 
 After the program is executed, the Terminal window will display the data of 3 axes X, Y and Z. Shifting (moving) the joystick or pressing it down will make the data change.
 
-.. image:: ../_static/imgs/10_Joystick/Chapter10_05.png
+.. image:: ../_static/imgs/10_Joystick/Chapter10_04.png
     :align: center
 
 The following is the program code:

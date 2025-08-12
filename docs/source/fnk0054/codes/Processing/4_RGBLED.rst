@@ -1,44 +1,35 @@
 ##############################################################################
-Chapter RGB LED
+Chapter 4 RGB LED
 ##############################################################################
 
 In this chapter, we will learn how to control an RGB LED.
 
-An RGB LED has 3 LEDs integrated into one LED component. It can respectively emit Red, Green and Blue light. In order to do this, it requires 4 pins (this is also how you identify it). The long pin (1) is the common which is the Anode (+) or positive lead, the other 3 are the Cathodes (-) or negative leads. A rendering of an RGB LED and its electronic symbol are shown below. We can make RGB LED emit various colors of light and brightness by controlling the 3 Cathodes (2, 3 & 4) of the RGB LED
-
-.. image:: ../_static/imgs/5_RGB_LED/Chapter05_00.png
-    :align: center
-    
-Red, Green, and Blue light are called 3 Primary Colors when discussing light (Note: for pigments such as paints, the 3 Primary Colors are Red, Blue and Yellow). When you combine these three Primary Colors of light with varied brightness, they can produce almost any color of visible light. Computer screens, single pixels of cell phone screens, neon lamps, etc. can all produce millions of colors due to phenomenon.
-
-.. image:: ../_static/imgs/5_RGB_LED/Chapter05_01.png
-    :align: center
-    
-If we use a three 8 bit PWM to control the RGB LED, in theory, we can create 28*28*28=16777216 (16 million) colors through different combinations of RGB light brightness.
-
-Next, we will use RGB LED to make a multicolored LED. 
-
 Project 4.1 Multicolored LED
 ****************************************************************
 
-In this project, we will make a multicolored LED, which we can program the RGB LED to automatically change colors.
+This project will make a Multicolored LED, namely, use Processing to control the color of RGBLED.
 
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
-| Jumper Wire         | RGBLED Module      |
-|                     |                    |
-|  |Chapter05_02|     |  |Chapter05_03|    |
-+---------------------+--------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+    
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
+    | Jumper Wire         | RGBLED Module      |
+    |                     |                    |
+    |  |Chapter05_02|     |  |Chapter05_03|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -50,21 +41,21 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter05_04|
-    *   -   Hardware connection:
-    *   -   |Chapter05_05|
+    * - Schematic diagram
+    * - |Chapter05_04|
+    * - Hardware connection:
+    * - |Chapter05_05|
 
 .. |Chapter05_04| image:: ../_static/imgs/5_RGB_LED/Chapter05_04.png
 .. |Chapter05_05| image:: ../_static/imgs/5_RGB_LED/Chapter05_05.png
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -72,7 +63,7 @@ Sketch
 Sketch 4.1.1 ColorfulLED
 ----------------------------------------------------------------
 
-If you have any concerns, please send an email to: support@freenove.com
+:combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 First, enter where the project is located:
 
@@ -85,7 +76,7 @@ And then right-click to select Processing IDE
 .. image:: ../_static/imgs/5_RGB_LED/Chapter05_11.png
     :align: center
 
-Or you can enter a command in the terminal to open the file Sketch_04_1_1_ColorfulLED. (The following is only one line of command. There is a Space after Processing.)
+Or you can enter a command in the terminal to open the file Sketch_04_1_1_ColorfulLED. :combo:`red font-bolder:(The following is only one line of command. There is a Space after Processing.)`
 
 .. code-block:: console
     
@@ -148,7 +139,7 @@ System functions mousePressed(), mouseReleased() and mouseDragged() are used to 
 Reference
 ----------------------------------------------------------------
 
-.. c:function:: class ProgressBar
+.. py:function:: class ProgressBar
 
     This is a custom class that is used to create a progress bar.
     
@@ -170,4 +161,4 @@ Reference
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com

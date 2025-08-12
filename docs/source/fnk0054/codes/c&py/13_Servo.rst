@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter Servo
+Chapter 13 Servo
 ##############################################################################
 
 Previously, we learned how to control the speed and rotational direction of a DC Motor. In this chapter, we will learn about Servos which are a rotary actuator type motor that can be controlled rotate to specific angles.
@@ -28,6 +28,7 @@ We will use a 50Hz PWM signal with a duty cycle in a certain range to drive the 
 
 .. list-table::
     :align: center
+    :class: zebra
 
     *  - High level time
        - Servo angle
@@ -52,19 +53,24 @@ When you change the Servo signal value, the Servo will rotate to the designated 
 Component List
 ================================================================
 
-+---------------------------------------------+
-| Freenove Projects Board for Raspberry Pi    |
-|                                             |
-|  |Chapter01_04|                             |
-+---------------------+-----------------------+
-| Raspberry Pi        | GPIO Ribbon Cable     |
-|                     |                       |
-|  |Chapter01_05|     |  |Chapter01_06|       |
-+---------------------+-----------------------+
-| Jumper Wire         | Servo                 |
-|                     |                       |
-|  |Chapter05_02|     |  |Chapter13_01|       |
-+---------------------+-----------------------+
+.. table::
+    :class: table-line
+    :align: center
+    :width: 80%
+
+    +---------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi    |
+    |                                             |
+    |  |Chapter01_04|                             |
+    +---------------------+-----------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable     |
+    |                     |                       |
+    |  |Chapter01_05|     |  |Chapter01_06|       |
+    +---------------------+-----------------------+
+    | Jumper Wire         | Servo                 |
+    |                     |                       |
+    |  |Chapter05_02|     |  |Chapter13_01|       |
+    +---------------------+-----------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -76,9 +82,9 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter13_02|
@@ -90,7 +96,7 @@ Circuit
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Code
 ================================================================
@@ -104,7 +110,7 @@ First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 13_1_Sweep directory of C code.
 
@@ -138,6 +144,7 @@ A 50 Hz pulse for a 20ms cycle is required to control the Servo. In function sof
     :linenos: 
     :language: c
     :lines: 18-20
+    :dedent:
 
 Since 0-180 degrees of the Servo's motion corresponds to the PWM pulse width of 0.5-2.5ms, with a PwmRange of 200 ms, we then need the function **softPwmWrite** (int pin, int value) and the scope 5-25 of the parameter values to correspond to 0-180 degrees' motion of the Servo. What's more, the number written in subfunction **servoWriteMS** () should be within the range of 5-25. However, in practice, due to the inherent error manufactured into each Servo, the pulse width will have a deviation. So we need to define a minimum and maximum pulse width and an error offset (this is essential in robotics).
 
@@ -145,6 +152,7 @@ Since 0-180 degrees of the Servo's motion corresponds to the PWM pulse width of 
     :linenos: 
     :language: c
     :lines: 7-12, 28-34
+    :dedent:
 
 In subfunction **servoWrite** (), directly input an angle value (0-180 degrees), map the angle to the pulse width and then output it.
 
@@ -152,6 +160,7 @@ In subfunction **servoWrite** (), directly input an angle value (0-180 degrees),
     :linenos: 
     :language: c
     :lines: 21-27
+    :dedent:
 
 Finally, in the "while" loop of the main function, use two "for" loop to make servo rotate from 0 degrees to 180 degrees, and then from 180 degrees to 0 degrees.
 
@@ -159,6 +168,7 @@ Finally, in the "while" loop of the main function, use two "for" loop to make se
     :linenos: 
     :language: c
     :lines: 44-55
+    :dedent:
 
 Python Code 13.1 Sweep
 ----------------------------------------------------------------
@@ -195,6 +205,7 @@ The time unit of the pulse is seconds.
     :linenos: 
     :language: python
     :lines: 16-16
+    :dedent:
 
 As 0-180 degrees of the Servo's rotation corresponds to the PWM pulse width 0.5-2.5ms within cycle 20ms.
 
@@ -204,6 +215,7 @@ However, in practice, due to the inherent error manufactured into each Servo, th
     :linenos: 
     :language: python
     :lines: 13-15
+    :dedent:
 
 Please note that the servo angle value should range from 0 to 180 degrees.
 
@@ -211,6 +223,7 @@ Please note that the servo angle value should range from 0 to 180 degrees.
     :linenos: 
     :language: python
     :lines: 20-22
+    :dedent:
 
 Finally, in the "while" loop of main function, we need to use two separate cycles to make servo rotate from 0 degrees to 180 degrees and then from 180 degrees to 0 degrees. 
 
@@ -218,6 +231,7 @@ Finally, in the "while" loop of main function, we need to use two separate cycle
     :linenos: 
     :language: python
     :lines: 18-27
+    :dedent:
 
 Project 13.2 Knob
 ****************************************************************
@@ -227,31 +241,36 @@ In this project, we will learn how to control the servo with a potentiometer.
 Component List
 ================================================================
 
-+---------------------------------------------+
-| Freenove Projects Board for Raspberry Pi    |
-|                                             |
-|  |Chapter01_04|                             |
-+---------------------+-----------------------+
-| Raspberry Pi        | GPIO Ribbon Cable     |
-|                     |                       |
-|  |Chapter01_05|     |  |Chapter01_06|       |
-+---------------------+-----------------------+
-| Jumper Wire         | Servo                 |
-|                     |                       |
-|  |Chapter05_02|     |  |Chapter13_01|       |
-+---------------------+-----------------------+
+.. table::
+    :class: table-line
+    :align: center
+    :width: 80%
+
+    +---------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi    |
+    |                                             |
+    |  |Chapter01_04|                             |
+    +---------------------+-----------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable     |
+    |                     |                       |
+    |  |Chapter01_05|     |  |Chapter01_06|       |
+    +---------------------+-----------------------+
+    | Jumper Wire         | Servo                 |
+    |                     |                       |
+    |  |Chapter05_02|     |  |Chapter13_01|       |
+    +---------------------+-----------------------+
 
 Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter13_04|
-    *   -   Hardware connection:
+    *   -   Hardware connection
     *   -   |Chapter13_05|
 
 .. |Chapter13_04| image:: ../_static/imgs/13_Servo/Chapter13_04.png
@@ -259,7 +278,7 @@ Circuit
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Code
 ================================================================
@@ -273,7 +292,7 @@ First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 13_2_Knob directory of C code.
 
@@ -300,12 +319,14 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/13_2_Knob/Knob.cpp
     :linenos: 
     :language: c
+
 Read the ADC value of channle2, and then the servo will rotate to corresponding angle.
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/13_2_Knob/Knob.cpp
     :linenos: 
     :language: c
     :lines: 59-64
+    :dedent:
 
 Python Code 13.2 Knob
 ----------------------------------------------------------------
@@ -314,7 +335,7 @@ First observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 13_2_Knob directory of Python code.
 
@@ -342,3 +363,4 @@ Read the ADC value of channle2, and then the servo will rotate to corresponding 
     :linenos: 
     :language: python
     :lines: 42-46
+    :dedent:

@@ -3,12 +3,6 @@ Pi4j language
 ##############################################################################
 
 .. toctree::
-   :titlesonly:
-   :caption: Welcome
-
-   codes/Pi4j/Welcome.rst
-
-.. toctree::
    :titlesonly: 
    :caption: Getting Started
 
@@ -24,7 +18,6 @@ Pi4j language
    codes/Pi4j/0_Preparation.rst
 
 .. toctree::
-   :numbered:
    :titlesonly:
    :caption: Projects
 

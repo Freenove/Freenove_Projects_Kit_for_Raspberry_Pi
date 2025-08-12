@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter Hygrothermograph DHT11
+Chapter 19 Hygrothermograph DHT11
 ##############################################################################
 
 In this chapter, we will learn about a commonly used sensor called a Hygrothermograph DHT11.
@@ -26,19 +26,24 @@ The NC pin (Not Connected Pin) is a type of pin found on various integrated circ
 Component List
 ================================================================
 
-+------------------------------------------------+
-| Freenove Projects Board for Raspberry Pi       |
-|                                                |
-|  |Chapter01_04|                                |
-+---------------------+--------------------------+
-| Raspberry Pi        | GPIO Ribbon Cable        |
-|                     |                          |
-|  |Chapter01_05|     |  |Chapter01_06|          |
-+---------------------+--------------------------+
-| Jumper Wire         | DHT11 Module             |
-|                     |                          |
-|  |Chapter05_02|     |  |Chapter20_01|          |
-+---------------------+--------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+    
+    +------------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi       |
+    |                                                |
+    |  |Chapter01_04|                                |
+    +---------------------+--------------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable        |
+    |                     |                          |
+    |  |Chapter01_05|     |  |Chapter01_06|          |
+    +---------------------+--------------------------+
+    | Jumper Wire         | DHT11 Module             |
+    |                     |                          |
+    |  |Chapter05_02|     |  |Chapter20_01|          |
+    +---------------------+--------------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -50,21 +55,21 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter20_02|
-    *   -   Hardware connection:
-    *   -   |Chapter20_03|
+    * - Schematic diagram
+    * - |Chapter20_02|
+    * - Hardware connection:
+    * - |Chapter20_03|
 
 .. |Chapter20_02| image:: ../_static/imgs/20_Hygrothermograph_DHT11/Chapter20_02.png
 .. |Chapter20_03| image:: ../_static/imgs/20_Hygrothermograph_DHT11/Chapter20_03.png
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -72,6 +77,7 @@ Sketch
 The Raspberry Pi can directly obtain data from the DHT11 sensor through system configuration. Before running the code, it is necessary to configure the Raspberry Pi first.
 
 Configure the config.txt file
+-----------------------------------------------------------------
 
 Run the command to open the config.txt file.
 
@@ -161,7 +167,7 @@ Below are the functions for getting temperature and humidity. The raw data read 
     :lines: 8-19
     :dedent:
 
-The method to read the contents of a file, loop through each line in the file, and append it to ‘content’.
+The method to read the contents of a file, loop through each line in the file, and append it to 'content'.
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_19_DHT11/DHT11.java
     :linenos: 
@@ -177,7 +183,7 @@ Create an instance of the DHT11 class, read the temperature and humidity data ev
     :lines: 33-51
     :dedent:
 
-Please note that after you finish studying this chapter, you should comment out the line related to DHT11 in the ‘config.txt’ file to avoid errors when Raspberry Pi uses GPIO23 in subsequent chapters.
+Please note that after you finish studying this chapter, you should comment out the line related to DHT11 in the 'config.txt' file to avoid errors when Raspberry Pi uses GPIO23 in subsequent chapters.
 
 Run the command to open the config.txt file.
 
@@ -187,8 +193,11 @@ Run the command to open the config.txt file.
 
 Add the “#” in front of the line.
 
-.. code-block:: console
+.. code-block:: shell
 
     #dtoverlay=dht11,gpiopin=23
+
+.. image:: ../_static/imgs/20_Hygrothermograph_DHT11/Chapter20_14.png
+    :align: center
 
 Save the file and reboot your Raspberry Pi.

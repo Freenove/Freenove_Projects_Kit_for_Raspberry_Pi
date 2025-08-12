@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter Attitude Sensor MPU6050
+Chapter 23 Attitude Sensor MPU6050
 ##############################################################################
 
 In this chapter, we will learn about a MPU6050 Attitude sensor, which integrates an Accelerometer and Gyroscope.
@@ -23,10 +23,9 @@ MPU6050 Sensor Module is a complete 6-axis Motion Tracking Device. It combines a
 The port description of the MPU6050 Module is as follows:
 
 .. list-table:: 
-    :width: 100%
     :align: center
-    :class: product-table
-    
+    :class: zebra
+    :header-rows: 1
     
     *   -   Pin name
         -   Pin number
@@ -73,15 +72,20 @@ For more detail, please refer to the MPU6050 datasheet.
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+    
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -91,9 +95,9 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter24_01|
@@ -107,9 +111,9 @@ Circuit
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
-Code
+Sketch
 ================================================================
 
 In this chapter, we will learn to obtain MPU6050 data and print them.

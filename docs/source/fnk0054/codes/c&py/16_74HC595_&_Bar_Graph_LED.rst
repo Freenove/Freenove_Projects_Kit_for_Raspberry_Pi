@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter 74HC595 & Bar Graph LED
+Chapter 16 74HC595 & Bar Graph LED
 ##############################################################################
 
 We have used LED Bar Graph to make a flowing water light, in which 10 GPIO ports of RPi are occupied. More GPIO ports mean that more peripherals can be connected to RPi, so GPIO resource is very precious. Can we make flowing water light with less GPIO ports? In this chapter, we will learn a component, 74HC595, which can achieve the target.
@@ -31,9 +31,9 @@ A 74HC595 chip is used to convert serial data into parallel data. A 74HC595 chip
 The ports of the 74HC595 chip are described as follows:
 
 .. list-table:: 
-    :widths: 1 1 1
     :align: center
-    :class: product-table
+    :class: zebra
+    :header-rows: 1
 
     *   -   Pin name
         -   Pin number
@@ -90,61 +90,65 @@ For more details, please refer to the datasheet on the 74HC595 chip.
 Component List
 ================================================================
 
-+---------------------------------------------+
-| Freenove Projects Board for Raspberry Pi    |
-|                                             |
-|  |Chapter01_04|                             |
-+---------------------+-----------------------+
-| Raspberry Pi        | GPIO Ribbon Cable     |
-|                     |                       |
-|  |Chapter01_05|     |  |Chapter01_06|       |
-+---------------------+-----------------------+
-| Bar Graph LED                               |
-|                                             |
-|  |Chapter16_02|                             |                              
-|                                             |
-+---------------------------------------------+
+.. table::
+    :class: table-line
+    :align: center
+    :width: 80%
+
+    +---------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi    |
+    |                                             |
+    |  |Chapter01_04|                             |
+    +---------------------+-----------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable     |
+    |                     |                       |
+    |  |Chapter01_05|     |  |Chapter01_06|       |
+    +---------------------+-----------------------+
+    | Bar Graph LED                               |
+    |                                             |
+    |  |Chapter16_02|                             |                              
+    +---------------------------------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
 .. |Chapter01_06| image:: ../_static/imgs/1_LED/Chapter01_06.png
-.. |Chapter14_04| image:: ../_static/imgs/16_74HC595_&_Bar_Graph_LED/Chapter16_02.png
+.. |Chapter16_02| image:: ../_static/imgs/16_74HC595_&_Bar_Graph_LED/Chapter16_02.png
 
 Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter16_03|
-    *   -   Hardware connection:
-    *   -   |Chapter16_04|
+    * - Schematic diagram
+    * - |Chapter16_03|
+    * - Hardware connection:
+    * - |Chapter16_04|
 
 .. |Chapter16_03| image:: ../_static/imgs/16_74HC595_&_Bar_Graph_LED/Chapter16_03.png
 .. |Chapter16_04| image:: ../_static/imgs/16_74HC595_&_Bar_Graph_LED/Chapter16_04.png
 
 .. hint::
 
-    :red:`If it dosen't work, rotate the LED bar graph for 180°.`
+    :combo:`red font-bolder:If it dosen't work, rotate the LED bar graph for 180°.`
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Code
 ================================================================
 
 In this project we will make a flowing water light with a 74HC595 chip to learn about its functions.
 
-C Code 16.1 LightWater02
+C Code LightWater02
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
 
-If you have any concerns, please send an email to: support@freenove.com
+:combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 16_FlowingLight02 directory of C code.
 
@@ -168,26 +172,28 @@ After the program runs, you will see that Bar Graph LED starts with the flowing 
 
 The following is the program code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/C_Code/16_FlowingLight02/FlowingLight02.cpp
+.. literalinclude:: ../../../freenove_Kit/Code/C_Code/16_FlowingLight02/FlowingLight02.c
     :linenos: 
     :language: c
 
 In the code, we configure three pins to control the 74HC595 chip and define a one-byte variable to control the state of the 10 LEDs (in the Bar Graph LED Module) through the 10 bits of the variable. The LEDs light ON when the corresponding bit is 1. If the variable is assigned to 0x01, that is 00000001 in binary, there will be only one LED ON. 
 
 .. code-block:: c
+    :linenos:
 
     x=0x0001;
 
 In the “while” loop of main function, use two loops to send x to 74HC595 output pin to control the LED. In one cycle, x will shift one bit to the LEFT in one cycle, then when data of x is sent to 74HC595, the LED that is turned ON will move one bit to the LEFT once.
 
-.. literalinclude:: ../../../freenove_Kit/Code/C_Code/16_FlowingLight02/FlowingLight02.cpp
+.. literalinclude:: ../../../freenove_Kit/Code/C_Code/16_FlowingLight02/FlowingLight02.c
     :linenos: 
     :language: c
     :lines: 46-52
+    :dedent:
 
 In second cycle, the situation is the same. The difference is that x is shift from 0x80 to the RIGHT in order.
 
-.. c:function:: << operator
+.. py:function:: << operator
 
     "<<" is the left shift operator, which can make all bits of 1 byte shift by several bits to the left (high) direction and add 0 on the right (low). For example, shift binary 00000001 by 1 bit to left:
         
@@ -202,7 +208,8 @@ In second cycle, the situation is the same. The difference is that x is shift fr
         :align: center
     
     There is another similar operator" >>". For example, shift binary 00000001 by 1 bit to right:
-        byte x = 1 >> 1;
+
+    byte x = 1 >> 1;
     
     .. image:: ../_static/imgs/16_74HC595_&_Bar_Graph_LED/Chapter16_07.png
         :align: center    
@@ -220,12 +227,12 @@ About shift function
 
     This is used to shift a 10-bit data value out with the data being sent out on dPin and the clock being sent out on the cPin. order is as above. Data is clocked out on the rising or falling edge - ie. dPin is set, then cPin is taken high then low - repeated for the 10 bits.
 
-Python Code 16.1 LightWater02 
+Python Code LightWater02 
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
 
-If you have any concerns, please send an email to: support@freenove.com
+:combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 16_FlowingLight02 directory of Python code.
 
@@ -253,6 +260,7 @@ In the code, we define a shiftOut() function, which is used to output values wit
     :linenos: 
     :language: python
     :lines: 19-26
+    :dedent:
 
 In the loop() function, we use two loops to achieve the action goal. First, define a variable x=0x0001. When it is transferred to the output port of 74HC595, the low bit outputs high level, then an LED turns ON. Next, x is shifted one bit, when x is transferred to the output port of 74HC595 once again, the LED that turns ON will be shifted. Repeat the operation, over and over and the effect of a flowing water light will be visible. If the direction of the shift operation for x is different, the flowing direction is different.
 
@@ -260,3 +268,4 @@ In the loop() function, we use two loops to achieve the action goal. First, defi
     :linenos: 
     :language: python
     :lines: 34-49
+    :dedent:

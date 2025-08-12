@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter Flowing Light
+Chapter 2 Flowing Light
 ##############################################################################
 
 We have learned how to control one LED to blink. Next, we will learn how to control a number of LEDs.
@@ -12,15 +12,20 @@ In this project, we use a number of LEDs to make a flowing water light.
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -30,9 +35,9 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter02_00|
@@ -44,7 +49,7 @@ Circuit
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -109,6 +114,7 @@ Import the classes of Pi4J library for GPIO control and simple console output.
     :linenos: 
     :language: java
     :lines: 9-11
+    :dedent:
 
 Define an array that includes the GPIO numbers connecting to LEDs.
 
@@ -116,6 +122,7 @@ Define an array that includes the GPIO numbers connecting to LEDs.
     :linenos: 
     :language: java
     :lines: 14-15
+    :dedent:
 
 Create a DigitalOutput array based on the GPIO array that controls the LEDs, and create a DigitalOutput instance for each pin.
 
@@ -123,6 +130,7 @@ Create a DigitalOutput array based on the GPIO array that controls the LEDs, and
     :linenos: 
     :language: java
     :lines: 21-24
+    :dedent:
 
 Iterate through all LEDs and turn them off (set to low level).
 
@@ -130,6 +138,7 @@ Iterate through all LEDs and turn them off (set to low level).
     :linenos: 
     :language: java
     :lines: 30-32
+    :dedent:
 
 Use 'currentLed' to record the position of the LED that is lit, recalculate the position of the lit LED every 100 milliseconds, and print a prompt message to the console. At the same time, turn off all LEDs except the LED at the position recorded by 'currentLed'.
 
@@ -137,3 +146,4 @@ Use 'currentLed' to record the position of the LED that is lit, recalculate the 
     :linenos: 
     :language: java
     :lines: 27-36
+    :dedent:

@@ -1,5 +1,5 @@
 ##############################################################################
-App Pong Game
+App 3 Pong Game
 ##############################################################################
 
 In this chapter, we will play a Pong Game.
@@ -12,15 +12,20 @@ Now, let's create and experience our own game.
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+    
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -30,21 +35,17 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |APP3_00|
-    *   -   Hardware connection:
-    *   -   |APP3_01|
+    * - Schematic diagram
+    * - |APP3_00|
+    * - Hardware connection:
+    * - |APP3_01|
 
 .. |APP3_00| image:: ../_static/imgs/App_3_Pong_Game/APP3_00.png
 .. |APP3_01| image:: ../_static/imgs/App_3_Pong_Game/APP3_01.png
-
-.. note::
-    
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -54,7 +55,7 @@ Sketch 3.1.1 PongGame
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 First, enter where the project is located:
 
@@ -67,7 +68,7 @@ And then right-click to select Processing IDE
 .. image:: ../_static/imgs/App_3_Pong_Game/APP3_02.png
     :align: center
 
-Or you can enter a command in the terminal to open the file App_03_1_1_Pong_Game. (The following is only one line of command. There is a Space after Processing.)
+Or you can enter a command in the terminal to open the file App_03_1_1_Pong_Game. :combo:`red font-bolder:(The following is only one line of command. There is a Space after Processing.)`
 
 .. code-block:: console
 
@@ -102,4 +103,4 @@ You can restart the game by pressing the space bar at any time during the game.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com

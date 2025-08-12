@@ -1,26 +1,31 @@
 ##############################################################################
-Chapter Flowing Light
+Chapter 2 Flowing Light
 ##############################################################################
 
 We have learned how to control one LED to blink. Next, we will learn how to control a number of LEDs.
 
-Project Flowing Water Light
+Project 2.1 Flowing Water Light
 ****************************************************************
 
-In this project, we use a number of LEDs to make a flowing water light.
+In this project, we will use the mouse to control the LED
 
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+    
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -30,21 +35,21 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter02_00|
-    *   -   Hardware connection:
-    *   -   |Chapter02_01|
+    * - Schematic diagram
+    * - |Chapter02_00|
+    * - Hardware connection:
+    * - |Chapter02_01|
 
 .. |Chapter02_00| image:: ../_static/imgs/2_FlowingLight/Chapter02_00.png
 .. |Chapter02_01| image:: ../_static/imgs/2_FlowingLight/Chapter02_01.png
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -54,7 +59,7 @@ Sketch 2.1.1 FollowLight
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 First, enter where the project is located:
 
@@ -67,7 +72,7 @@ And then right-click to select Processing IDE
 .. image:: ../_static/imgs/2_FlowingLight/Chapter02_07.png
     :align: center
 
-Or you can enter a command in the terminal to open the file Sketch_02_1_1_FollowLight. (The following is only one line of command. There is a Space after Processing.)
+Or you can enter a command in the terminal to open the file Sketch_02_1_1_FollowLight. :combo:`red font-bolder:(The following is only one line of command. There is a Space after Processing.)`
 
 .. code-block:: console
     
@@ -100,4 +105,4 @@ In the function draw(), we draw 11 rectangles to represent 11 LEDs of LED Bar Gr
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com

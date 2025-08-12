@@ -1,10 +1,10 @@
 ##############################################################################
-Chapter Stepper Motor
+Chapter 14 Stepper Motor
 ##############################################################################
 
 Thus far, we have learned about DC Motors and Servos. A DC motor can rotate constantly in on direction but we cannot control the rotation to a specific angle. On the contrary, a Servo can rotate to a specific angle but cannot rotate constantly in one direction. In this chapter, we will learn about a Stepper Motor which is also a type of motor. A Stepper Motor can rotate constantly and also to a specific angle. Using a Stepper Motor can easily achieve higher accuracies in mechanical motion.
 
-Project 14.1 Stepper Motor
+Project Stepper Motor
 ****************************************************************
 
 In this project, we will learn how to drive a Stepper Motor, and understand its working principle.
@@ -49,20 +49,24 @@ A ULN2003 Stepper Motor Driver is used to convert weak signals into more powerfu
 Component List
 ================================================================
 
-+---------------------------------------------+
-| Freenove Projects Board for Raspberry Pi    |
-|                                             |
-|  |Chapter01_04|                             |
-+---------------------+-----------------------+
-| Raspberry Pi        | GPIO Ribbon Cable     |
-|                     |                       |
-|  |Chapter01_05|     |  |Chapter01_06|       |
-+---------------------+-----------------------+
-| Stepper Motor                               |
-|                                             |
-|  |Chapter14_04|                             |                              
-|                                             |
-+---------------------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +---------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi    |
+    |                                             |
+    |  |Chapter01_04|                             |
+    +---------------------+-----------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable     |
+    |                     |                       |
+    |  |Chapter01_05|     |  |Chapter01_06|       |
+    +---------------------+-----------------------+
+    | Stepper Motor                               |
+    |                                             |
+    |  |Chapter14_04|                             |
+    +---------------------------------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -75,7 +79,7 @@ Circuit
 .. list-table:: 
     :width: 100%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter14_05|
@@ -87,7 +91,7 @@ Circuit
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -155,6 +159,7 @@ Define the GPIO pins for motor control and the GPIO outputs used to control the 
     :linenos: 
     :language: java
     :lines: 17-18
+    :dedent:
 
 Define the motor's rotation direction and the array of step sequences for clockwise and counter-clockwise directions.
 
@@ -162,6 +167,7 @@ Define the motor's rotation direction and the array of step sequences for clockw
     :linenos: 
     :language: java
     :lines: 20-22
+    :dedent:
 
 Constructor, initialize GPIO pins.
 
@@ -169,6 +175,7 @@ Constructor, initialize GPIO pins.
     :linenos: 
     :language: java
     :lines: 24-29
+    :dedent:
 
 Control the stepper motor to execute a one-step sequence cycle.
 
@@ -176,6 +183,7 @@ Control the stepper motor to execute a one-step sequence cycle.
     :linenos: 
     :language: java
     :lines: 31-44
+    :dedent:
 
 The stepper motor driving function controls the direction of motor rotation, the execution time of each stepping action, and the number of stepping sequences to execute.
 
@@ -183,6 +191,7 @@ The stepper motor driving function controls the direction of motor rotation, the
     :linenos: 
     :language: java
     :lines: 46-50
+    :dedent:
 
 Stepper motor stop function that stops the motor.
 
@@ -190,6 +199,7 @@ Stepper motor stop function that stops the motor.
     :linenos: 
     :language: java
     :lines: 52-56
+    :dedent:
 
 Implement the AutoCloseable interface to ensure that resources are released when they are no longer needed.
 
@@ -197,6 +207,7 @@ Implement the AutoCloseable interface to ensure that resources are released when
     :linenos: 
     :language: java
     :lines: 58-66
+    :dedent:
 
 Initialize stepper motor controller.
 
@@ -204,6 +215,7 @@ Initialize stepper motor controller.
     :linenos: 
     :language: java
     :lines: 79-79
+    :dedent:
 
 Add JVM shutdown hook to ensure motors are stopped on program exit.
 
@@ -211,6 +223,7 @@ Add JVM shutdown hook to ensure motors are stopped on program exit.
     :linenos: 
     :language: java
     :lines: 80-80
+    :dedent:
 
 First, control the stepper motor to rotate forward one circle, then pause for 500 milliseconds, then control the stepper motor to rotate reversely one circle, then pause for 500 milliseconds, and repeat this process.
 
@@ -218,6 +231,7 @@ First, control the stepper motor to rotate forward one circle, then pause for 50
     :linenos: 
     :language: java
     :lines: 82-87
+    :dedent:
 
 If a thread termination exception or other exception occurs, it will be printed out on the terminal interface.
 
@@ -225,6 +239,7 @@ If a thread termination exception or other exception occurs, it will be printed 
     :linenos: 
     :language: java
     :lines: 89-94
+    :dedent:
 
 Make sure the resources are released when the program ends.
 
@@ -232,3 +247,4 @@ Make sure the resources are released when the program ends.
     :linenos: 
     :language: java
     :lines: 94-102
+    :dedent:

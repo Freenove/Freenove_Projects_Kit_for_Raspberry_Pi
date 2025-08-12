@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter Thermistor
+Chapter 9 Thermistor
 ##############################################################################
 
 In this chapter, we will learn about Thermistors which are another kind of Resistor.
@@ -22,22 +22,21 @@ Thermistor is a temperature sensitive resistor. When it senses a change in tempe
 
 The relationship between resistance value and temperature of a thermistor is:
 
-.. image:: ../_static/imgs/9_Thermistor/Chapter09_01.png
-    :align: center
+.. math::
+    
+    \boldsymbol{R_t} \boldsymbol{=} \boldsymbol{R} \boldsymbol{\cdot} \boldsymbol{\mathrm{EXP}} \boldsymbol{\left[ B \boldsymbol{\cdot} \left( \frac{1}{T_2} - \frac{1}{T_1} \right) \right]}
 
-Rt=R*EXP [B*(1/T2-1/T1)]
+**Where:**
 
-Where:
+    **Rt** is the thermistor resistance under T2 temperature;
 
-    Rt is the thermistor resistance under T2 temperature;
+    **R** is in the nominal resistance of thermistor under T1 temperature;
 
-    R is in the nominal resistance of thermistor under T1 temperature;
+    **EXP[n]** is nth power of e;
 
-    EXP[n] is nth power of e;
+    **B** is for thermal index;
 
-    B is for thermal index;
-
-    T1, T2 is Kelvin temperature (absolute temperature). Kelvin temperature=273.15 + Celsius temperature.
+    **T1, T2** is Kelvin temperature (absolute temperature). Kelvin temperature=273.15 + Celsius temperature.
 
 For the parameters of the Thermistor, we use: B=3950, R=10k, T1=25.
 
@@ -50,21 +49,27 @@ We can use the value measured by the ADC converter to obtain the resistance valu
 
 Therefore, the temperature formula can be derived as:
 
-.. image:: ../_static/imgs/9_Thermistor/Chapter09_03.png
-    :align: center
+.. math::
+    
+    \boldsymbol{T_2} \boldsymbol{=} \boldsymbol{\frac{1}{\frac{1}{T_1} + \frac{\ln\left(\frac{R_t}{R}\right)}{B}}}
 
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
+.. table::
+    :align: center
+    :class: table-line
+    :width: 80%
+
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -74,21 +79,21 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter09_04|
-    *   -   Hardware connection:
-    *   -   |Chapter09_05|
+    * - Schematic diagram
+    * - |Chapter09_04|
+    * - Hardware connection:
+    * - |Chapter09_05|
 
 .. |Chapter09_04| image:: ../_static/imgs/9_Thermistor/Chapter09_04.png
 .. |Chapter09_05| image:: ../_static/imgs/9_Thermistor/Chapter09_05.png
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Code
 ================================================================
@@ -104,7 +109,7 @@ First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1. Use cd command to enter 9_Thermometer directory of C code.
 
@@ -146,7 +151,7 @@ First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 9_Thermometer directory of Python code.
 +
@@ -167,6 +172,6 @@ After the program is executed, the Terminal window will display the current ADC 
 
 The following is the code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/C_Code/9_Thermometer/Thermometer.py
+.. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/9_Thermometer/Thermometer.py
     :linenos: 
     :language: python

@@ -1,5 +1,5 @@
 ##############################################################################
-0. Chapter Preparation
+Chapter 0 Preparation
 ##############################################################################
 
 Pi4J is a Java I/O library specially designed for Raspberry Pi platform.
@@ -40,7 +40,7 @@ Run the following commands one by one to install jbang.
     $ cd ~/Freenove_Kit/Pi4j/Lib
     $ python setup.py
 
-:red:`Please note that sudo is not applicable here.`
+:combo:`red font-bolder:Please note that sudo is not applicable here.`
 
 .. image:: ../_static/imgs/0_Preparation/Chapter00_15.png
     :align: center

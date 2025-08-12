@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter Stepper Motor
+Chapter 14 Stepper Motor
 ##############################################################################
 
 Thus far, we have learned about DC Motors and Servos. A DC motor can rotate constantly in on direction but we cannot control the rotation to a specific angle. On the contrary, a Servo can rotate to a specific angle but cannot rotate constantly in one direction. In this chapter, we will learn about a Stepper Motor which is also a type of motor. A Stepper Motor can rotate constantly and also to a specific angle. Using a Stepper Motor can easily achieve higher accuracies in mechanical motion.
@@ -49,20 +49,24 @@ A ULN2003 Stepper Motor Driver is used to convert weak signals into more powerfu
 Component List
 ================================================================
 
-+---------------------------------------------+
-| Freenove Projects Board for Raspberry Pi    |
-|                                             |
-|  |Chapter01_04|                             |
-+---------------------+-----------------------+
-| Raspberry Pi        | GPIO Ribbon Cable     |
-|                     |                       |
-|  |Chapter01_05|     |  |Chapter01_06|       |
-+---------------------+-----------------------+
-| Stepper Motor                               |
-|                                             |
-|  |Chapter14_04|                             |                              
-|                                             |
-+---------------------------------------------+
+.. table::
+    :class: table-line
+    :align: center
+    :width: 80%
+
+    +---------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi    |
+    |                                             |
+    |  |Chapter01_04|                             |
+    +---------------------+-----------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable     |
+    |                     |                       |
+    |  |Chapter01_05|     |  |Chapter01_06|       |
+    +---------------------+-----------------------+
+    | Stepper Motor                               |
+    |                                             |
+    |  |Chapter14_04|                             |                              
+    +---------------------------------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -73,21 +77,21 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter14_05|
-    *   -   Hardware connection:
-    *   -   |Chapter14_06|
+    * - Schematic diagram
+    * - |Chapter14_05|
+    * - Hardware connection:
+    * - |Chapter14_06|
 
 .. |Chapter14_05| image:: ../_static/imgs/14_Stepper_Motor/Chapter14_05.png
 .. |Chapter14_06| image:: ../_static/imgs/14_Stepper_Motor/Chapter14_06.png
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Code
 ================================================================
@@ -101,7 +105,7 @@ First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 14_SteppingMotor directory of C code.
 
@@ -135,6 +139,7 @@ In the code we define the four pins of the Stepper Motor and the order to supply
     :linenos: 
     :language: c
     :lines: 10-12
+    :dedent:
 
 Subfunction moveOnePeriod ((int dir,int ms) will drive the Stepper Motor rotating four-step clockwise or anticlockwise, four-step as a cycle. Where parameter "dir" indicates the rotation direction, if "dir" is 1, the servo will rotate clockwise, otherwise it rotates to anticlockwise. Parameter "ms" indicates the time between each two steps. The "ms" of Stepper Motor used in this project is 3ms (the shortest time period), a value of less than 3ms will exceed the limits of the Stepper Motor with a result that it does not rotate.
 
@@ -142,6 +147,7 @@ Subfunction moveOnePeriod ((int dir,int ms) will drive the Stepper Motor rotatin
     :linenos: 
     :language: c
     :lines: 14-29
+    :dedent:
 
 Subfunction moveSteps (int dir, int ms, int steps) is used to specific cycle number of Stepper Motor.
 
@@ -149,6 +155,7 @@ Subfunction moveSteps (int dir, int ms, int steps) is used to specific cycle num
     :linenos: 
     :language: c
     :lines: 31-36
+    :dedent:
 
 Subfunction motorStop () is used to stop the Stepper Motor.
 
@@ -156,6 +163,7 @@ Subfunction motorStop () is used to stop the Stepper Motor.
     :linenos: 
     :language: c
     :lines: 37-42
+    :dedent:
 
 Finally, in the while loop of main function, rotate one revolution clockwise, and then one revolution anticlockwise. According to the previous material covered, the Stepper Motor rotating for one revolution requires 2048 steps, that is, 2048/4=512 cycle.
 
@@ -163,6 +171,7 @@ Finally, in the while loop of main function, rotate one revolution clockwise, an
     :linenos: 
     :language: c
     :lines: 54-59
+    :dedent:
 
 Python Code 14.1 SteppingMotor
 ----------------------------------------------------------------
@@ -171,7 +180,7 @@ First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 14_StepperMotor directory of Python code.
 
@@ -199,6 +208,7 @@ In the code we define the four pins of the Stepper Motor and the order to supply
     :linenos: 
     :language: python
     :lines: 11-15
+    :dedent:
 
 Subfunction moveOnePeriod ((int dir, int ms) will drive the Stepper Motor rotating four-step clockwise or anticlockwise, four-step as a cycle. Where parameter "dir" indicates the rotation direction, if "dir" is 1, the servo will rotate clockwise, otherwise it rotates to anticlockwise. Parameter "ms" indicates the time between each two steps. The "ms" of Stepper Motor used in this project is 3ms (the shortest time period), a value of less than 3ms will exceed the limits of the Stepper Motor with a result that it does not rotate.
 
@@ -206,6 +216,7 @@ Subfunction moveOnePeriod ((int dir, int ms) will drive the Stepper Motor rotati
     :linenos: 
     :language: python
     :lines: 18-27
+    :dedent:
 
 Subfunction moveSteps (direction, ms, steps) is used to specify the cycle number of Stepper Motor.
 
@@ -213,6 +224,7 @@ Subfunction moveSteps (direction, ms, steps) is used to specify the cycle number
     :linenos: 
     :language: python
     :lines: 30-32
+    :dedent:
 
 Subfunction motorStop () is used to stop the Stepper Motor.
 
@@ -220,6 +232,7 @@ Subfunction motorStop () is used to stop the Stepper Motor.
     :linenos: 
     :language: python
     :lines: 35-37
+    :dedent:
 
 Finally, in the while loop of main function, rotate one revolution clockwise, and then one revolution anticlockwise. According to the previous material covered, the Stepper Motor rotating for one revolution requires 2048 steps, that is, 2048/4=512 cycle.
 
@@ -227,4 +240,4 @@ Finally, in the while loop of main function, rotate one revolution clockwise, an
     :linenos: 
     :language: python
     :lines: 40-44
-
+    :dedent:

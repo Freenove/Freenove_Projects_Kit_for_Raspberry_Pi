@@ -1,10 +1,10 @@
 ##############################################################################
-Chapter LED
+Chapter 1 LED
 ##############################################################################
 
 This chapter is the Start Point in the journey to build and explore RPi electronic projects. We will start with simple “Blink” project.
 
-Project Blink
+Project 1.1 Blink
 ****************************************************************
 
 In this project, we will use RPi to control blinking a common LED.
@@ -58,15 +58,20 @@ For more details about wiringPi, please refer to https://github.com/WiringPi/Wir
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
+.. table::
+    :align: center
+    :class: table-line
+    :width: 80%
+    
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -76,25 +81,25 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter01_07|
-    *   -   Hardware connection:
+    * - Schematic diagram
+    * - |Chapter01_07|
+    * - Hardware connection:
 
-            Turn ON the power switch and NO.5 toggle switch. 
+        Turn ON the power switch and NO.5 toggle switch. 
 
-            Power switch should be turned ON in all the projects.
-    *   -   |Chapter01_08|
+        Power switch should be turned ON in all the projects.
+    * - |Chapter01_08|
 
 .. |Chapter01_07| image:: ../_static/imgs/1_LED/Chapter01_07.png
 .. |Chapter01_08| image:: ../_static/imgs/1_LED/Chapter01_08.png
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Component knowledge
 ================================================================
@@ -129,7 +134,11 @@ The bands of color on a resistor is a shorthand code used to identify its resist
 
 With a fixed voltage, there will be less current output with greater resistance added to the circuit. The relationship between Current, Voltage and Resistance can be expressed by this formula: I=V/R known as Ohm’s Law where I = Current, V = Voltage and R = Resistance. Knowing the values of any two of these allows you to solve the value of the third.
 
-In the following diagram, the current through R1 is: I=U/R=5V/10kΩ=0.0005A=0.5mA.
+In the following diagram, the current through R1 is:
+
+.. math::
+    
+    \boldsymbol{I} \boldsymbol{=} \boldsymbol{\frac{U}{R}} \boldsymbol{=} \boldsymbol{\frac{5V}{10k\Omega}} \boldsymbol{=} \boldsymbol{0.0005A} \boldsymbol{=} \boldsymbol{0.5mA}
 
 .. image:: ../_static/imgs/1_LED/Chapter01_11.png
     :align: center
@@ -156,7 +165,7 @@ If you want to execute it with editor, please refer to section Code Editor to co
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 It is recommended to execute the code via command line.
 
@@ -224,6 +233,7 @@ GPIO connected to ledPin in the circuit is GPIO17.
 So ledPin should be defined as 17 pin. You can refer to the GPIO Numbering Relationship.
 
 .. code-block:: c
+    :linenos:
 
     #define  ledPin    17 //define the led pin number
 
@@ -235,6 +245,7 @@ GPIO Numbering Relationship
 In the main function main(), initialize GPIO first.
 
 .. code-block:: c
+    :linenos:
 
     //wiringPiSetup();  //Initialize wiringPi. Use WiringPi Number.
     wiringPiSetupGpio();//Initialize wiringPi. Use BCM Number.
@@ -245,6 +256,7 @@ After the wiringPi is initialized successfully, you can set the ledPin to output
     :linenos: 
     :language: c
     :lines: 16-25
+    :dedent:
 
 Python Code 1.1 Blink
 ----------------------------------------------------------------
@@ -253,7 +265,7 @@ Now, we will use Python language to make a LED blink.
 
 First, observe the project result, and then learn about the code in detail. 
 
-If you have any concerns, please send an email to: support@freenove.com
+:combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 1_Blink directory of Python code.
 
@@ -265,7 +277,7 @@ If you have any concerns, please send an email to: support@freenove.com
 
 .. code-block:: console
 
-    python Blink.pypython
+    python Blink.py
 
 The LED starts blinking.
 
@@ -277,14 +289,15 @@ You can press **"Ctrl+C"** to end the program. The following is the program code
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/1_Blink/Blink.py
     :linenos: 
     :language: python
+    :dedent:
 
-About gpiozero.LED:
+About **gpiozero.LED**:
 
-.. c:function:: gpiozero.LED
+.. py:function:: gpiozero.LED
 
     The gpiozero library is an object-oriented python library where the LED module is used to control leds.
 
-.. c:function:: LED(pin)
+.. py:function:: LED(pin)
 
     LED module, used to apply for a control LED object, please fill in the gpio pin correctly. Please refer to the following writing method.
     
@@ -300,15 +313,15 @@ About gpiozero.LED:
     
     led = LED("J8:11")       # BOARD
 
-.. c:function:: led.on()
+.. py:function:: led.on()
 
     Control GPIO output high level.
 
-.. c:function:: led.off()
+.. py:function:: led.off()
 
     Control GPIO output low level.
 
-.. c:function:: led.close()
+.. py:function:: led.close()
 
     Release the GPIO resource.
 
@@ -323,13 +336,59 @@ https://docs.python.org/2/library/time.html?highlight=time%20time#module-time
 The Blue LED is controlled using GPIO17. GPIO17 is based on the BCM Number, so just fill in 17 in the code.
 
 .. code-block:: python
+    :linenos:
 
     led = LED(17)           # define LED pin according to BCM Numbering
 
-GPIO Numbering Relationship
+**GPIO Numbering Relationship**
 
-.. image:: ../_static/imgs/1_LED/Chapter01_16.png
+.. table::
     :align: center
+    :class: zebra text-center
+    
+    +--------+----------------+------------+----------------+--------+
+    | WingPi | BCM(Extension) | Physical   | BCM(Extension) | WingPi |
+    +========+================+======+=====+================+========+
+    | 3.3V   | 3.3V           | 1    | 2   | 5V             | 5V     |
+    +--------+----------------+------+-----+----------------+--------+
+    | 8      | SDA1           | 3    | 4   | 5V             | 5V     |
+    +--------+----------------+------+-----+----------------+--------+
+    | 9      | SCL1           | 5    | 6   | GND            | GND    |
+    +--------+----------------+------+-----+----------------+--------+
+    | 7      | GPIO4          | 7    | 8   | GPIO14/TXD0    | 15     |
+    +--------+----------------+------+-----+----------------+--------+
+    | GND    | GND            | 9    | 10  | GPIO15/RXD0    | 16     |
+    +--------+----------------+------+-----+----------------+--------+
+    | 0      | GPIO17         | 11   | 12  | GPIO18         | 1      |
+    +--------+----------------+------+-----+----------------+--------+
+    | 2      | GPIO27         | 13   | 14  | GND            | GND    |
+    +--------+----------------+------+-----+----------------+--------+
+    | 3      | GPIO22         | 15   | 16  | GPIO23         | 4      |
+    +--------+----------------+------+-----+----------------+--------+
+    | 3.3V   | 3.3V           | 17   | 18  | GPIO24         | 5      |
+    +--------+----------------+------+-----+----------------+--------+
+    | 12     | GPIO10/MOSI    | 19   | 20  | GND            | GND    |
+    +--------+----------------+------+-----+----------------+--------+
+    | 13     | GPIO9/MOIS     | 21   | 22  | GPIO25         | 6      |
+    +--------+----------------+------+-----+----------------+--------+
+    | 14     | GPIO11/SCLK    | 23   | 24  | GPIO8 /CE0     | 10     |
+    +--------+----------------+------+-----+----------------+--------+
+    | GND    | GND            | 25   | 26  | GPIO7 CE1      | 11     |
+    +--------+----------------+------+-----+----------------+--------+
+    | 30     | GPIO0/SDA0     | 27   | 28  | GPIO1 /SCL0    | 31     |
+    +--------+----------------+------+-----+----------------+--------+
+    | 21     | GPIO5          | 29   | 30  | GND            | GND    |
+    +--------+----------------+------+-----+----------------+--------+
+    | 22     | GPIO6          | 31   | 32  | GPIO12         | 26     |
+    +--------+----------------+------+-----+----------------+--------+
+    | 23     | GPIO13         | 33   | 34  | GND            | GND    |
+    +--------+----------------+------+-----+----------------+--------+
+    | 24     | GPIO19         | 35   | 36  | GPIO16         | 27     |
+    +--------+----------------+------+-----+----------------+--------+
+    | 25     | GPIO26         | 37   | 38  | GPIO20         | 28     |
+    +--------+----------------+------+-----+----------------+--------+
+    | GND    | GND            | 39   | 40  | GPIO21         | 29     |
+    +--------+----------------+------+-----+----------------+--------+
 
 In loop(), there is a while loop, which is an endless loop (a while loop). That is, the program will always be executed in this loop, unless it is ended because of external factors. In this loop, set led pin output high level, then the LED turns ON. After a period of time delay, set led pin output low level, then the LED turns OFF, which is followed by a delay. Repeat the loop, then LED will start blinking. 
 
@@ -337,10 +396,12 @@ In loop(), there is a while loop, which is an endless loop (a while loop). That 
     :linenos: 
     :language: python
     :lines: 22-29
+    :dedent:
 
 Each time the program terminates, the led module needs to release the GPIO resource. If you do not release the GPIO pin, the GPIO pin cannot be used the next time, and an error message is displayed in Terminal. Like "GPIO Busy."
 
 .. code-block:: python
+    :linenos:
 
     led.close()
 
@@ -348,6 +409,6 @@ Each time the program terminates, the led module needs to release the GPIO resou
 
 This may cause the GPIO resource to be occupied, making it impossible to continue calling the GPIO.
 
-If you accidentally use this action. You can use this by enter “fg” in Terminal, then pressing Enter. It will resume suspended tasks that occupy GPIO resources. Then you can use Ctrl+C to exit the code normally.
+If you accidentally use this action. You can use this by enter “**fg**” in Terminal, then pressing Enter. It will resume suspended tasks that occupy GPIO resources. Then you can use Ctrl+C to exit the code normally.
 
 Of course, you can also choose to restart the RPI directly. It can also be used to free up GPIO resources.

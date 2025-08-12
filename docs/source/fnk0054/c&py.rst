@@ -3,12 +3,6 @@ C & Python language
 ##############################################################################
 
 .. toctree::
-   :titlesonly:
-   :caption: Welcome
-
-   codes/c&py/Welcome.rst
-
-.. toctree::
    :titlesonly: 
    :caption: Getting Started
 
@@ -24,7 +18,6 @@ C & Python language
    codes/c&py/0_Preparation.rst
 
 .. toctree::
-   :numbered:
    :titlesonly:
    :caption: Projects
 

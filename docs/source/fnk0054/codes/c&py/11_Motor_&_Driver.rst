@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter Motor & Driver
+Chapter 11 Motor & Driver
 ##############################################################################
 
 In this chapter, we will learn about DC Motors and DC Motor Drivers and how to control the speed and direction of a DC Motor.
@@ -28,23 +28,28 @@ When a DC Motor is connected to a power supply, it will rotate in one direction.
 Component List
 ================================================================
 
-+---------------------------------------------+
-| Freenove Projects Board for Raspberry Pi    |
-|                                             |
-|  |Chapter01_04|                             |
-+---------------------+-----------------------+
-| Raspberry Pi        | GPIO Ribbon Cable     |
-|                     |                       |
-|  |Chapter01_05|     |  |Chapter01_06|       |
-+---------------------+-----------------------+
-| Jumper Wire         | Motor                 |
-|                     |                       |
-|  |Chapter05_02|     |  |Chapter11_02|       |
-+---------------------+-----------------------+
-| 9V Battery (you provide) & 9V Battery Cable |
-|                                             |
-|  |Chapter11_03|                             |
-+---------------------------------------------+
+.. table::
+    :class: table-line
+    :align: center
+    :width: 80%
+
+    +---------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi    |
+    |                                             |
+    |  |Chapter01_04|                             |
+    +---------------------+-----------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable     |
+    |                     |                       |
+    |  |Chapter01_05|     |  |Chapter01_06|       |
+    +---------------------+-----------------------+
+    | Jumper Wire         | Motor                 |
+    |                     |                       |
+    |  |Chapter05_02|     |  |Chapter11_02|       |
+    +---------------------+-----------------------+
+    | 9V Battery (you provide) & 9V Battery Cable |
+    |                                             |
+    |  |Chapter11_03|                             |
+    +---------------------------------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -57,21 +62,21 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter11_04|
-    *   -   Hardware connection:
-    *   -   |Chapter11_05|
+    * - Schematic diagram
+    * - |Chapter11_04|
+    * - Hardware connection:
+    * - |Chapter11_05|
 
 .. |Chapter11_04| image:: ../_static/imgs/11_Motor_&_Driver/Chapter11_04.png
 .. |Chapter11_05| image:: ../_static/imgs/11_Motor_&_Driver/Chapter11_05.png
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Code
 ================================================================
@@ -87,7 +92,7 @@ First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 11_Motor directory of the C code.
 
@@ -128,6 +133,7 @@ The difference between ADC and 128 determines the duty cycle for the PWM.
     :linenos: 
     :language: c
     :lines: 24-43
+    :dedent:
 
 Python Code 11.1 Motor
 ----------------------------------------------------------------
@@ -157,7 +163,7 @@ After the program runs, you can use the Potentiometer to control the DC Motor. W
 
 The following is the code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/C_Code/11_Motor/Motor.py
+.. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/11_Motor/Motor.py
     :linenos: 
     :language: python
 
@@ -167,7 +173,8 @@ When ADC value is less than 128, motorPin2 outputs high lever and motorPin1 outp
 
 The difference between ADC and 128 determines the duty cycle for the PWM.
 
-.. literalinclude:: ../../../freenove_Kit/Code/C_Code/11_Motor/Motor.py
+.. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/11_Motor/Motor.py
     :linenos: 
     :language: python
     :lines: 31-44
+    :dedent:

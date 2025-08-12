@@ -1,10 +1,10 @@
 ##############################################################################
-Chapter Matrix Keypad
+Chapter 17 Matrix Keypad
 ##############################################################################
 
 Earlier we learned about a single Push Button Switch. In this chapter, we will learn about Matrix Keyboards, which integrates a number of Push Button Switches as Keys for the purposes of Input.
 
-Project 21 Matrix Keypad
+Project 17.1 Matrix Keypad
 ****************************************************************
 
 In this project, we will attempt to get every key code on the Matrix Keypad to work.
@@ -15,34 +15,35 @@ Component knowledge
 4x4 Matrix Keypad
 ----------------------------------------------------------------
 
-A Keypad Matrix is a device that integrates a number of keys in one package. As is shown below, a 4x4 Keypad Matrix integrates 16 keys (think of this as 16 Push Button Switches in one module):
+First, review the matrix keyboard sequence to facilitate building circuit.
 
 .. image:: ../_static/imgs/21_Matrix_Keypad/Chapter21_00.png
     :align: center
 
-Similar to the integration of an LED Matrix, the 4x4 Keypad Matrix has each row of keys connected with one pin and this is the same for the columns. Such efficient connections reduce the number of processor ports required. The internal circuit of the Keypad Matrix is shown below.
-
 .. image:: ../_static/imgs/21_Matrix_Keypad/Chapter21_01.png
     :align: center
-
-The method of usage is similar to the Matrix LED, by using a row or column scanning method to detect the state of each key’s position by column and row. Take column scanning method as an example, send low level to the first 1 column (Pin1), detect level state of rows 5, 6, 7, 8 to judge whether the keys A, B, C, D are pressed. Then send low level to columns 2, 3, 4 in turn to detect whether other keys are pressed. Therefore, you can get the state of all of the keys.
 
 Component List
 ================================================================
 
-+---------------------------------------------+
-| Freenove Projects Board for Raspberry Pi    |
-|                                             |
-|  |Chapter01_04|                             |
-+---------------------+-----------------------+
-| Raspberry Pi        | GPIO Ribbon Cable     |
-|                     |                       |
-|  |Chapter01_05|     |  |Chapter01_06|       |
-+---------------------+-----------------------+
-| 4x4 Matrix Keypad                           |
-|                                             |
-|  |Chapter21_02|                             |                              
-+---------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+    
+    +---------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi    |
+    |                                             |
+    |  |Chapter01_04|                             |
+    +---------------------+-----------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable     |
+    |                     |                       |
+    |  |Chapter01_05|     |  |Chapter01_06|       |
+    +---------------------+-----------------------+
+    | 4x4 Matrix Keypad                           |
+    |                                             |
+    |  |Chapter21_02|                             |                              
+    +---------------------------------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -55,19 +56,15 @@ Circuit
 .. list-table:: 
     :width: 100%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter21_03|
-    *   -   Hardware connection:
-    *   -   |Chapter21_04|
+    * - Schematic diagram
+    * - |Chapter21_03|
+    * - Hardware connection:
+    * - |Chapter21_04|
 
-.. |Chapter21_03| image:: ../_static/imgs/20_Hygrothermograph_DHT11/Chapter21_03.png
-.. |Chapter21_04| image:: ../_static/imgs/20_Hygrothermograph_DHT11/Chapter21_04.png
-
-.. note::
-    
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+.. |Chapter21_03| image:: ../_static/imgs/21_Matrix_Keypad/Chapter21_03.png
+.. |Chapter21_04| image:: ../_static/imgs/21_Matrix_Keypad/Chapter21_04.png
 
 Sketch
 ================================================================
@@ -77,7 +74,7 @@ Sketch 17.1.1 Calculator
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 First, enter where the project is located:
 
@@ -90,7 +87,7 @@ And then right-click to select Processing IDE
 .. image:: ../_static/imgs/21_Matrix_Keypad/Chapter21_12.png
     :align: center
 
-Or you can enter a command in the terminal to open the file Sketch_17_1_1_Calculator. (The following is only one line of command. There is a Space after Processing.)
+Or you can enter a command in the terminal to open the file Sketch_17_1_1_Calculator. :combo:`red font-bolder:(The following is only one line of command. There is a Space after Processing.)`
 
 .. code-block:: console
 
@@ -101,7 +98,7 @@ Open Processing and click Run
 .. image:: ../_static/imgs/21_Matrix_Keypad/Chapter21_13.png
     :align: center
 
-The result is as shown below. Pressing the matrix keypad can make calculation. (Clicking the windows doesn’t work.) 
+The result is as shown below. Pressing the matrix keypad can make calculation. (Clicking the windows doesn't work.) 
 
 .. image:: ../_static/imgs/21_Matrix_Keypad/Chapter21_14.png
     :align: center
@@ -142,19 +139,19 @@ In draw(), use cc.process() to obtain the key code of Keypad and for processing.
 Reference
 ----------------------------------------------------------------
 
-.. c:function:: void drawKeypad(int x, int y)
+.. py:function:: void drawKeypad(int x, int y)
 
     Used to draw a Keypad with (x, y) on the upper left corner.
 
-.. c:function:: void drawDisplay(String content)
+.. py:function:: void drawDisplay(String content)
 
     The function at the top of the window to draw a calculator display area, and in the area of the right alignment display content.
 
-.. c:function:: class Key
+.. py:function:: class Key
 
     This is a custom class that defines the associated attribute owned by a key. There are only some member variables and a constructor in this class.
 
-.. c:function:: class Keypad
+.. py:function:: class Keypad
 
     This is a custom class that defines the methods to use keypad.
     
@@ -190,7 +187,7 @@ Reference
     
     Judge whether there is a change of key state, then return True or False.
 
-.. c:function:: class Calculator
+.. py:function:: class Calculator
 
     This is a custom class that defines the rules and calculating methods of the calculator.
     
@@ -212,4 +209,4 @@ Reference
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com

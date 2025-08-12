@@ -1,35 +1,13 @@
 ##############################################################################
-Chapter 74HC595 & 4-Digit 7-Segment Display
+Chapter 1674HC595 & 4-Digit 7-Segment Display
 ##############################################################################
 
 In this chapter, we will introduce the 7-Segment Display.
 
-Project 16.1 4-Digit 7-Segment Display
+Project 4-Digit 7-Segment Display
 ****************************************************************
 
 We will use a 74HC595 IC Chip to control a 4-Digit 7-Segment Display and make it display sixteen decimal characters "0” to “F".
-
-Component List
-================================================================
-
-+---------------------------------------------+
-| Freenove Projects Board for Raspberry Pi    |
-|                                             |
-|  |Chapter01_04|                             |
-+---------------------+-----------------------+
-| Raspberry Pi        | GPIO Ribbon Cable     |
-|                     |                       |
-|  |Chapter01_05|     |  |Chapter01_06|       |
-+---------------------+-----------------------+
-| 4-Digit 7-Segment Display                   |
-|                                             |
-|  |Chapter17_00|                             |                              
-+---------------------------------------------+
-
-.. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
-.. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
-.. |Chapter01_06| image:: ../_static/imgs/1_LED/Chapter01_06.png
-.. |Chapter17_00| image:: ../_static/imgs/17_74HC595_&_4-Digit_7-Segment_Display/Chapter17_00.png
 
 Component knowledge
 ================================================================
@@ -44,12 +22,55 @@ A 4 Digit 7-segment display integrates four 7-Segment Displays into one module, 
 
 The internal electronic circuit is shown below, and all 8 LED cathode pins of each 7-Segment Display are connected together.
 
-.. image:: ../_static/imgs/17_74HC595_&_4-Digit_7-Segment_Display/Chapter17_01.png
+.. image:: ../_static/imgs/17_74HC595_&_4-Digit_7-Segment_Display/Chapter17_02.png
     :align: center
 
 Display method of 4 Digit 7-segment display is similar to 1 Digit 7-segment display. The difference between them is that the 4-Digit displays each Digit is visible in turn, one by one and not together. We need to first send high level to the common end of the first Digit Display, and send low level to the remaining three common ends, and then send content to 8 LED cathode pins of the first Digit Display. At this time, the first 7-Segment Display will show visible content and the remaining three will be OFF.
 
 Similarly, the second, third and fourth 7-Segment Displays will show visible content in turn by scanning the display. Although the four number characters are displayed in turn separately, this process is so fast that it is unperceivable to the naked eye. This is due to the principle of optical afterglow effect and the vision persistence effect in human sight. This is how we can see all 4 number characters at the same time. However, if each number character is displayed for a longer period, you will be able to see that the number characters are displayed separately. 
+
+Component List
+================================================================
+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+    
+    +---------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi    |
+    |                                             |
+    |  |Chapter01_04|                             |
+    +---------------------+-----------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable     |
+    |                     |                       |
+    |  |Chapter01_05|     |  |Chapter01_06|       |
+    +---------------------+-----------------------+
+    | 4-Digit 7-Segment Display                   |
+    |                                             |
+    |  |Chapter17_00|                             |                              
+    +---------------------------------------------+
+
+.. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
+.. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
+.. |Chapter01_06| image:: ../_static/imgs/1_LED/Chapter01_06.png
+.. |Chapter17_00| image:: ../_static/imgs/17_74HC595_&_4-Digit_7-Segment_Display/Chapter17_00.png
+
+Circuit
+================================================================
+
+.. list-table:: 
+    :width: 100%
+    :align: center
+    :class: table-line
+
+    * - Schematic diagram
+    * - |Chapter17_21|
+    * - Hardware connection:
+    * - |Chapter17_22|
+
+.. |Chapter17_21| image:: ../_static/imgs/17_74HC595_&_4-Digit_7-Segment_Display/Chapter17_21.png
+.. |Chapter17_22| image:: ../_static/imgs/17_74HC595_&_4-Digit_7-Segment_Display/Chapter17_22.png
 
 Sketch
 ================================================================
@@ -98,7 +119,7 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/17_74HC595_&_4-Digit_7-Segment_Display/Chapter17_07.png
     :align: center
 
-If the code fails to run, please check Geany Configuration.
+If the code fails to run, please check :ref:`Geany Configuration<geany>`.
 
 The following is program code:
 
@@ -112,6 +133,7 @@ Define an array to control the display content of the digital tube.
     :linenos: 
     :language: java
     :lines: 77-77
+    :dedent:
 
 In the given circuit, the 74HC595 shift registers are used to control a digital tube display. The common anodes of the digital tube are controlled by the outputs Q3 to Q0 of chip U2, while the common cathodes are controlled by Q7 to Q0 of chip U1. To display '0000' on the digital tube, the following steps are necessary:
 
@@ -127,6 +149,15 @@ This sequence ensures that the digital tube will display '0000' with the correct
     :linenos: 
     :language: java
     :lines: 82-84
+    :dedent:
+
+Update the register to have the two chips output signals to control the display content of the digital tube.
+
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_16_1_SevenSegmentDisplay/SevenSegmentDisplay.java
+    :linenos: 
+    :language: java
+    :lines: 85-85
+    :dedent:
 
 The digital tube displays from 0 to F in sequence, with a time interval of 500 milliseconds.
 
@@ -134,35 +165,41 @@ The digital tube displays from 0 to F in sequence, with a time interval of 500 m
     :linenos: 
     :language: java
     :lines: 79-88
+    :dedent:
 
-Project 16.2 4-Digit 7-Segment Display
+Project 4-Digit 7-Segment Display
 ****************************************************************
 
 Component List
 ================================================================
 
-+---------------------------------------------+
-| Freenove Projects Board for Raspberry Pi    |
-|                                             |
-|  |Chapter01_04|                             |
-+---------------------+-----------------------+
-| Raspberry Pi        | GPIO Ribbon Cable     |
-|                     |                       |
-|  |Chapter01_05|     |  |Chapter01_06|       |
-+---------------------+-----------------------+
-| 4-Digit 7-Segment Display                   |
-|                                             |
-|  |Chapter17_00|                             |                              
-+---------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+    
+    +---------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi    |
+    |                                             |
+    |  |Chapter01_04|                             |
+    +---------------------+-----------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable     |
+    |                     |                       |
+    |  |Chapter01_05|     |  |Chapter01_06|       |
+    +---------------------+-----------------------+
+    | 4-Digit 7-Segment Display                   |
+    |                                             |
+    |  |Chapter17_00|                             |                              
+    +---------------------------------------------+
 
 Circuit
 ================================================================
 
-The same as that of 17.1 
+The same as that of 16.1 
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -219,7 +256,7 @@ The following is program code:
     :linenos: 
     :language: java
 
-Define an array called 'values' to store the content displayed on the digital tube. Define an array called ‘bits’ to store the control bits for the common anode of the digital tube.
+Define an array called 'values' to store the content displayed on the digital tube. Define an array called 'bits' to store the control bits for the common anode of the digital tube.
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_16_2_StopWatch/StopWatch.java
     :linenos: 
@@ -239,7 +276,7 @@ To display the number 1234 on a digital tube, we must first break down the numbe
 
 We then proceed to control the digital tube to show the digit 1 in the first position for 1 millisecond, followed by the digit 2 in the second position for another millisecond, and continue this pattern for digits 3 and 4. 
 
-After displaying each digit sequentially, we repeat the entire sequence `times` times. Due to the rapid cycling through the digits, the human eye perceives a continuous display of the number 1234 on the digital tube.
+After displaying each digit sequentially, we repeat the entire sequence 'times' times. Due to the rapid cycling through the digits, the human eye perceives a continuous display of the number 1234 on the digital tube.
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_16_2_StopWatch/StopWatch.java
     :linenos: 

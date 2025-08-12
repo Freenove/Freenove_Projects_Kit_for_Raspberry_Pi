@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter RGB LED
+Chapter 5 RGB LED
 ##############################################################################
 
 In this chapter, we will learn how to control an RGB LED.
@@ -26,19 +26,24 @@ In this project, we will make a multicolored LED, which we can program the RGB L
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
-| Jumper Wire         | RGBLED Module      |
-|                     |                    |
-|  |Chapter05_02|     |  |Chapter05_03|    |
-+---------------------+--------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
+    | Jumper Wire         | RGBLED Module      |
+    |                     |                    |
+    |  |Chapter05_02|     |  |Chapter05_03|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -50,9 +55,9 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter05_04|
@@ -64,7 +69,7 @@ Circuit
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -127,6 +132,7 @@ Import Pi4j library, context management, digital output interface, HashMap class
     :linenos: 
     :language: java
     :lines: 9-15
+    :dedent:
 
 Initialize the pins corresponding to the RGB lights and print a stack trace if an exception occurs.
 
@@ -134,6 +140,7 @@ Initialize the pins corresponding to the RGB lights and print a stack trace if a
     :linenos: 
     :language: java
     :lines: 102-110
+    :dedent:
 
 Configure the RGB colored lights and adjust the brightness of the LED by adjusting the duty cycle of PWM.
 
@@ -141,6 +148,7 @@ Configure the RGB colored lights and adjust the brightness of the LED by adjusti
     :linenos: 
     :language: java
     :lines: 112-121
+    :dedent:
 
 Create a console instance, define an array of GPIO pins for LED connections, and create a random number generator instance.
 
@@ -148,6 +156,7 @@ Create a console instance, define an array of GPIO pins for LED connections, and
     :linenos: 
     :language: java
     :lines: 124-126
+    :dedent:
 
 Initialize the array of GPIO pins connected to the LEDs, generate 3 new random numbers every 500 milliseconds as brightness values for the RGB lights, and print prompt messages on the console.
 
@@ -155,6 +164,7 @@ Initialize the array of GPIO pins connected to the LEDs, generate 3 new random n
     :linenos: 
     :language: java
     :lines: 128-138
+    :dedent:
 
 At the end of the program, stop all PWM controllers and close the Pi4J context.
 
@@ -162,3 +172,4 @@ At the end of the program, stop all PWM controllers and close the Pi4J context.
     :linenos: 
     :language: java
     :lines: 139-144
+    :dedent:

@@ -1,5 +1,5 @@
 ##############################################################################
-App Oscilloscope
+App 1 Oscilloscope
 ##############################################################################
 
 We have used the ADC module to read the voltage of potentiometer to achieve the function of a voltmeter before. In this chapter, we will make a more complex virtual instrument, oscilloscope. Oscilloscope is a widely used electronic measuring instrument. It can get the electrical signals that cannot be observed directly into visible images to facilitate the analysis and study of various electrical signals changing process.
@@ -12,15 +12,20 @@ Now, let's make an oscilloscope.
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+    
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -30,21 +35,17 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |APP1_00|
-    *   -   Hardware connection:
-    *   -   |APP1_01|
+    * - Schematic diagram
+    * - |APP1_00|
+    * - Hardware connection:
+    * - |APP1_01|
 
 .. |APP1_00| image:: ../_static/imgs/App_1_Oscilloscope/APP1_00.png
 .. |APP1_01| image:: ../_static/imgs/App_1_Oscilloscope/APP1_01.png
-
-.. note::
-    
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -54,7 +55,7 @@ Sketch 1.1.1 Oscilloscope
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 First, enter where the project is located:
 
@@ -67,7 +68,7 @@ And then right-click to select Processing IDE
 .. image:: ../_static/imgs/App_1_Oscilloscope/APP1_02.png
     :align: center
 
-Or you can enter a command in the terminal to open the file App_01_1_1_Oscilloscope. (The following is only one line of command. There is a Space after Processing.)
+Or you can enter a command in the terminal to open the file App_01_1_1_Oscilloscope. :combo:`red font-bolder:(The following is only one line of command. There is a Space after Processing.)`
 
 .. code-block:: console
 
@@ -95,4 +96,4 @@ We believe that with the help of this oscilloscope, you can have a more intuitiv
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com

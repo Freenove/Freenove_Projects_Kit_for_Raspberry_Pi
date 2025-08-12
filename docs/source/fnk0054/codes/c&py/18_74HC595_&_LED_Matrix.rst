@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter 74HC595 & LED Matrix
+Chapter 18 74HC595 & LED Matrix
 ##############################################################################
 
 Thus far we have learned how to use the 74HC595 IC Chip to control the Bar Graph LED and the 7-Segment Display. We will now use 74HC595 IC Chips to control an LED Matrix.
@@ -33,9 +33,8 @@ Here is how a Common Anode LED Matrix works. First, choose 16 ports on RPI board
     :align: center
 
 .. list-table:: 
-    :width: 100%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -  Column 
         -  Binary
@@ -80,62 +79,67 @@ Scanning rows is another option to display on an LED Matrix (dot matrix grid). W
 Component List
 ================================================================
 
-+---------------------------------------------+
-| Freenove Projects Board for Raspberry Pi    |
-|                                             |
-|  |Chapter01_04|                             |
-+---------------------+-----------------------+
-| Raspberry Pi        | GPIO Ribbon Cable     |
-|                     |                       |
-|  |Chapter01_05|     |  |Chapter01_06|       |
-+---------------------+-----------------------+
-| LED matrix                                  |
-|                                             |
-|  |Chapter18_00|                             |                              
-+---------------------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +---------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi    |
+    |                                             |
+    |  |Chapter01_04|                             |
+    +---------------------+-----------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable     |
+    |                     |                       |
+    |  |Chapter01_05|     |  |Chapter01_06|       |
+    +---------------------+-----------------------+
+    | LED matrix                                  |
+    |                                             |
+    |  |Chapter18_00|                             |                              
+    +---------------------------------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
 .. |Chapter01_06| image:: ../_static/imgs/1_LED/Chapter01_06.png
-.. |Chapter17_00| image:: ../_static/imgs/18_74HC595_&_LED_Matrix/Chapter18_00.png
+.. |Chapter18_00| image:: ../_static/imgs/18_74HC595_&_LED_Matrix/Chapter18_00.png
 
 Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter18_03|
-    *   -   Hardware connection:
-    *   -   |Chapter18_04|
+    * - Schematic diagram
+    * - |Chapter18_03|
+    * - Hardware connection
+    * - |Chapter18_04|
 
 .. |Chapter18_03| image:: ../_static/imgs/18_74HC595_&_LED_Matrix/Chapter18_03.png
 .. |Chapter18_04| image:: ../_static/imgs/18_74HC595_&_LED_Matrix/Chapter18_04.png
 
 .. hint::
 
-    :red:`If it dosen't work, rotate the LED matrix for 180°.`
+    :combo:`red font-bolder:If it dosen't work, rotate the LED matrix for 180°.`
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Code
 ================================================================
 
 Two 74HC595 IC Chips are used in this project, one for controlling the LED Matrix's columns and the other for controlling the rows. According to the circuit connection, row data should be sent first, then column data. The following code will make the LED Matrix display a smiling face, and then display characters "0 to F" scrolling in a loop on the LED Matrix.
 
-C Code 18.1 LEDMatrix
+C Code LEDMatrix
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 18_LEDMatrix directory of C language.
 
@@ -169,6 +173,7 @@ The first “for” loop in the “while” loop is used to display a static smi
     :linenos: 
     :language: c
     :lines: 65-76
+    :dedent:
 
 The second “for” loop is used to display scrolling characters "0 to F", for a total of 18 X 8 = 144 columns. Displaying the 0-8 column, then the 1-9 column, then the 2-10 column...... and so on…138-144 column in consecutively to achieve the scrolling effect. The display of each frame is repeated a certain number of times and the more repetitions, the longer the single frame display will be and the slower the scrolling movement.
 
@@ -176,16 +181,16 @@ The second “for” loop is used to display scrolling characters "0 to F", for 
     :linenos: 
     :language: c
     :lines: 77-89
+    :dedent:
 
-
-Python Code 18.1 LEDMatrix
+Python Code LEDMatrix
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 18_LEDMatrix directory of Python language.
 
@@ -213,6 +218,7 @@ The first “for” loop in the “while” loop is used to display a static smi
     :linenos: 
     :language: python
     :lines: 50-58
+    :dedent:
 
 The second “for” loop is used to display scrolling characters "0 to F", for a total of 18 X 8 = 144 columns. Displaying the 0-8 column, then the 1-9 column, then the 2-10 column...... and so on…138-144 column in consecutively to achieve the scrolling effect. The display of each frame is repeated a certain number of times and the more repetitions, the longer the single frame display will be and the slower the scrolling movement.
 
@@ -220,3 +226,4 @@ The second “for” loop is used to display scrolling characters "0 to F", for 
     :linenos: 
     :language: python
     :lines: 60-69
+    :dedent:

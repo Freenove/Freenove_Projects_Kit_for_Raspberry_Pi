@@ -1,7 +1,7 @@
 .. _ADC:
 
 ##############################################################################
-Chapter (Important) Chapter ADC
+Chapter 7 (Important) Chapter ADC
 ##############################################################################
 
 We have learned how to control the brightness of an LED through PWM and that PWM is not a real analog signal. In this chapter, we will learn how to read analog values via an ADC Module and convert these analog values into digital.
@@ -33,7 +33,7 @@ The resultant analog signal will be divided accordingly.
 DAC
 ----------------------------------------------------------------
 
-The reversing this process requires a DAC, Digital-to-Analog Converter. The digital I/O port can output high level and low level (0 or 1), but cannot output an intermediate voltage value. This is where a DAC is useful. The DAC module PCF8591 has a DAC output pin with 8-bit accuracy, which can divide VDD (here is 3.3V) into 28=256 parts. For example, when the digital quantity is 1, the output voltage value is 3.3/256 *1 V, and when the digital quantity is 128, the output voltage value is 3.3/256 *128=1.65V, the higher the accuracy of DAC, the higher the accuracy of output voltage value will be.
+The reversing this process requires a DAC, Digital-to-Analog Converter. The digital I/O port can output high level and low level (0 or 1), but cannot output an intermediate voltage value. This is where a DAC is useful. The DAC module PCF8591 has a DAC output pin with 8-bit accuracy, which can divide VDD (here is 3.3V) into 28=256 parts. For example, when the digital quantity is 1, the output voltage value is 3.3/256 \*1 V, and when the digital quantity is 128, the output voltage value is 3.3/256 \*128=1.65V, the higher the accuracy of DAC, the higher the accuracy of output voltage value will be.
 
 Component knowledge
 ================================================================
@@ -41,7 +41,7 @@ Component knowledge
 Potentiometer
 ----------------------------------------------------------------
 
-Potentiometer is a resistive element with three Terminal parts. Unlike the resistors that we have used thus far in our project which have a fixed resistance value, the resistance value of a potentiometer can be adjusted. A potentiometer is often made up by a resistive substance (a wire or carbon element) and movable contact brush. When the brush moves along the resistor element, there will be a change in the resistance of the potentiometer’s output side (3) (or change in the voltage of the circuit that is a part). The illustration below represents a linear sliding potentiometer and its electronic symbol on the right.
+Potentiometer is a resistive element with three Terminal parts. Unlike the resistors that we have used thus far in our project which have a fixed resistance value, the resistance value of a potentiometer can be adjusted. A potentiometer is often made up by a resistive substance (a wire or carbon element) and movable contact brush. When the brush moves along the resistor element, there will be a change in the resistance of the potentiometer's output side (3) (or change in the voltage of the circuit that is a part). The illustration below represents a linear sliding potentiometer and its electronic symbol on the right.
 
 .. image:: ../_static/imgs/7_ADC/Chapter07_01.png
     :align: center
@@ -63,43 +63,48 @@ ADS7830
 
 The ADS7830 is a single-supply, low-power, 8-bit data acquisition device that features a serial I2C interface and an 8-channel multiplexer. The following table is the pin definition diagram of ADS7830.
 
-+-----------+-----+---------------------------------------------------+-----------------------------------------------+
-| SYMBOL    | PIN |                    DESCRIPTION                    |                    TOP VIEW                   |
-+===========+=====+===================================================+===============================================+
-|  CH0      |  1  |                                                   |                                               |
-+-----------+-----+                                                   |                                               |
-|  CH1      |  2  |                                                   |                                               |
-+-----------+-----+                                                   |                                               |
-|  CH2      |  3  |                                                   |                                               |
-+-----------+-----+                                                   |                                               |
-|  CH3      |  4  |                                                   |                                               |                                               
-+-----------+-----+       Analog input channels  (A/D converter)      |                                               |
-|  CH4      |  5  |                                                   |                                               |
-+-----------+-----+                                                   |                                               |
-|  CH5      |  6  |                                                   |                                               |
-+-----------+-----+                                                   |                                               |
-|  CH6      |  7  |                                                   |                                               |
-+-----------+-----+                                                   |                                               |
-|  CH7      |  8  |                                                   ||Chapter07_03|                                  |
-+-----------+-----+---------------------------------------------------+                                               |
-|  GND      |  9  |   Ground                                          |                                               |
-+-----------+-----+---------------------------------------------------+                                               |
-|           |     | Internal +2.5V Reference,External                 |                                               |
-|REF in/out |  10 |                                                   |                                               |
-|           |     | Reference Input                                   |                                               |
-+-----------+-----+---------------------------------------------------+                                               |
-|  COM      |  11 |   Common to Analog Input Channel                  |                                               |
-+-----------+-----+---------------------------------------------------+                                               |
-|  A0       |  12 |                                                   |                                               |
-+-----------+-----+   Hardware address                                |                                               |
-|  A1       |  13 |                                                   |                                               |
-+-----------+-----+---------------------------------------------------+                                               |
-|  SCL      |  14 |   Serial Clock                                    |                                               |
-+-----------+-----+---------------------------------------------------+                                               |
-|  SDA      |  15 |   Serial Sata                                     |                                               |
-+-----------+-----+---------------------------------------------------+                                               |
-|  +VDD     |  16 |   Power Supply, 3.3V Nominal                      |                                               |
-+-----------+-----+---------------------------------------------------+-----------------------------------------------+
+.. table::
+    :align: center
+    :class: table-line
+    :width: 80%
+    
+    +-----------+-----+---------------------------------------------------+-----------------------------------------------+
+    | SYMBOL    | PIN |                    DESCRIPTION                    |                    TOP VIEW                   |
+    +===========+=====+===================================================+===============================================+
+    |  CH0      |  1  |                                                   |                                               |
+    +-----------+-----+                                                   |                                               |
+    |  CH1      |  2  |                                                   |                                               |
+    +-----------+-----+                                                   |                                               |
+    |  CH2      |  3  |                                                   |                                               |
+    +-----------+-----+                                                   |                                               |
+    |  CH3      |  4  |                                                   |                                               |                                               
+    +-----------+-----+       Analog input channels  (A/D converter)      |                                               |
+    |  CH4      |  5  |                                                   |                                               |
+    +-----------+-----+                                                   |                                               |
+    |  CH5      |  6  |                                                   |                                               |
+    +-----------+-----+                                                   |                                               |
+    |  CH6      |  7  |                                                   |                                               |
+    +-----------+-----+                                                   |                                               |
+    |  CH7      |  8  |                                                   ||Chapter07_03|                                 |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |  GND      |  9  |   Ground                                          |                                               |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |           |     | Internal +2.5V Reference,External                 |                                               |
+    |REF in/out |  10 |                                                   |                                               |
+    |           |     | Reference Input                                   |                                               |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |  COM      |  11 |   Common to Analog Input Channel                  |                                               |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |  A0       |  12 |                                                   |                                               |
+    +-----------+-----+   Hardware address                                |                                               |
+    |  A1       |  13 |                                                   |                                               |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |  SCL      |  14 |   Serial Clock                                    |                                               |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |  SDA      |  15 |   Serial Sata                                     |                                               |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |  +VDD     |  16 |   Power Supply, 3.3V Nominal                      |                                               |
+    +-----------+-----+---------------------------------------------------+-----------------------------------------------+
 
 .. |Chapter07_03| image:: ../_static/imgs/7_ADC/Chapter07_03.png
 
@@ -111,15 +116,20 @@ I2C (Inter-Integrated Circuit) has a two-wire serial communication mode, which c
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -129,9 +139,9 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter07_04|
@@ -160,7 +170,7 @@ Then open the following dialog box:
 .. image:: ../_static/imgs/7_ADC/Chapter07_06.png
     :align: center
 
-Choose “Interfacing Options” then “I5 I2C” then “Yes” and then “Finish” in this order and restart your RPi. The I2C module will then be started.
+Choose “**Interfacing Options**” then “I5 I2C” then “Yes” and then “Finish” in this order and restart your RPi. The I2C module will then be started.
 
 Type a command to check whether the I2C module is started:
 
@@ -208,7 +218,7 @@ For C code for the ADC Device, a custom library needs to be installed.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter folder of the ADC Device library.
 
@@ -233,7 +243,7 @@ First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 7_1_ADC directory of C code.
 
@@ -267,6 +277,7 @@ The following is the code:
 In this code, a custom class library "ADCDevice" is used. It contains the method of utilizing the ADC Module in this project, through which the ADC Module can easily and quickly be used. In the code, you need to first create a class pointer adc, and then point to an instantiated object. (Note: An instantiated object is given a name and created in memory or on disk using the structure described within a class declaration.)
 
 .. code-block:: c
+    :linenos:
 
     ADCDevice *adc;  // Define an ADC Device class object
     ......
@@ -278,16 +289,19 @@ Then use the member function detectIC(addr) in the class to detect the I2C modul
     :linenos: 
     :language: c
     :lines: 16-25
+    :dedent:
 
 When you have a class object pointed to a specific device, you can get the ADC value of the specific channel by calling the member function analogRead (chn) in this class
 
 .. code-block:: c
+    :linenos:
 
     int adcValue = adc->analogRead(2);    //read analog value of A2 pin
 
 Then according to the formula, the voltage value is calculated and displayed on the Terminal.
 
 .. code-block:: c
+    :linenos:
 
     float voltage = (float)adcValue / 255.0 * 5.0;  // Calculate voltage
     printf("ADC value : %d  ,\tVoltage : %.2fV\n",adcValue,voltage);
@@ -295,7 +309,7 @@ Then according to the formula, the voltage value is calculated and displayed on 
 Reference
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. c:function:: class ADCDevice
+.. py:function:: class ADCDevice
 
     This is a base class. All ADC module classes are its derived classes. It has a real function and a virtual function.
 
@@ -307,7 +321,7 @@ Reference
     
     This is a virtual function that reads the ADC value of the specified channel. It is implemented in a derived class.
 
-.. c:function:: class ADS7830:public ADCDevice	
+.. py:function:: class ADS7830:public ADCDevice	
 
     These classes are derived from the ADCDevice class and mainly implement the function analogRead(chn).
 
@@ -324,7 +338,7 @@ For Python code, ADCDevice requires a custom module which needs to be installed.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter folder of ADCDevice.
 
@@ -353,7 +367,7 @@ Execute the following command. Observe the project result and then learn about t
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1. Use cd command to enter 7_1_ADC directory of Python code.
 
@@ -381,6 +395,7 @@ The following is the code:
 In this code, a custom Python module "ADCDevice" is used. It contains the method of utilizing the ADC Module in this project, through which the ADC Module can easily and quickly be used. In the code, you need to first create an ADCDevice object adc.
 
 .. code-block:: python
+    :linenos:
 
     adc = ADCDevice(0x48) # Define an ADCDevice class object
 
@@ -390,16 +405,19 @@ Then in setup(), use detecticIC(addr), the member function of ADCDevice, to dete
     :linenos: 
     :language: python
     :lines: 13-21
+    :dedent:
 
 When you have a class object of a specific device, you can get the ADC value of the specified channel by calling the member function of this class, analogRead(chn). In loop(), get the ADC value of potentiometer.
 
 .. code-block:: python
+    :linenos:
 
     value = adc.analogRead(2)    # read the ADC value of channel 2
 
 Then according to the formula, the voltage value is calculated and displayed on the terminal monitor.
 
 .. code-block:: python
+    :linenos:
 
     voltage = value / 255.0 * 5.0  # calculate the voltage value
     print ('ADC Value : %d, Voltage : %.2f'%(value,voltage))
@@ -410,7 +428,7 @@ Reference
 
 About smbus Module:
 
-.. c:function:: smbus Module
+.. py:function:: smbus Module
 
     The System Management Bus Module defines an object type that allows SMBus transactions on hosts running the Linux kernel. The host kernel must support I2C, I2C device interface support, and a bus adapter driver. All of these can be either built-in to the kernel, or loaded from modules.
     
@@ -422,7 +440,7 @@ About smbus Module:
     
     **bus.write_byte_data(address,cmd,value):** Write a byte of data to an address.
 
-.. c:function:: class ADCDevice(object)
+.. py:function:: class ADCDevice(object)
 
     This is a base class. 
     
@@ -430,7 +448,7 @@ About smbus Module:
     
     This is a member function, which is used to detect whether the device with the given I2C address exists. If it exists, it returns true. Otherwise, it returns false.
 
-.. c:function:: class ADS7830(ADCDevice)
+.. py:function:: class ADS7830(ADCDevice)
 
     These classes are derived from the ADCDevice class and mainly implement the function analogRead(chn).
 
@@ -448,39 +466,40 @@ In this project, we will make a soft light. We will use an ADC Module to read AD
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
-
-.. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
-.. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
-.. |Chapter01_06| image:: ../_static/imgs/1_LED/Chapter01_06.png
+.. table::
+    :align: center
+    :class: table-line
+    :width: 80%
+    
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
 
 Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter07_13|
-    *   -   Hardware connection:
-    *   -   |Chapter07_14|
+    * - Schematic diagram
+    * - |Chapter07_13|
+    * - Hardware connection:
+    * - |Chapter07_14|
 
 .. |Chapter07_13| image:: ../_static/imgs/7_ADC/Chapter07_13.png
 .. |Chapter07_14| image:: ../_static/imgs/7_ADC/Chapter07_14.png
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Code
 ================================================================
@@ -494,7 +513,7 @@ First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 7_2_Softlight directory of C code.
 
@@ -525,6 +544,7 @@ The following is the code:
 In the code, read the ADC value of potentiometer and map it to the duty cycle of PWM to control LED brightness.
 	    
 .. code-block:: c
+    :linenos:
 
     int adcValue = adc->analogRead(2);        //read analog value of A2 pin
     softPwmWrite(ledPin,adcValue*100/255);    // Mapping to PWM duty cycle
@@ -538,7 +558,7 @@ First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 7_2_Softlight directory of Python code
 
@@ -563,6 +583,7 @@ The following is the code:
 In the code, read ADC value of potentiometers and map it to the duty cycle of the PWM to control LED brightness.
 
 .. code-block:: python
+    :linenos:
 
     value = adc.analogRead(2)      # read the ADC value of channel 0
     led.value = value / 255.0      # Mapping to PWM duty cycle 
@@ -575,23 +596,25 @@ In this project, 3 potentiometers are used to control the RGB LED and in princip
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
-| Jumper Wire         | RGBLED Module      |
-|                     |                    |
-|  |Chapter05_02|     |  |Chapter05_03|    |
-+---------------------+--------------------+
+.. table::
+    :align: center
+    :class: table-line
+    :width: 80%
+    
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
+    | Jumper Wire         | RGBLED Module      |
+    |                     |                    |
+    |  |Chapter05_02|     |  |Chapter05_03|    |
+    +---------------------+--------------------+
 
-.. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
-.. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
-.. |Chapter01_06| image:: ../_static/imgs/1_LED/Chapter01_06.png
 .. |Chapter05_02| image:: ../_static/imgs/5_RGB_LED/Chapter05_02.png
 .. |Chapter05_03| image:: ../_static/imgs/5_RGB_LED/Chapter05_03.png
 
@@ -599,9 +622,9 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter07_15|
@@ -613,7 +636,7 @@ Circuit
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Code
 ================================================================
@@ -667,7 +690,7 @@ First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 7_3_ColorfulSoftlight directory of Python code.
 

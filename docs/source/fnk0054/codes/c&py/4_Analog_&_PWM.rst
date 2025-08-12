@@ -1,12 +1,12 @@
 ##############################################################################
-Chapter Analog & PWM
+Chapter 4 Analog & PWM
 ##############################################################################
 
 In previous chapters, we learned that a Push Button Switch has two states: Pressed (ON) and Released (OFF), and an LED has a Light ON and OFF state. Is there a middle or intermediated state? We will next learn how to create an intermediate output state to achieve a partially bright (dim) LED.
 
 First, let us learn how to control the brightness of an LED.
 
-Project Breathing LED
+Project 4.1 Breathing LED
 ****************************************************************
 
 We describe this project as a Breathing Light. This means that an LED that is OFF will then turn ON gradually and then gradually turn OFF like "breathing". Okay, so how do we control the brightness of an LED to create a Breathing Light? We will use PWM to achieve this goal.
@@ -24,7 +24,7 @@ An Analog Signal is a continuous signal in both time and value. On the contrary,
 
 .. note::
     
-    he Analog signals are curved waves and the Digital signals are “Square Waves”. 
+    The Analog signals are curved waves and the Digital signals are “Square Waves”. 
 
 In practical applications, we often use binary as the digital signal, that is a series of 0's and 1’s. Since a binary signal only has two values (0 or 1) it has great stability and reliability. Lastly, both analog and digital signals can be converted into the other.
 
@@ -53,15 +53,20 @@ In order to keep the results running consistently, we will use PWM.
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
+.. table::
+    :align: center
+    :class: table-line
+    :width: 80%
+    
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -71,9 +76,9 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter04_02|
@@ -88,7 +93,7 @@ Circuit
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Code
 ================================================================
@@ -100,19 +105,25 @@ First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 4_BreathingLED directory of C code.
     
-    cd ~/Freenove_Kit/Code/C_Code/4_BreathingLED
+.. code-block:: console
+
+    $ cd ~/Freenove_Kit/Code/C_Code/4_BreathingLED
 
 2.	Use following command to compile “BreathingLED.c” and generate executable file “BreathingLED”.
 
-    gcc BreathingLED.c -o BreathingLED -lwiringPi
+.. code-block:: console
+
+    $ gcc BreathingLED.c -o BreathingLED -lwiringPi
 
 3.	Then run the generated file “BreathingLED”
 
-    ./BreathingLED
+.. code-block:: console
+
+    $ ./BreathingLED
 
 After the program is executed, you'll see that LED is turned from on to off and then from off to on gradually like breathing.
 
@@ -125,8 +136,17 @@ The following is the program code:
 First, create a software PWM pin.
 
 .. code-block:: C
+    :linenos:
 
     softPwmCreate(ledPin,  0, 100);//Creat SoftPWM pin
+
+There are two “for” loops in the next endless “while” loop. The first loop outputs a power signal to the ledPin PWM from 0% to 100% and the second loop outputs a power signal to the ledPin PWM from 100% to 0%. 
+
+.. literalinclude:: ../../../freenove_Kit/Code/C_Code/4_BreathingLED/BreathingLED.c
+    :linenos: 
+    :language: c
+    :lines: 23-34
+    :dedent:
 
 You can also adjust the rate of the state change of LED by changing the parameter of the delay() function in the “for” loop.
 
@@ -170,6 +190,7 @@ The following is the program code:
 The LED is connected to the IO port called GPIO17. The LedPin is defined as pin 17 and set to output mode according to the corresponding chart for pin designations. Then create a PWM instance and set the PWM frequency to 1000HZ and the initial value to 0.
 
 .. code-block:: C
+    :linenos:
 
     led = PWMLED(17 ,initial_value=0 ,frequency=1000)
 
@@ -179,6 +200,7 @@ There are two “for” loops used to control the breathing LED in the next endl
     :linenos: 
     :language: py
     :lines: 12-21
+    :dedent:
 
 The related functions of PWM are described as follows:
 

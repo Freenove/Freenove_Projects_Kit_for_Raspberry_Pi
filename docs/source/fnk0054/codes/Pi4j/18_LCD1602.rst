@@ -1,10 +1,10 @@
 ##############################################################################
-Chapter LCD1602
+Chapter 18_LEDMatrixLCD1602
 ##############################################################################
 
 In this chapter, we will learn about the LCD1602 Display Screen,
 
-Project 19.1 I2C LCD1602
+Project 18.1 I2C LCD1602
 ****************************************************************
 
 There are LCD1602 display screen and the I2C LCD. We will introduce both of them in this chapter. But what we use in this project is an I2C LCD1602 display screen. The LCD1602 Display Screen can display 2 lines of characters in 16 columns. It is capable of displaying numbers, letters, symbols, ASCII code and so on. As shown below is a monochrome LCD1602 Display Screen along with its circuit pin diagram
@@ -23,10 +23,8 @@ Below is the PCF8574 chip pin diagram and its module pin diagram:
 
 
 .. list-table:: 
-    :width: 100%
     :align: center
-    :class: product-table
-    :
+    :class: table-line
 
     *   -  PCF8574 chip pin diagram:
         -  PCF8574 module pin diagram 
@@ -49,19 +47,24 @@ In this project, we will use the I2C LCD1602 to display some static characters a
 Component List
 ================================================================
 
-+------------------------------------------------+
-| Freenove Projects Board for Raspberry Pi       |
-|                                                |
-|  |Chapter01_04|                                |
-+---------------------+--------------------------+
-| Raspberry Pi        | GPIO Ribbon Cable        |
-|                     |                          |
-|  |Chapter01_05|     |  |Chapter01_06|          |
-+---------------------+--------------------------+
-| Jumper Wire         | I2C LCD1602 Module       |
-|                     |                          |
-|  |Chapter05_02|     |  |Chapter19_05|          |
-+---------------------+--------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+    
+    +------------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi       |
+    |                                                |
+    |  |Chapter01_04|                                |
+    +---------------------+--------------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable        |
+    |                     |                          |
+    |  |Chapter01_05|     |  |Chapter01_06|          |
+    +---------------------+--------------------------+
+    | Jumper Wire         | I2C LCD1602 Module       |
+    |                     |                          |
+    |  |Chapter05_02|     |  |Chapter19_05|          |
+    +---------------------+--------------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -77,9 +80,9 @@ Circuit
     the power supply for I2C LCD1602 in this circuit is 5V.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter19_06|
@@ -91,7 +94,7 @@ Circuit
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -206,6 +209,14 @@ At the first lin of LCD1602, print the character “Hello World”.
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_18_I2CLCD1602/I2CLCD1602.java
     :linenos: 
     :language: java
+    :lines: 379-380
+    :dedent:
+
+Print the character “Count” and the counts number at the second line every one second.
+
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_18_I2CLCD1602/I2CLCD1602.java
+    :linenos: 
+    :language: java
     :lines: 382-389
     :dedent:
 
@@ -213,8 +224,9 @@ In Java, an `InterruptedException` is thrown when a thread's waiting, sleeping (
 
 When 'InterruptedException' is capured, 'Thread.currentThread().interrupt()' is called keep the interrupt status, so that the thread can respond to the interruption request appropriately.
 
-.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_18_I2CLCD1602/I2CLCD1602.java
-    :linenos: 
-    :language: java
-    :lines: 390-392
-    :dedent:
+.. code-block:: python
+    :linenos:
+
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+    }

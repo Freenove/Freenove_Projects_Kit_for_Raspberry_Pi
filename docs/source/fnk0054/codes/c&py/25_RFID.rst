@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter RFID
+Chapter 25 RFID
 ##############################################################################
 
 In this chapter, we will learn how to use RFID.
@@ -35,13 +35,13 @@ This RFID Module uses MFRC522 as the control chip, and SPI (Peripheral Interface
 .. list-table:: 
     :width: 100%
     :align: center
-    :class: product-table
+    :class: table-line
     
     *   -   Operating Voltage
-        -   13-26mA(DC)\3.3V
+        -   13-26mA(DC)\\3.3V
 
     *   -   Idle current 
-        -   10-13mA(DC)\3.3V
+        -   10-13mA(DC)\\3.3V
 
     *   -   Sleep current in the
         -   <80uA
@@ -77,9 +77,8 @@ The Mifare S50 capacity (1K byte) is divided into 16 sectors (Sector0-Sector15).
 And each block contains 16 bytes (Byte0-Byte15), 64*16=1024. As is shown in the following table:
 
 .. list-table:: 
-    :width: 100%
     :align: center
-    :class: product-table
+    :class: zebra
     
     *   -   Sector No. 
         -   Block No.
@@ -174,9 +173,8 @@ Each sector has a set of independent password and access control put in its last
 The sector trailer block in each sector is the control block, including a 6-byte password A, a 4-byte access control and a 6-byte password B. For example, the control block of a brand new card is as follows:
 
 .. list-table:: 
-    :width: 100%
     :align: center
-    :class: product-table
+    :class: table-line
     
     *   -   A0 A1 A2 A3 A4 A5
         -   FF 07 80 69
@@ -199,19 +197,24 @@ For Mifare1 S50 card equipped in Freenove RFID Kit, the default password A and B
 Component List
 ================================================================
 
-+------------------------------------------------------------+
-| Freenove Projects Board for Raspberry Pi                   |
-|                                                            |
-|  |Chapter01_04|                                            |
-+---------------------------+--------------------------------+
-| Raspberry Pi              | GPIO Ribbon Cable              |
-|                           |                                |
-|  |Chapter01_05|           |  |Chapter01_06|                |
-+---------------------------+--------------------------------+
-| Mifare1 S50 Standard card | Mifare1 S50 Non-standard card  |
-|                           |                                |
-|  |Chapter25_00|           |  |Chapter25_01|                |
-+---------------------------+--------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi                   |
+    |                                                            |
+    |  |Chapter01_04|                                            |
+    +---------------------------+--------------------------------+
+    | Raspberry Pi              | GPIO Ribbon Cable              |
+    |                           |                                |
+    |  |Chapter01_05|           |  |Chapter01_06|                |
+    +---------------------------+--------------------------------+
+    | Mifare1 S50 Standard card | Mifare1 S50 Non-standard card  |
+    |                           |                                |
+    |  |Chapter25_00|           |  |Chapter25_01|                |
+    +---------------------------+--------------------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -225,7 +228,7 @@ Circuit
 .. list-table:: 
     :width: 100%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter25_02|
@@ -239,7 +242,7 @@ Circuit
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Configure SPI
 ================================================================
@@ -278,14 +281,14 @@ Code
 
 The project code uses human-computer interaction command line mode to read and write the M1-S50 card.
 
-C Code 25.1 RFID
+C Code RFID
 ----------------------------------------------------------------
 
 First observe the running result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 25_RFID directory of C code.
 
@@ -380,6 +383,7 @@ In the code, first initialize the MFRC522. If the initialization fails, the prog
     :linenos: 
     :language: c
     :lines: 31-35
+    :dedent:
 
 In the main function, wait for the command input. If command "scan" is received, the function will begin to detect whether there is a card close to the sensing area. If a card is detected, the card will be selected and card UID will be acquired. Then enter the function scan_loop (). If command "quit" or "exit" is received, the program will exit.
 
@@ -387,6 +391,7 @@ In the main function, wait for the command input. If command "scan" is received,
     :linenos: 
     :language: c
     :lines: 43-80
+    :dedent:
 
 The function scan_loop() will detect command read, write, clean, halt, dump and do the corresponding processing to each command. The functions of each command and the method have been introduced before.
 
@@ -394,6 +399,7 @@ The function scan_loop() will detect command read, write, clean, halt, dump and 
     :linenos: 
     :language: c
     :lines: 83-134
+    :dedent:
 
 Python Code 25.1 RFID
 ----------------------------------------------------------------
@@ -402,7 +408,7 @@ First observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 .. code-block:: console
 
@@ -475,6 +481,7 @@ In the code, first create an MFRC522 class object.
     :linenos: 
     :language: python
     :lines: 14-14
+    :dedent:
 
 In the function loop, wait for the command input. If command "scan" is received, the function will begin to detect whether there is a card close to the sensing area. If a card is detected, the card will be selected and card UID will be acquired. Then enter the function scan_loop (). If command "quit" or "exit" is received, the program will exit.
 
@@ -482,6 +489,7 @@ In the function loop, wait for the command input. If command "scan" is received,
     :linenos: 
     :language: python
     :lines: 32-57
+    :dedent:
 
 The function cmdloop() will detect command read, write, clean, halt, dump and do the corresponding processing to each command. The functions of each command and the method have been introduced before.
 
@@ -489,5 +497,6 @@ The function cmdloop() will detect command read, write, clean, halt, dump and do
     :linenos: 
     :language: python
     :lines: 59-138
+    :dedent:
 
 The file "MFRC522.py" contains the associated operation method for the MFRC522. You can open the file to view all the definitions and functions.

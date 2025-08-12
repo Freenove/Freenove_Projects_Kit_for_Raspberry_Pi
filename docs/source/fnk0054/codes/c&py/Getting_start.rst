@@ -43,23 +43,13 @@ We also have cars and robot kit for Raspberry Pi. If you are interested in them,
 
 http://www.freenove.com/store.html
 
-FNK0043 - :blue:`Freenove 4WD Smart Car Kit for Raspberry Pi`
-
-.. image:: ../_static/imgs/Getting_start/GS00.png
-    :align: center
-
-https://www.youtube.com/watch?v=4Zv0GZUQjZc
+FNK0043 - :combo:`blue font-bolder:Freenove 4WD Smart Car Kit for Raspberry Pi`
 
 .. raw:: html
 
    <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/4Zv0GZUQjZc" frameborder="0" allowfullscreen></iframe>
 
-FNK0050 - :blue:`Freenove Robot Dog Kit for Raspberry Pi`
-
-.. image:: ../_static/imgs/Getting_start/GS00.png
-    :align: center
-
-https://www.youtube.com/watch?v=7BmIZ8_R9d4&t=35s
+FNK0050 - :combo:`blue font-bolder:Freenove Robot Dog Kit for Raspberry Pi`
 
 .. raw:: html
 
@@ -89,7 +79,7 @@ All the files, materials and instructional guides provided are released under `C
 .. image:: ../_static/imgs/Getting_start/GS02.png
     :align: center
 
-This means you can use these resource in your own derived works, in part or completely, but NOT for the intent or purpose of commercial use.
+This means you can use these resource in your own derived works, in part or completely, but **NOT for the intent or purpose of commercial use**.
 
 Freenove brand and logo are copyright of Freenove Creative Technology Co., Ltd. and cannot be used without written permission.
 

@@ -1,10 +1,10 @@
 ##############################################################################
-Chapter Matrix Keypad
+Chapter 20 Matrix Keypad
 ##############################################################################
 
 Earlier we learned about a single Push Button Switch. In this chapter, we will learn about Matrix Keyboards, which integrates a number of Push Button Switches as Keys for the purposes of Input.
 
-Project 20 Matrix Keypad
+Project 20.1Matrix Keypad
 ****************************************************************
 
 In this project, we will attempt to get every key code on the Matrix Keypad to work.
@@ -30,19 +30,24 @@ The method of usage is similar to the Matrix LED, by using a row or column scann
 Component List
 ================================================================
 
-+---------------------------------------------+
-| Freenove Projects Board for Raspberry Pi    |
-|                                             |
-|  |Chapter01_04|                             |
-+---------------------+-----------------------+
-| Raspberry Pi        | GPIO Ribbon Cable     |
-|                     |                       |
-|  |Chapter01_05|     |  |Chapter01_06|       |
-+---------------------+-----------------------+
-| 4x4 Matrix Keypad                           |
-|                                             |
-|  |Chapter21_02|                             |                              
-+---------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+    
+    +---------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi    |
+    |                                             |
+    |  |Chapter01_04|                             |
+    +---------------------+-----------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable     |
+    |                     |                       |
+    |  |Chapter01_05|     |  |Chapter01_06|       |
+    +---------------------+-----------------------+
+    | 4x4 Matrix Keypad                           |
+    |                                             |
+    |  |Chapter21_02|                             |                              
+    +---------------------------------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -53,21 +58,21 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter21_03|
-    *   -   Hardware connection:
-    *   -   |Chapter21_04|
+    * - Schematic diagram
+    * - |Chapter21_03|
+    * - Hardware connection:
+    * - |Chapter21_04|
 
-.. |Chapter21_03| image:: ../_static/imgs/20_Hygrothermograph_DHT11/Chapter21_03.png
-.. |Chapter21_04| image:: ../_static/imgs/20_Hygrothermograph_DHT11/Chapter21_04.png
+.. |Chapter21_03| image:: ../_static/imgs/21_Matrix_Keypad/Chapter21_03.png
+.. |Chapter21_04| image:: ../_static/imgs/21_Matrix_Keypad/Chapter21_04.png
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -85,7 +90,7 @@ First, enter where the project is located:
 
 .. image:: ../_static/imgs/21_Matrix_Keypad/Chapter21_07.png
     :align: center
- 
+
 Enter the command to run the code.
 
 .. code-block:: console
@@ -127,7 +132,7 @@ The following is program code:
 
 Re-encapsulate the GPIO functions using the Pi4J library, with these functions referring to the classic usage of Arduino. This is done to ensure compatibility with the later Key class and Keypad class, making matrix buttons easier to use. If you are interested in this code, please review it, as we will include detailed comments within the code.
 
-.. code-block:: c
+.. code-block:: python
 
     class GPIO {
         ......

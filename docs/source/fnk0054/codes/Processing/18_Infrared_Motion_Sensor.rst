@@ -1,10 +1,10 @@
 ##############################################################################
-Chapter Infrared Motion Sensor
+Chapter 18 Infrared Motion Sensor
 ##############################################################################
 
 In this chapter, we will learn a widely used sensor, Infrared Motion Sensor. 
 
-Project 22.1 PIR Infrared Motion Detector with LED Indicator
+Project 18.1 Sense LED
 ****************************************************************
 
 In this project, we will make a Motion Detector, with the human body infrared pyroelectric sensors.
@@ -19,9 +19,9 @@ Component Knowledge
 The following is the diagram of the Infrared Motion Sensor(HC SR-501)a PIR Sensor:
 
 .. list-table:: 
-    :width: 100%
     :align: center
-    :class: product-table
+    :class: table-line
+    :header-rows: 1
 
     *   -   Top
         -   Bottom 
@@ -43,9 +43,9 @@ Description:
 
 3.	According to the position of Fresnel lenses dome, you can choose non-repeatable trigger modes or repeatable modes.
 
-L: non-repeatable trigger mode. The module outputs high level after sensing a body, then when the delay time is over, the module will output low level. During high level time, the sensor no longer actively senses bodies.  
+    L: non-repeatable trigger mode. The module outputs high level after sensing a body, then when the delay time is over, the module will output low level. During high level time, the sensor no longer actively senses bodies.  
 
-H: repeatable trigger mode. The distinction from the L mode is that it can sense a body until that body leaves during the period of high level output. After this, it starts to time and output low level after delaying T time.
+    H: repeatable trigger mode. The distinction from the L mode is that it can sense a body until that body leaves during the period of high level output. After this, it starts to time and output low level after delaying T time.
 
 4.	Induction block time: the induction will stay in block condition and does not induce external signal at lesser time intervals (less than delay time) after outputting high level or low level 
 
@@ -58,52 +58,55 @@ We can regard this sensor as a simple inductive switch when in use.
 Component List
 ================================================================
 
-+------------------------------------------------+
-| Freenove Projects Board for Raspberry Pi       |
-|                                                |
-|  |Chapter01_04|                                |
-+---------------------+--------------------------+
-| Raspberry Pi        | GPIO Ribbon Cable        |
-|                     |                          |
-|  |Chapter01_05|     |  |Chapter01_06|          |
-+---------------------+--------------------------+
-| Jumper Wire         | HC SR501                 |
-|                     |                          |
-|  |Chapter05_02|     |  |Chapter22_00|          |
-+---------------------+--------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+    
+    +------------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi       |
+    |                                                |
+    |  |Chapter01_04|                                |
+    +---------------------+--------------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable        |
+    |                     |                          |
+    |  |Chapter01_05|     |  |Chapter01_06|          |
+    +---------------------+--------------------------+
+    | Jumper Wire         | HC SR501                 |
+    |                     |                          |
+    |  |Chapter05_02|     |  |Chapter22_00|          |
+    +---------------------+--------------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
 .. |Chapter01_06| image:: ../_static/imgs/1_LED/Chapter01_06.png
 .. |Chapter05_02| image:: ../_static/imgs/5_RGB_LED/Chapter05_02.png
-.. |Chapter22_00| image:: ../_static/imgs/22_Infrared_Motion_Sensor/Chapter22_00.png
 
 Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter22_03|
-    *   -   Hardware connection:
-    *   -   |Chapter22_04|
+    * - Schematic diagram
+    * - |Chapter22_03|
+    * - Hardware connection:
+    * - |Chapter22_16|
 
 .. |Chapter22_03| image:: ../_static/imgs/22_Infrared_Motion_Sensor/Chapter22_03.png
-.. |Chapter22_04| image:: ../_static/imgs/22_Infrared_Motion_Sensor/Chapter22_04.png
+.. |Chapter22_16| image:: ../_static/imgs/22_Infrared_Motion_Sensor/Chapter22_16.png
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 **How to use this sensor?**
 
 .. list-table:: 
-    :width: 100%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Top
         -   Bottom 
@@ -115,26 +118,22 @@ Description:
 
 1.	You can choose non-repeatable trigger modes or repeatable modes.
 
-L: non-repeatable trigger mode. The module outputs high level after sensing a body, then when the delay time is over, the module will output low level. During high level time, the sensor no longer actively senses bodies.  
+    L: non-repeatable trigger mode. The module outputs high level after sensing a body, then when the delay time is over, the module will output low level. During high level time, the sensor no longer actively senses bodies.  
 
-H: repeatable trigger mode. The distinction from the L mode is that it can sense a body until that body leaves. After this, it starts to time and output low level after delaying T time.
+    H: repeatable trigger mode. The distinction from the L mode is that it can sense a body until that body leaves. After this, it starts to time and output low level after delaying T time.
 
 2.	R1 is used to adjust HIGH level lasting time when sensor detects human motion, 1.2s-320s.
 
 3.	R2 is used to adjust the maxmum distance the sensor can detect, 3~5m.
 
-:red:`Here we connect L and adjust R1 and R2 like below to do this project.`
+:combo:`red font-bolder:Here we connect L and adjust R1 and R2 like below to do this project.`
 
-:red:`Put you hand close and away from the sensor slowly. Obsever the LED in previous circuit.`
+:combo:`red font-bolder:Put you hand close and away from the sensor slowly. Obsever the LED in previous circuit.`
 
-:red:`It need some time between two detections.`
+:combo:`red font-bolder:It need some time between two detections.`
 
 .. image:: ../_static/imgs/22_Infrared_Motion_Sensor/Chapter22_05.png
     :align: center
-
-.. note::
-    
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -144,7 +143,7 @@ Sketch 18.1.1 SenseLED
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 First, enter where the project is located:
 
@@ -190,4 +189,4 @@ In this project, the code is relatively simple. In the function draw(), read lev
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com

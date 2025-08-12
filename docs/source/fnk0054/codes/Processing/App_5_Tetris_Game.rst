@@ -1,5 +1,5 @@
 ##############################################################################
-App Tetris Game
+App 5 Tetris Game
 ##############################################################################
 
 In this chapter, we will play a game, Tetris game.
@@ -12,15 +12,20 @@ Now, let's create and experience our own game.
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -32,19 +37,19 @@ Circuit
 .. list-table:: 
     :width: 100%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |APP4_00|
-    *   -   Hardware connection:
-    *   -   |APP4_01|
+    * - Schematic diagram
+    * - |APP4_00|
+    * - Hardware connection:
+    * - |APP4_01|
 
 .. |APP4_00| image:: ../_static/imgs/App_5_Tetris_Game/APP5_00.png
 .. |APP4_01| image:: ../_static/imgs/App_5_Tetris_Game/APP5_01.png
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -54,7 +59,7 @@ Sketch 5.1.1 TetrisGame
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 First, enter where the project is located:
 

@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter Thermistor
+Chapter 8 Thermistor
 ##############################################################################
 
 In this chapter, we will learn about Thermistors which are another kind of Resistor.
@@ -22,22 +22,21 @@ Thermistor is a temperature sensitive resistor. When it senses a change in tempe
 
 The relationship between resistance value and temperature of a thermistor is:
 
-.. image:: ../_static/imgs/9_Thermistor/Chapter09_01.png
-    :align: center
+.. math::
+    
+    \boldsymbol{R_t} \boldsymbol{=} \boldsymbol{R} \boldsymbol{\cdot} \boldsymbol{\mathrm{EXP}} \boldsymbol{\left[ B \boldsymbol{\cdot} \left( \frac{1}{T_2} - \frac{1}{T_1} \right) \right]}
 
-Rt=R*EXP [B*(1/T2-1/T1)]
+**Where:**
 
-Where:
+    **Rt** is the thermistor resistance under T2 temperature;
 
-    Rt is the thermistor resistance under T2 temperature;
+    **R** is in the nominal resistance of thermistor under T1 temperature;
 
-    R is in the nominal resistance of thermistor under T1 temperature;
+    **EXP[n]** is nth power of e;
 
-    EXP[n] is nth power of e;
+    **B** is for thermal index;
 
-    B is for thermal index;
-
-    T1, T2 is Kelvin temperature (absolute temperature). Kelvin temperature=273.15 + Celsius temperature.
+    **T1, T2** is Kelvin temperature (absolute temperature). Kelvin temperature=273.15 + Celsius temperature.
 
 For the parameters of the Thermistor, we use: B=3950, R=10k, T1=25.
 
@@ -50,21 +49,27 @@ We can use the value measured by the ADC converter to obtain the resistance valu
 
 Therefore, the temperature formula can be derived as:
 
-.. image:: ../_static/imgs/9_Thermistor/Chapter09_03.png
-    :align: center
+.. math::
+    
+    \boldsymbol{T_2} \boldsymbol{=} \boldsymbol{\frac{1}{\frac{1}{T_1} + \frac{\ln\left(\frac{R_t}{R}\right)}{B}}}
 
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+    
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -74,9 +79,9 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter09_04|
@@ -88,7 +93,7 @@ Circuit
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -98,7 +103,7 @@ Sketch 8.1.1 Thermometer
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 First, enter where the project is located:
 
@@ -111,7 +116,7 @@ And then right-click to select Processing IDE
 .. image:: ../_static/imgs/9_Thermistor/Chapter09_13.png
     :align: center
 
-Or you can enter a command in the terminal to open the file Sketch_08_1_1_Thermometer. (The following is only one line of command. There is a Space after Processing.)
+Or you can enter a command in the terminal to open the file Sketch_08_1_1_Thermometer. :combo:`red font-bolder:(The following is only one line of command. There is a Space after Processing.)`
 
 .. code-block:: console
 
@@ -148,4 +153,4 @@ In this project code, first read ADC, and then calculate the current temperature
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com

@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter Ultrasonic Ranging
+Chapter 22 Ultrasonic Ranging
 ##############################################################################
 
 In this chapter, we learn a module which use ultrasonic to measure distance, HC SR04.
@@ -20,12 +20,11 @@ The Ultrasonic Ranging Module uses the principle that ultrasonic waves will be r
 The HC-SR04 Ultrasonic Ranging Module integrates both an ultrasonic transmitter and a receiver. The transmitter is used to convert electrical signals (electrical energy) into high frequency (beyond human hearing) sound waves (mechanical energy) and the function of the receiver is opposite of this. The picture and the diagram of the HC SR04 Ultrasonic Ranging Module are shown below:
 
 .. list-table:: 
-    :width: 70%
     :align: center
-    :class: product-table
+    :class: table-line
     
-    *   -   |Chapter23_01|
-        -   |Chapter23_02|
+    * - |Chapter23_01|
+      - |Chapter23_02|
 
 .. |Chapter23_01| image:: ../_static/imgs/23_Ultrasonic_Ranging/Chapter23_01.png
 .. |Chapter23_02| image:: ../_static/imgs/23_Ultrasonic_Ranging/Chapter23_02.png
@@ -33,9 +32,9 @@ The HC-SR04 Ultrasonic Ranging Module integrates both an ultrasonic transmitter 
 Pin description:
 
 .. list-table:: 
-    :width: 70%
     :align: center
-    :class: product-table
+    :class: zebra
+    :header-rows: 1
     
     *   -   VCC
         -   power supply pin
@@ -67,19 +66,24 @@ Instructions for Use: output a high-level pulse in Trig pin lasting for least 10
 Component List
 ================================================================
 
-+------------------------------------------------+
-| Freenove Projects Board for Raspberry Pi       |
-|                                                |
-|  |Chapter01_04|                                |
-+---------------------+--------------------------+
-| Raspberry Pi        | GPIO Ribbon Cable        |
-|                     |                          |
-|  |Chapter01_05|     |  |Chapter01_06|          |
-+---------------------+--------------------------+
-| Jumper Wire         | HC SR501                 |
-|                     |                          |
-|  |Chapter05_02|     |  |Chapter23_01|          |
-+---------------------+--------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+    
+    +------------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi       |
+    |                                                |
+    |  |Chapter01_04|                                |
+    +---------------------+--------------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable        |
+    |                     |                          |
+    |  |Chapter01_05|     |  |Chapter01_06|          |
+    +---------------------+--------------------------+
+    | Jumper Wire         | HC SR501                 |
+    |                     |                          |
+    |  |Chapter05_02|     |  |Chapter23_01|          |
+    +---------------------+--------------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -90,9 +94,9 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter23_04|
@@ -106,7 +110,7 @@ Circuit
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -166,7 +170,7 @@ The following is program code:
 
 Re-encapsulate the GPIO functions using the Pi4J library, with these functions emulating the classic usage patterns of Arduino. This is done to ensure compatibility with the upcoming Ultrasonic class, allowing the Raspberry Pi to easily obtain distance data from ultrasonic modules. If you are interested in this code, please review it, as we will include detailed comments within the code.
 
-.. code-block:: c
+.. code-block:: python
 
     class GPIO {  
         ......

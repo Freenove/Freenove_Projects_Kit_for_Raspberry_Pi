@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter 74HC595 & Bar Graph LED
+Chapter 15 74HC595 & Bar Graph LED
 ##############################################################################
 
 We have used LED Bar Graph to make a flowing water light, in which 10 GPIO ports of RPi are occupied. More GPIO ports mean that more peripherals can be connected to RPi, so GPIO resource is very precious. Can we make flowing water light with less GPIO ports? In this chapter, we will learn a component, 74HC595, which can achieve the target.
@@ -31,9 +31,9 @@ A 74HC595 chip is used to convert serial data into parallel data. A 74HC595 chip
 The ports of the 74HC595 chip are described as follows:
 
 .. list-table:: 
-    :widths: 1 1 1
     :align: center
-    :class: product-table
+    :class: zebra
+    :header-rows: 1
 
     *   -   Pin name
         -   Pin number
@@ -90,20 +90,25 @@ For more details, please refer to the datasheet on the 74HC595 chip.
 Component List
 ================================================================
 
-+---------------------------------------------+
-| Freenove Projects Board for Raspberry Pi    |
-|                                             |
-|  |Chapter01_04|                             |
-+---------------------+-----------------------+
-| Raspberry Pi        | GPIO Ribbon Cable     |
-|                     |                       |
-|  |Chapter01_05|     |  |Chapter01_06|       |
-+---------------------+-----------------------+
-| Bar Graph LED                               |
-|                                             |
-|  |Chapter16_02|                             |                              
-|                                             |
-+---------------------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +---------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi    |
+    |                                             |
+    |  |Chapter01_04|                             |
+    +---------------------+-----------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable     |
+    |                     |                       |
+    |  |Chapter01_05|     |  |Chapter01_06|       |
+    +---------------------+-----------------------+
+    | Bar Graph LED                               |
+    |                                             |
+    |  |Chapter16_02|                             |                              
+    |                                             |
+    +---------------------------------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -116,23 +121,23 @@ Circuit
 .. list-table:: 
     :width: 100%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter16_03|
-    *   -   Hardware connection:
-    *   -   |Chapter16_04|
+    * - Schematic diagram
+    * - |Chapter16_03|
+    * - Hardware connection:
+    * - |Chapter16_04|
 
 .. |Chapter16_03| image:: ../_static/imgs/16_74HC595_&_Bar_Graph_LED/Chapter16_03.png
 .. |Chapter16_04| image:: ../_static/imgs/16_74HC595_&_Bar_Graph_LED/Chapter16_04.png
 
 .. hint::
 
-    :red:`If it dosen't work, rotate the LED bar graph for 180°.`
+    :combo:`red font-bolder:If it dosen't work, rotate the LED bar graph for 180°.`
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -162,10 +167,6 @@ Enter the command to run the code.
 
 When the code is running, you can see the LEDs of the LED bar light up in a flowing water pattern.
 
-.. code-block:: console
-
-    $ jbang FlowingLight02.java
-
 .. image:: ../_static/imgs/16_74HC595_&_Bar_Graph_LED/Chapter16_11.png
     :align: center
 
@@ -192,6 +193,7 @@ The following is program code:
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_15_FlowingLight02/FlowingLight02.java
     :linenos: 
     :language: java
+    :dedent:
 
 Define the data transfer order for enumeration types.
 
@@ -199,6 +201,7 @@ Define the data transfer order for enumeration types.
     :linenos: 
     :language: java
     :lines: 14-14
+    :dedent:
 
 Define the data pin, latch pin, clock pin, and Pi4j context.
 
@@ -206,6 +209,7 @@ Define the data pin, latch pin, clock pin, and Pi4j context.
     :linenos: 
     :language: java
     :lines: 15-18
+    :dedent:
 
 Constructor, initialize pins and context.
 
@@ -213,6 +217,7 @@ Constructor, initialize pins and context.
     :linenos: 
     :language: java
     :lines: 20-25
+    :dedent:
 
 Delay function in microsecond.
 
@@ -220,6 +225,7 @@ Delay function in microsecond.
     :linenos: 
     :language: java
     :lines: 27-32
+    :dedent:
 
 Shift function for expansion chip. The Raspberry Pi sends data to the extended chip through GPIO.
 
@@ -227,6 +233,7 @@ Shift function for expansion chip. The Raspberry Pi sends data to the extended c
     :linenos: 
     :language: java
     :lines: 34-53
+    :dedent:
 
 Update the expansion chip latch to let the expansion chip output the signal. Usually you need to first call the shiftOut function to input data to the expansion chip, and then call the updateLatch function to have the expansion chip output the signal level corresponding to the data.
 
@@ -234,6 +241,7 @@ Update the expansion chip latch to let the expansion chip output the signal. Usu
     :linenos: 
     :language: java
     :lines: 55-59
+    :dedent:
 
 When Pi4j context is not used, shut it down to release resources.
 
@@ -241,6 +249,7 @@ When Pi4j context is not used, shut it down to release resources.
     :linenos: 
     :language: java
     :lines: 61-63
+    :dedent:
 
 Define the pin number of the driver expansion chip.
 
@@ -248,6 +257,7 @@ Define the pin number of the driver expansion chip.
     :linenos: 
     :language: java
     :lines: 67-69
+    :dedent:
 
 Create a pi4j automatic context and create an HC595 instance.
 
@@ -255,6 +265,7 @@ Create a pi4j automatic context and create an HC595 instance.
     :linenos: 
     :language: java
     :lines: 72-73
+    :dedent:
 
 The Raspberry Pi controls the LED bar to flow from left to right and then from right to left.
 
@@ -262,6 +273,7 @@ The Raspberry Pi controls the LED bar to flow from left to right and then from r
     :linenos: 
     :language: java
     :lines: 77-95
+    :dedent:
 
 Shutdown HC595 instance resources.
 
@@ -269,3 +281,4 @@ Shutdown HC595 instance resources.
     :linenos: 
     :language: java
     :lines: 96-98
+    :dedent:

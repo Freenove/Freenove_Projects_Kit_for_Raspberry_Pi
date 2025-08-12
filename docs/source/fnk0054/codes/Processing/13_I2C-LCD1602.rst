@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter I2C-LCD1602
+Chapter 13 I2C-LCD1602
 ##############################################################################
 
 In this chapter, we will learn about the LCD1602 Display Screen,
@@ -23,10 +23,10 @@ Below is the PCF8574 chip pin diagram and its module pin diagram:
 
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
-    :
+    :class: table-line
+    :header-rows: 1
 
     *   -  PCF8574 chip pin diagram:
         -  PCF8574 module pin diagram 
@@ -49,19 +49,24 @@ In this project, we will use the I2C LCD1602 to display some static characters a
 Component List
 ================================================================
 
-+------------------------------------------------+
-| Freenove Projects Board for Raspberry Pi       |
-|                                                |
-|  |Chapter01_04|                                |
-+---------------------+--------------------------+
-| Raspberry Pi        | GPIO Ribbon Cable        |
-|                     |                          |
-|  |Chapter01_05|     |  |Chapter01_06|          |
-+---------------------+--------------------------+
-| Jumper Wire         | I2C LCD1602 Module       |
-|                     |                          |
-|  |Chapter05_02|     |  |Chapter19_05|          |
-+---------------------+--------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+    
+    +------------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi       |
+    |                                                |
+    |  |Chapter01_04|                                |
+    +---------------------+--------------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable        |
+    |                     |                          |
+    |  |Chapter01_05|     |  |Chapter01_06|          |
+    +---------------------+--------------------------+
+    | Jumper Wire         | I2C LCD1602 Module       |
+    |                     |                          |
+    |  |Chapter05_02|     |  |Chapter19_05|          |
+    +---------------------+--------------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -79,19 +84,19 @@ Circuit
 .. list-table:: 
     :width: 100%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter19_06|
-    *   -   Hardware connection:
-    *   -   |Chapter19_07|
+    * - Schematic diagram
+    * - |Chapter19_06|
+    * - Hardware connection:
+    * - |Chapter19_07|
 
 .. |Chapter19_06| image:: ../_static/imgs/19_LCD1602/Chapter19_06.png
 .. |Chapter19_07| image:: ../_static/imgs/19_LCD1602/Chapter19_07.png
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -101,7 +106,7 @@ Sketch 13.1.1 LCD
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 First, enter where the project is located:
 
@@ -114,7 +119,7 @@ And then right-click to select Processing IDE
 .. image:: ../_static/imgs/19_LCD1602/Chapter19_13.png
     :align: center
 
-Or you can enter a command in the terminal to open the file Sketch_13_1_1_LCD. (The following is only one line of command. There is a Space after Processing.)
+Or you can enter a command in the terminal to open the file Sketch_13_1_1_LCD. :combo:`red font-bolder:(The following is only one line of command. There is a Space after Processing.)`
 
 .. code-block:: console
 
@@ -132,7 +137,7 @@ The result is as shown below. You can see the time and date on the pop-up window
 
 .. note::
     
-    If you cannot see anything on the display or the display is not clear, try rotating the white knob on back of LCD1602 slowly, which adjusts the contrast, until the screen can display the Time and Data clearly.
+    :combo:`red font-bolder:If you cannot see anything on the display or the display is not clear, try rotating the white knob on back of LCD1602 slowly, which adjusts the contrast, until the screen can display the Time and Data clearly.`
 
 .. image:: ../_static/imgs/19_LCD1602/Chapter19_16.png
     :align: center
@@ -168,7 +173,7 @@ In the function draw(), get the current time and date, and display them on the L
 Reference
 ----------------------------------------------------------------
 
-.. c:function:: class PCF8574
+.. py:function:: class PCF8574
 
     This is a custom class that is used to control the integrated circuit PCF8574.
     
@@ -192,7 +197,7 @@ Reference
     
     Write data to all ports.
 
-.. c:function:: class Freenove_LCD
+.. py:function:: class Freenove_LCD
 
     This is a custom class that is currently only used to control the I2C-LCD1602 connected to PCF8574.
     
@@ -250,4 +255,4 @@ Reference
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com

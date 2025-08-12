@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter Relay & LED
+Chapter 12 Relay & LED
 ##############################################################################
 
 In this chapter, we will learn a kind of special switch module, Relay Module.
@@ -18,9 +18,9 @@ Relays are a type of Switch that open and close circuits electromechanically or 
 The following is a basic diagram of a common Relay and the image and circuit symbol diagram of the 5V relay used in this project:
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Diagram 
         -   Feature:
@@ -54,15 +54,20 @@ The circuit for a Relay is as follows: The coil of Relay can be equivalent to an
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -74,19 +79,19 @@ Circuit
 .. list-table:: 
     :width: 100%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter12_05|
-    *   -   Hardware connection:
-    *   -   |Chapter12_06|
+    * - Schematic diagram
+    * - |Chapter12_05|
+    * - Hardware connection:
+    * - |Chapter12_06|
 
 .. |Chapter12_05| image:: ../_static/imgs/12_Relay_&_LED/Chapter12_05.png
 .. |Chapter12_06| image:: ../_static/imgs/12_Relay_&_LED/Chapter12_06.png
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch 
 ================================================================
@@ -154,6 +159,7 @@ Create a boolean variable relayState and set the default state to false.
     :linenos: 
     :language: java
     :lines: 19-19
+    :dedent:
 
 Relay control function: According to the value of the Boolean variable state, the Raspberry Pi controls the GPIO output high and low levels, thereby controlling the relay to be attracted and disconnected.
 
@@ -161,6 +167,7 @@ Relay control function: According to the value of the Boolean variable state, th
     :linenos: 
     :language: java
     :lines: 26-32
+    :dedent:
 
 Each time a button is pressed, the value of relayState is changed and the value of relayState is sent as a parameter to the relay control function. At the same time, a prompt message is printed in the terminal.
 
@@ -168,3 +175,4 @@ Each time a button is pressed, the value of relayState is changed and the value 
     :linenos: 
     :language: java
     :lines: 41-47
+    :dedent:

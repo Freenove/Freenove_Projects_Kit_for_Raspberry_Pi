@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter Joystick
+Chapter 10 Joystick
 ##############################################################################
 
 In an earlier chapter, we learned how to use Rotary Potentiometer. We will now learn about joysticks, which are electronic modules that work on the same principle as the Rotary Potentiometer.
@@ -30,15 +30,20 @@ When the Joystick data is read, there are some differences between the axes: dat
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
+.. table::
+    :class: table-line
+    :align: center
+    :width: 80%
+
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -48,21 +53,21 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter10_00|
-    *   -   Hardware connection:
-    *   -   |Chapter10_01|
+    * - Schematic diagram
+    * - |Chapter10_02|
+    * - Hardware connection:
+    * - |Chapter10_03|
 
-.. |Chapter10_00| image:: ../_static/imgs/9_Thermistor/Chapter10_00.png
-.. |Chapter10_01| image:: ../_static/imgs/9_Thermistor/Chapter10_01.png
+.. |Chapter10_02| image:: ../_static/imgs/10_Joystick/Chapter10_02.png
+.. |Chapter10_03| image:: ../_static/imgs/10_Joystick/Chapter10_03.png
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -125,6 +130,7 @@ Configure the Raspberry Pi's I2C to obtain the ADC values of the x-axis and y-ax
     :linenos: 
     :language: java
     :lines: 60-72
+    :dedent:
 
 The joystick sensor is associated with channel 5 and channel 6 of ADS7830, and its data is acquired every 100 milliseconds and the collected values are printed on the terminal.
 
@@ -132,3 +138,4 @@ The joystick sensor is associated with channel 5 and channel 6 of ADS7830, and i
     :linenos: 
     :language: java
     :lines: 80-89
+    :dedent:

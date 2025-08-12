@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter Analog & PWM
+Chapter 4 Analog & PWM
 ##############################################################################
 
 In previous chapters, we learned that a Push Button Switch has two states: Pressed (ON) and Released (OFF), and an LED has a Light ON and OFF state. Is there a middle or intermediated state? We will next learn how to create an intermediate output state to achieve a partially bright (dim) LED.
@@ -24,7 +24,7 @@ An Analog Signal is a continuous signal in both time and value. On the contrary,
 
 .. note::
     
-    he Analog signals are curved waves and the Digital signals are “Square Waves”. 
+    The Analog signals are curved waves and the Digital signals are “Square Waves”. 
 
 In practical applications, we often use binary as the digital signal, that is a series of 0's and 1’s. Since a binary signal only has two values (0 or 1) it has great stability and reliability. Lastly, both analog and digital signals can be converted into the other.
 
@@ -53,15 +53,20 @@ In order to keep the results running consistently, we will use PWM.
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -73,22 +78,22 @@ Circuit
 .. list-table:: 
     :width: 100%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter04_02|
-    *   -   Hardware connection:
-           
-            Switch ON NO.5 switch and the four switches of NO.2.
+    * - Schematic diagram
+    * - |Chapter04_02|
+    * - Hardware connection:
+ 
+        Switch ON NO.5 switch and the four switches of NO.2.
 
-    *   -   |Chapter04_03|
+    * - |Chapter04_03|
 
 .. |Chapter04_02| image:: ../_static/imgs/4_Analog_&_PWM/Chapter04_02.png
 .. |Chapter04_03| image:: ../_static/imgs/4_Analog_&_PWM/Chapter04_03.png
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -112,7 +117,6 @@ You can enter the command to run the code.
 .. code-block:: console
     
     $ jbang BreathingLED.java
-
 
 .. image:: ../_static/imgs/4_Analog_&_PWM/Chapter04_05.png
     :align: center
@@ -152,6 +156,7 @@ Use JBange to run the script and automatically process the declared dependencies
     :linenos: 
     :language: java
     :lines: 1-7
+    :dedent:
 
 Import Pi4J library, context management, digital output interface, HashMap class, and Map interface.
 
@@ -159,6 +164,7 @@ Import Pi4J library, context management, digital output interface, HashMap class
     :linenos: 
     :language: java
     :lines: 9-13
+    :dedent:
 
 Pi4j only has 4 hardware PWM pins, and the use of these pins is greatly limited, so we use software PWM to control the LED. Although software PWM is not as precise as hardware PWM, it can be applied to any GPIO.
 
@@ -168,6 +174,7 @@ To implement software PWM, we have written a PWMController class to control the 
     :linenos: 
     :language: java
     :lines: 24-31
+    :dedent:
 
 Define variables to configure PWM's parameters.
 
@@ -175,6 +182,7 @@ Define variables to configure PWM's parameters.
     :linenos: 
     :language: java
     :lines: 16-22
+    :dedent:
 
 Constructor, to initialize various parameters of the PWM controller.
 
@@ -182,6 +190,7 @@ Constructor, to initialize various parameters of the PWM controller.
     :linenos: 
     :language: java
     :lines: 24-31
+    :dedent:
 
 This is a simple delay method in microsecond.
 
@@ -189,6 +198,7 @@ This is a simple delay method in microsecond.
     :linenos: 
     :language: java
     :lines: 68-73
+    :dedent:
 
 The functions to set PWM frenqunency.
 
@@ -196,6 +206,7 @@ The functions to set PWM frenqunency.
     :linenos: 
     :language: java
     :lines: 47-60
+    :dedent:
 
 @Override means that the run method overrides the method in the parent class or implements the interface. This method allows the pin to output PWM signals.
 
@@ -203,6 +214,7 @@ The functions to set PWM frenqunency.
     :linenos: 
     :language: java
     :lines: 33-45
+    :dedent:
 
 Request to stop the PWM controller. The PWMController class is used in the thread. When running is false, exit the thread.
 
@@ -210,6 +222,7 @@ Request to stop the PWM controller. The PWMController class is used in the threa
     :linenos: 
     :language: java
     :lines: 75-77
+    :dedent:
 
 Define the pins that control PWM and create an integer Map variable pwmControllers to store the mapping of PWMController objects.
 
@@ -217,6 +230,7 @@ Define the pins that control PWM and create an integer Map variable pwmControlle
     :linenos: 
     :language: java
     :lines: 81-83
+    :dedent:
 
 The PWM configuration function only needs to fill in the GPIO number in the parameter. The code will automatically apply for a PWMController object and create a corresponding thread to run it. At the same time, the PWMController is stored in pwmControllers and then the thread is started.
 
@@ -224,6 +238,7 @@ The PWM configuration function only needs to fill in the GPIO number in the para
     :linenos: 
     :language: java
     :lines: 85-99
+    :dedent:
 
 Add JVM shutdown hook to ensure PWM controller is stopped on JVM shutdown.
 
@@ -231,6 +246,7 @@ Add JVM shutdown hook to ensure PWM controller is stopped on JVM shutdown.
     :linenos: 
     :language: java
     :lines: 91-98
+    :dedent:
 
 The main program, which is used to test the effect of making the LED breathe.
 
@@ -238,6 +254,7 @@ The main program, which is used to test the effect of making the LED breathe.
     :linenos: 
     :language: java
     :lines: 101-125
+    :dedent:
 
 Configure PWM and associate it with pin.
 
@@ -245,6 +262,7 @@ Configure PWM and associate it with pin.
     :linenos: 
     :language: java
     :lines: 102-102
+    :dedent:
 
 Obtain PWM controller corresponding to the pin.
 
@@ -252,6 +270,7 @@ Obtain PWM controller corresponding to the pin.
     :linenos: 
     :language: java
     :lines: 103-103
+    :dedent:
 
 The duty cycle value is changed every 10 milliseconds, so that the LED cycles from dark to bright and then from bright to dark.
 
@@ -259,6 +278,7 @@ The duty cycle value is changed every 10 milliseconds, so that the LED cycles fr
     :linenos: 
     :language: java
     :lines: 104-118
+    :dedent:
 
 When exiting the main loop, first close all PWM controller threads and then close the pi4j context.
 
@@ -266,4 +286,4 @@ When exiting the main loop, first close all PWM controller threads and then clos
     :linenos: 
     :language: java
     :lines: 119-124
-
+    :dedent:

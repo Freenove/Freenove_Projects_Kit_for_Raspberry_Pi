@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter Photoresistor & LED
+Chapter 8 Photoresistor & LED
 ##############################################################################
 
 In this chapter, we will learn how to use a photoresistor to make an automatic dimming nightlight.
@@ -12,19 +12,24 @@ A Photoresistor is very sensitive to the amount of light present. We can take ad
 Component List
 ================================================================
 
-+------------------------------------------+
-| Freenove Projects Board for Raspberry Pi |
-|                                          |
-|  |Chapter01_04|                          |
-+---------------------+--------------------+
-| Raspberry Pi        | GPIO Ribbon Cable  |
-|                     |                    |
-|  |Chapter01_05|     |  |Chapter01_06|    |
-+---------------------+--------------------+
-| Jumper Wire         | Photoresistor      |
-|                     |                    |
-|  |Chapter05_02|     |  |Chapter08_00|    |
-+---------------------+--------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi |
+    |                                          |
+    |  |Chapter01_04|                          |
+    +---------------------+--------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable  |
+    |                     |                    |
+    |  |Chapter01_05|     |  |Chapter01_06|    |
+    +---------------------+--------------------+
+    | Jumper Wire         | Photoresistor      |
+    |                     |                    |
+    |  |Chapter05_02|     |  |Chapter08_00|    |
+    +---------------------+--------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -38,19 +43,19 @@ Circuit
 .. list-table:: 
     :width: 100%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter08_01|
-    *   -   Hardware connection:
-    *   -   |Chapter08_02|
+    * - Schematic diagram
+    * - |Chapter08_01|
+    * - Hardware connection:
+    * - |Chapter08_02|
 
 .. |Chapter08_01| image:: ../_static/imgs/8_Photoresistor_&_LED/Chapter08_01.png
 .. |Chapter08_02| image:: ../_static/imgs/8_Photoresistor_&_LED/Chapter08_02.png
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================

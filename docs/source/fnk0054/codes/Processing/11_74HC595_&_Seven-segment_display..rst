@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter 74HC595 & Seven-segment display
+Chapter 11 74HC595 & Seven-segment display
 ##############################################################################
 
 In this chapter, we will learn a new component, Seven-segment display (SSD).
@@ -12,44 +12,45 @@ We will use a 74HC595 IC Chip to control a 4-Digit 7-Segment Display and make it
 Component List
 ================================================================
 
-+---------------------------------------------+
-| Freenove Projects Board for Raspberry Pi    |
-|                                             |
-|  |Chapter01_04|                             |
-+---------------------+-----------------------+
-| Raspberry Pi        | GPIO Ribbon Cable     |
-|                     |                       |
-|  |Chapter01_05|     |  |Chapter01_06|       |
-+---------------------+-----------------------+
-| 4-Digit 7-Segment Display                   |
-|                                             |
-|  |Chapter17_00|                             |                              
-+---------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+    
+    +---------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi    |
+    |                                             |
+    |  |Chapter01_04|                             |
+    +---------------------+-----------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable     |
+    |                     |                       |
+    |  |Chapter01_05|     |  |Chapter01_06|       |
+    +---------------------+-----------------------+
+    | 4-Digit 7-Segment Display                   |
+    |                                             |
+    |  |Chapter17_00|                             |                              
+    +---------------------------------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
 .. |Chapter01_06| image:: ../_static/imgs/1_LED/Chapter01_06.png
 .. |Chapter17_00| image:: ../_static/imgs/17_74HC595_&_4-Digit_7-Segment_Display/Chapter17_00.png
 
-Component knowledge
-================================================================
+Circuit
+=======================================
 
-4 Digit 7-Segment Display
-----------------------------------------------------------------
-
-A 4 Digit 7-segment display integrates four 7-Segment Displays into one module, therefore it can display more characters. All of the LEDs contained have a Common Anode and individual Cathodes. Its internal structure and pin designation diagram is shown below:
-
-.. image:: ../_static/imgs/17_74HC595_&_4-Digit_7-Segment_Display/Chapter17_00.png
+.. list-table:: 
+    :width: 80%
     :align: center
+    :class: table-line
 
-The internal electronic circuit is shown below, and all 8 LED cathode pins of each 7-Segment Display are connected together.
+    * - Schematic diagram
+    * - |Chapter17_21|
+    * - Hardware connection
+    * - |Chapter17_22|
 
-.. image:: ../_static/imgs/17_74HC595_&_4-Digit_7-Segment_Display/Chapter17_01.png
-    :align: center
-
-Display method of 4 Digit 7-segment display is similar to 1 Digit 7-segment display. The difference between them is that the 4-Digit displays each Digit is visible in turn, one by one and not together. We need to first send high level to the common end of the first Digit Display, and send low level to the remaining three common ends, and then send content to 8 LED cathode pins of the first Digit Display. At this time, the first 7-Segment Display will show visible content and the remaining three will be OFF.
-
-Similarly, the second, third and fourth 7-Segment Displays will show visible content in turn by scanning the display. Although the four number characters are displayed in turn separately, this process is so fast that it is unperceivable to the naked eye. This is due to the principle of optical afterglow effect and the vision persistence effect in human sight. This is how we can see all 4 number characters at the same time. However, if each number character is displayed for a longer period, you will be able to see that the number characters are displayed separately. 
+.. |Chapter17_21| image:: ../_static/imgs/17_74HC595_&_4-Digit_7-Segment_Display/Chapter17_21.png
+.. |Chapter17_22| image:: ../_static/imgs/17_74HC595_&_4-Digit_7-Segment_Display/Chapter17_22.png
 
 Sketch
 ================================================================
@@ -61,7 +62,7 @@ Sketch 11.1.1 SSD
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 First, enter where the project is located:
 
@@ -74,7 +75,7 @@ And then right-click to select Processing IDE
 .. image:: ../_static/imgs/17_74HC595_&_4-Digit_7-Segment_Display/Chapter17_13.png
     :align: center
 
-Or you can enter a command in the terminal to open the file Sketch_11_1_1_FDSSD. (The following is only one line of command. There is a Space after Processing.)
+Or you can enter a command in the terminal to open the file Sketch_11_1_1_FDSSD. :combo:`red font-bolder:(The following is only one line of command. There is a Space after Processing.)`
 
 .. code-block:: console
 
@@ -128,7 +129,7 @@ By creating the font "mFont", we change the font of the characters on Display Wi
 
 For more details about loadFont(), please refer to "Help -> Reference -> loadFont()" or the official website:
 
-https://processing.org/reference/loadFont_.html 
+https://processing.org/reference/loadFont\_.html 
 
 By creating an empty font, you can reset the font to default font.
 
@@ -140,7 +141,7 @@ By creating an empty font, you can reset the font to default font.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Project 11.2 4-digit Seven-segment display.
 ****************************************************************
@@ -150,19 +151,24 @@ Now, let's learn to use 4-digit 7-segment display(FDSSD).
 Component List
 ================================================================
 
-+---------------------------------------------+
-| Freenove Projects Board for Raspberry Pi    |
-|                                             |
-|  |Chapter01_04|                             |
-+---------------------+-----------------------+
-| Raspberry Pi        | GPIO Ribbon Cable     |
-|                     |                       |
-|  |Chapter01_05|     |  |Chapter01_06|       |
-+---------------------+-----------------------+
-| 4-Digit 7-Segment Display                   |
-|                                             |
-|  |Chapter17_00|                             |                              
-+---------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+    
+    +---------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi    |
+    |                                             |
+    |  |Chapter01_04|                             |
+    +---------------------+-----------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable     |
+    |                     |                       |
+    |  |Chapter01_05|     |  |Chapter01_06|       |
+    +---------------------+-----------------------+
+    | 4-Digit 7-Segment Display                   |
+    |                                             |
+    |  |Chapter17_00|                             |                              
+    +---------------------------------------------+
 
 Circuit
 ================================================================
@@ -171,7 +177,7 @@ The same as that of 17.1
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
@@ -183,7 +189,7 @@ Sketch 11.2.1 FDSSD
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 First, enter where the project is located:
 
@@ -196,7 +202,7 @@ And then right-click to select Processing IDE
 .. image:: ../_static/imgs/17_74HC595_&_4-Digit_7-Segment_Display/Chapter17_17.png
     :align: center
 
-Or you can enter a command in the terminal to open the file Sketch_11_2_1_FDSSD. (The following is only one line of command. There is a Space after Processing.)
+Or you can enter a command in the terminal to open the file Sketch_11_2_1_FDSSD. :combo:`red font-bolder:(The following is only one line of command. There is a Space after Processing.)`
 
 .. code-block:: console
 
@@ -226,14 +232,18 @@ The following is program code:
 
 In a separate thread, make the FDSSD display numbers in scan mode. Subfunction display() is used to make FDSSD display a four-digit number.
 
-.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_11_2_1_FDSSD/Sketch_11_2_1_FDSSD.pde
-    :linenos: 
-    :language: c
-    :lines: 28-58
-    :dedent:
+.. code-block:: c
+
+      thread("displaySSD");
+    ...
+    void displaySSD() {
+        while (true) {
+            display(index);
+        }
+    }
 
 Other contents of the program are the same as the previous section "SSD".
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com

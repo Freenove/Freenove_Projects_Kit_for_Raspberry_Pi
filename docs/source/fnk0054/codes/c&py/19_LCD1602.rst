@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter LCD1602
+Chapter 19 LCD1602
 ##############################################################################
 
 In this chapter, we will learn about the LCD1602 Display Screen,
@@ -21,12 +21,10 @@ The serial-to-parallel IC chip used in this module is PCF8574T (PCF8574AT), and 
 
 Below is the PCF8574 chip pin diagram and its module pin diagram:
 
-
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
-    :
+    :class: table-line
 
     *   -  PCF8574 chip pin diagram:
         -  PCF8574 module pin diagram 
@@ -49,19 +47,24 @@ In this project, we will use the I2C LCD1602 to display some static characters a
 Component List
 ================================================================
 
-+------------------------------------------------+
-| Freenove Projects Board for Raspberry Pi       |
-|                                                |
-|  |Chapter01_04|                                |
-+---------------------+--------------------------+
-| Raspberry Pi        | GPIO Ribbon Cable        |
-|                     |                          |
-|  |Chapter01_05|     |  |Chapter01_06|          |
-+---------------------+--------------------------+
-| Jumper Wire         | I2C LCD1602 Module       |
-|                     |                          |
-|  |Chapter05_02|     |  |Chapter19_05|          |
-+---------------------+--------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi       |
+    |                                                |
+    |  |Chapter01_04|                                |
+    +---------------------+--------------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable        |
+    |                     |                          |
+    |  |Chapter01_05|     |  |Chapter01_06|          |
+    +---------------------+--------------------------+
+    | Jumper Wire         | I2C LCD1602 Module       |
+    |                     |                          |
+    |  |Chapter05_02|     |  |Chapter19_05|          |
+    +---------------------+--------------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -74,24 +77,24 @@ Circuit
 
 .. note::
     
-    the power supply for I2C LCD1602 in this circuit is 5V.
+    The power supply for I2C LCD1602 in this circuit is 5V.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter19_06|
-    *   -   Hardware connection:
-    *   -   |Chapter19_07|
+    * - Schematic diagram
+    * - |Chapter19_06|
+    * - Hardware connection:
+    * - |Chapter19_07|
 
 .. |Chapter19_06| image:: ../_static/imgs/19_LCD1602/Chapter19_06.png
 .. |Chapter19_07| image:: ../_static/imgs/19_LCD1602/Chapter19_07.png
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Code
 ================================================================
@@ -107,7 +110,7 @@ First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 19_I2CLCD1602 directory of C code.
 
@@ -150,14 +153,15 @@ First, define the I2C address of the PCF8574 and the Extension of the GPIO pin, 
     :linenos: 
     :language: c
     :lines: 15-25
+    :dedent:
 
 Then, in main function, initialize the PCF8574, set all the pins to output mode, and turn ON the LCD1602 backlight (without the backlight the Display is difficult to read). 
-
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/19_I2CLCD1602/I2CLCD1602.c
     :linenos: 
     :language: c
     :lines: 83-87
+    :dedent:
 
 Then use lcdInit() to initialize LCD1602 and set the RW pin of LCD1602 to 0 (can be written) according to requirements of this function. The return value of the function called "Handle" is used to handle LCD1602".
 
@@ -165,6 +169,7 @@ Then use lcdInit() to initialize LCD1602 and set the RW pin of LCD1602 to 0 (can
     :linenos: 
     :language: c
     :lines: 89-89
+    :dedent:
 
 Details about lcdInit():
 
@@ -182,14 +187,17 @@ In the next “while”, two subfunctions are called to display the RPi's CPU Te
     :linenos: 
     :language: c
     :lines: 28-40
+    :dedent:
 
 Details about lcdPosition() and lcdPrintf():
 
-.. c:function:: lcdPosition (int handle, int x, int y);
+.. py:function:: lcdPosition(int handle, int x, int y);
 
     Set the position of the cursor for subsequent text entry.
 
-.. c:function:: lcdPutchar (int handle, uint8_t data) lcdPuts (int handle, char *string) lcdPrintf (int handle, char *message, …)
+.. py:function:: lcdPutchar(int handle, uint8_t data) 
+.. py:function:: lcdPuts(int handle, char *string) 
+.. py:function:: lcdPrintf(int handle, char *message, ...)
 
     These output a single ASCII character, a string or a formatted string using the usual print formatting commands to display individual characters (it is how you are able to see characters on your computer monitor).
 
@@ -199,8 +207,9 @@ Next is subfunction printDataTime() used to display System Time. First, it gets 
     :linenos: 
     :language: c
     :lines: 41-49
+    :dedent:
 
-Python Code 19.1 I2CLCD1602
+Python Code I2CLCD1602
 ----------------------------------------------------------------
 
 If you haven't configured I2C and install Smbus, please refer to Chapter 7. If you've done it, please continue.
@@ -209,7 +218,7 @@ First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 19_I2CLCD1602 directory of Python code.
 
@@ -227,7 +236,7 @@ After the program runs, the LCD1602 Screen will display your RPi's CPU Temperatu
 
 .. note::
     
-    :red:`After the program runs, if nothing displays or the display is not clear, try rotating the white knob on back of LCD1602 slowly, which adjusts the contrast, until the screen can display the Time and Temperature clearly.`
+    :combo:`red font-bolder:After the program runs, if nothing displays or the display is not clear, try rotating the white knob on back of LCD1602 slowly, which adjusts the contrast, until the screen can display the Time and Temperature clearly.`
 
 .. image:: ../_static/imgs/19_LCD1602/Chapter19_08.png
     :align: center
@@ -244,6 +253,7 @@ In this section, we introduce the LCD1602 module for displaying LCD1602 and the 
     :linenos: 
     :language: python
     :lines: 9-11
+    :dedent:
 
 In the loop function, lCD1602.init_lcd () will initialize LCD1602 for later use.
 
@@ -253,6 +263,7 @@ get_cpu_temp() is used to obtain the system temperature value, get_time_now() is
     :linenos: 
     :language: python
     :lines: 23-30
+    :dedent:
 
 CPU temperature is stored in file “/sys/class/thermal/thermal_zone0/temp”. Open the file and read content of the file, and then convert it to Celsius degrees and return. Subfunction used to get CPU temperature is shown below:
 
@@ -260,6 +271,7 @@ CPU temperature is stored in file “/sys/class/thermal/thermal_zone0/temp”. O
     :linenos: 
     :language: python
     :lines: 14-18
+    :dedent:
 
 Subfunction used to get time:
 
@@ -267,8 +279,9 @@ Subfunction used to get time:
     :linenos: 
     :language: python
     :lines: 20-21
+    :dedent:
 
-.. c:function:: Module LCD1602.CharLCD1602()
+.. py:function:: Module LCD1602.CharLCD1602()
 
     This module provides the basic operation method of LCD1602, including class CharLCD1602. Some member functions are described as follows:
     

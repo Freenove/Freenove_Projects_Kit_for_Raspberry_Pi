@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter Ultrasonic Ranging
+Chapter 23 Ultrasonic Ranging
 ##############################################################################
 
 In this chapter, we learn a module which use ultrasonic to measure distance, HC SR04.
@@ -20,9 +20,8 @@ The Ultrasonic Ranging Module uses the principle that ultrasonic waves will be r
 The HC-SR04 Ultrasonic Ranging Module integrates both an ultrasonic transmitter and a receiver. The transmitter is used to convert electrical signals (electrical energy) into high frequency (beyond human hearing) sound waves (mechanical energy) and the function of the receiver is opposite of this. The picture and the diagram of the HC SR04 Ultrasonic Ranging Module are shown below:
 
 .. list-table:: 
-    :width: 70%
     :align: center
-    :class: product-table
+    :class: table-line
     
     *   -   |Chapter23_01|
         -   |Chapter23_02|
@@ -33,9 +32,8 @@ The HC-SR04 Ultrasonic Ranging Module integrates both an ultrasonic transmitter 
 Pin description:
 
 .. list-table:: 
-    :width: 70%
     :align: center
-    :class: product-table
+    :class: table-line
     
     *   -   VCC
         -   power supply pin
@@ -67,19 +65,24 @@ Instructions for Use: output a high-level pulse in Trig pin lasting for least 10
 Component List
 ================================================================
 
-+------------------------------------------------+
-| Freenove Projects Board for Raspberry Pi       |
-|                                                |
-|  |Chapter01_04|                                |
-+---------------------+--------------------------+
-| Raspberry Pi        | GPIO Ribbon Cable        |
-|                     |                          |
-|  |Chapter01_05|     |  |Chapter01_06|          |
-+---------------------+--------------------------+
-| Jumper Wire         | HC SR501                 |
-|                     |                          |
-|  |Chapter05_02|     |  |Chapter23_01|          |
-+---------------------+--------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi       |
+    |                                                |
+    |  |Chapter01_04|                                |
+    +---------------------+--------------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable        |
+    |                     |                          |
+    |  |Chapter01_05|     |  |Chapter01_06|          |
+    +---------------------+--------------------------+
+    | Jumper Wire         | HC SR501                 |
+    |                     |                          |
+    |  |Chapter05_02|     |  |Chapter23_01|          |
+    +---------------------+--------------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
@@ -90,9 +93,9 @@ Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter23_04|
@@ -106,19 +109,19 @@ Circuit
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Code
 ================================================================
 
-C Code 23.1 UltrasonicRanging
+C Code UltrasonicRanging
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 23_UltrasonicRanging directory of C code.
 
@@ -143,6 +146,8 @@ After the program runs, aim the Ultrasonic Ranging Module's detectors ("eyes") p
 .. image:: ../_static/imgs/23_Ultrasonic_Ranging/Chapter23_06.png
     :align: center
 
+The following is the program code:
+
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/23_UltrasonicRanging/UltrasonicRanging.c
     :linenos: 
     :language: c
@@ -153,13 +158,23 @@ First, define the pins and the maximum measurement distance.
     :linenos: 
     :language: c
     :lines: 11-13
+    :dedent:
 
-If the module does not return high level, we cannot wait for this forever, so we need to calculate the time period for the maximum distance, that is, time Out. timeOut= 2*MAX_DISTANCE/100/340*1000000. The result of the constant part in this formula is approximately 58.8. 
+If the module does not return high level, we cannot wait for this forever, so we need to calculate the time period for the maximum distance, that is, time Out. **timeOut= 2*MAX_DISTANCE/100/340*1000000**. The result of the constant part in this formula is approximately 58.8. 
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/23_UltrasonicRanging/UltrasonicRanging.c
     :linenos: 
     :language: c
     :lines: 14-14
+    :dedent:
+
+Subfunction getSonar () function is used to start the Ultrasonic Module to begin measurements and return the measured distance in cm units. In this function, first let trigPin send 10us high level to start the Ultrasonic Module. Then use pulseIn () to read the Ultrasonic Module and return the duration time of high level. Finally, the measured distance according to the time is calculated.
+
+.. literalinclude:: ../../../freenove_Kit/Code/C_Code/23_UltrasonicRanging/UltrasonicRanging.c
+    :linenos: 
+    :language: c
+    :lines: 17-26
+    :dedent:
 
 Lastly, in the while loop of main function, get the measurement distance and display it continually.
 
@@ -167,6 +182,7 @@ Lastly, in the while loop of main function, get the measurement distance and dis
     :linenos: 
     :language: c
     :lines: 36-40
+    :dedent:
 
 About function pulseIn():
 
@@ -174,12 +190,12 @@ About function pulseIn():
 
     Return the length of the pulse (in microseconds) or 0 if no pulse is completed before the timeout (unsigned long).
 
-Python Code 23.1 UltrasonicRanging
+Python Code UltrasonicRanging
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
 
-If you have any concerns, please send an email to: support@freenove.com
+:combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 1.	Use cd command to enter 23_UltrasonicRanging directory of Python code.
 
@@ -210,6 +226,7 @@ Importing libraries and modules, gpiozero library integrates a module for ultras
     :linenos: 
     :language: python
     :lines: 8-11
+    :dedent:
 
 Set the pin of the ultrasonic data and initialize it. Note that max_distance is measured in meters.
 
@@ -217,6 +234,7 @@ Set the pin of the ultrasonic data and initialize it. Note that max_distance is 
     :linenos: 
     :language: python
     :lines: 13-15
+    :dedent:
 
 The ultrasonic sensor data is obtained using Sensor.distance and converted to a value in centimeters.
 
@@ -224,6 +242,7 @@ The ultrasonic sensor data is obtained using Sensor.distance and converted to a 
     :linenos: 
     :language: python
     :lines: 17-20
+    :dedent:
 
 Release the GPIO resource.
 
@@ -231,8 +250,4 @@ Release the GPIO resource.
     :linenos: 
     :language: python
     :lines: 29-29
-
-
-
-
-
+    :dedent:

@@ -1,10 +1,10 @@
 ##############################################################################
-Chapter 74HC595 & LED Matrix
+Chapter 17 74HC595 & LED Matrix
 ##############################################################################
 
 Thus far we have learned how to use the 74HC595 IC Chip to control the Bar Graph LED and the 7-Segment Display. We will now use 74HC595 IC Chips to control an LED Matrix.
 
-Project 18.1 LED Matrix
+Project 17.1 LED Matrix
 ****************************************************************
 
 In this project, we will use two 74HC595 IC chips to control a monochrome (one color) (8X8) LED Matrix to make it display both simple graphics and characters.
@@ -33,9 +33,9 @@ Here is how a Common Anode LED Matrix works. First, choose 16 ports on RPI board
     :align: center
 
 .. list-table:: 
-    :width: 100%
     :align: center
-    :class: product-table
+    :class: zebra
+    :header-rows: 1
 
     *   -  Column 
         -  Binary
@@ -80,32 +80,37 @@ Scanning rows is another option to display on an LED Matrix (dot matrix grid). W
 Component List
 ================================================================
 
-+---------------------------------------------+
-| Freenove Projects Board for Raspberry Pi    |
-|                                             |
-|  |Chapter01_04|                             |
-+---------------------+-----------------------+
-| Raspberry Pi        | GPIO Ribbon Cable     |
-|                     |                       |
-|  |Chapter01_05|     |  |Chapter01_06|       |
-+---------------------+-----------------------+
-| LED matrix                                  |
-|                                             |
-|  |Chapter18_00|                             |                              
-+---------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+    
+    +---------------------------------------------+
+    | Freenove Projects Board for Raspberry Pi    |
+    |                                             |
+    |  |Chapter01_04|                             |
+    +---------------------+-----------------------+
+    | Raspberry Pi        | GPIO Ribbon Cable     |
+    |                     |                       |
+    |  |Chapter01_05|     |  |Chapter01_06|       |
+    +---------------------+-----------------------+
+    | LED matrix                                  |
+    |                                             |
+    |  |Chapter18_00|                             |                              
+    +---------------------------------------------+
 
 .. |Chapter01_04| image:: ../_static/imgs/1_LED/Chapter01_04.png
 .. |Chapter01_05| image:: ../_static/imgs/1_LED/Chapter01_05.png
 .. |Chapter01_06| image:: ../_static/imgs/1_LED/Chapter01_06.png
-.. |Chapter17_00| image:: ../_static/imgs/18_74HC595_&_LED_Matrix/Chapter18_00.png
+.. |Chapter18_00| image:: ../_static/imgs/18_74HC595_&_LED_Matrix/Chapter18_00.png
 
 Circuit
 ================================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
-    :class: product-table
+    :class: table-line
 
     *   -   Schematic diagram
     *   -   |Chapter18_03|
@@ -117,11 +122,11 @@ Circuit
 
 .. hint::
 
-    :red:`If it dosen't work, rotate the LED matrix for 180°.`
+    :combo:`red font-bolder:If it dosen't work, rotate the LED matrix for 180°.`
 
 .. note::
     
-    :red:`If you have any concerns, please send an email to:` support@freenove.com
+    :combo:`red font-bolder:If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
