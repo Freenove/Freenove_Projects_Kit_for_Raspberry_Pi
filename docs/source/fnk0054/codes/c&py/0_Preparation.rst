@@ -142,7 +142,7 @@ In the pi directory of the RPi terminal, enter the following command.
 .. code-block:: console
     
     $ cd
-    $ git clone --depth 1 https://github.com/freenove/Freenove_Complete_Starter_Kit_for_Raspberry_Pi
+    $ git clone --depth 1 https://github.com/freenove/Freenove_Complete_Starter_Kit_for_Raspberry_Pi.git
 
 :combo:`green font-bolder:(There is no need for a password. If you get some errors, please check your commands.)`
 
@@ -158,7 +158,7 @@ After the download is completed, a new folder "Freenove_Complete_Starter_Kit_for
 
 .. code-block:: console
 
-    $ mv Freenove_Complete_Starter_Kit_for_Raspberry_Pi/ Freenove_Kit/
+    $ mv Freenove_Complete_Starter_Kit_for_Raspberry_Pi/Freenove_Kit/
 
 ``Freenove_Kit`` is now the new and much shorter folder name.
 
