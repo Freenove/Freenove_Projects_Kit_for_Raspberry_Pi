@@ -412,7 +412,7 @@ First observe the project result, and then learn about the code in detail.
 
 .. code-block:: console
 
-    $ cd ~/Freenove_Kit/Code/Python_GPIOZero_Code/25_RFID/Python3
+    $ cd ~/Freenove_Kit/Code/Python_GPIOZero_Code/25_RFID
 
 1.	Use python command to execute code "RFID.py".
 
