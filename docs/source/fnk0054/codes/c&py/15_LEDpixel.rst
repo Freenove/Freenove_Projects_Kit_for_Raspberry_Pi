@@ -10,7 +10,7 @@ In this chapter, we will learn Freenove 8 RGB LED Module.
 
 **Since rpi libraries do not work on bookworm systems, skip 15.1 and 15.2 if you are using that system. 15.3 Use spi to drive the color lights.**
 
-Project LEDpixel
+Project 15.1 LEDpixel
 ****************************************************************
 
 This project will achieve an RGB triple colored flowing water. 
@@ -237,7 +237,7 @@ Light up the eight LEDs in red, green and blue in turn.
     :lines: 36-47
     :dedent:
 
-Project Rainbow Light
+Project 15.2 Rainbow Light
 ****************************************************************
 
 In this project, we will learn to control the LED module with a potentiometer.
@@ -393,7 +393,7 @@ Read the ADC value of channel 2 in an infinite loop. Let the color of the eight 
     :lines: 62-70
     :dedent:
 
-Project 25.2 SpiLEDpixel
+Project 15.3 SpiLEDpixel
 ****************************************************************
 
 .. table::
