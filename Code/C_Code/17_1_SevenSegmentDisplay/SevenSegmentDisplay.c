@@ -43,7 +43,7 @@ int main(void)
 	pinMode(latchPin,OUTPUT);
 	pinMode(clockPin,OUTPUT);
 	while(1){
-		for(i=0;i<sizeof(num);i++){
+		for(i=0;i<sizeof(num)/sizeof(num[0]);i++){
 			digitalWrite(latchPin,LOW);
 			_shiftOut(dataPin,clockPin,MSBFIRST,num[i]);//Output the figures and the highest level is transfered preferentially. 
 			digitalWrite(latchPin,HIGH);
